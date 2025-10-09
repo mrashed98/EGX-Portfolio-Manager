@@ -23,6 +23,8 @@ class RebalancingHistoryResponse(BaseModel):
     strategy_id: int
     actions: list  # List of action dictionaries
     executed: bool
+    undone: bool
+    undone_at: datetime | None
     created_at: datetime
 
     class Config:

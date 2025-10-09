@@ -381,6 +381,103 @@ class RebalancingService:
         
         await db.commit()
     
+    async def undo_rebalancing(self, db: AsyncSession, rebalancing_id: int):
+        """Undo an executed rebalancing by reversing all actions"""
+        
+        # Get the rebalancing record
+        result = await db.execute(
+            select(RebalancingHistory).where(RebalancingHistory.id == rebalancing_id)
+        )
+        rebalancing = result.scalar_one_or_none()
+        
+        if not rebalancing:
+            raise ValueError("Rebalancing record not found")
+        
+        if not rebalancing.executed:
+            raise ValueError("Cannot undo a rebalancing that hasn't been executed")
+        
+        if rebalancing.undone:
+            raise ValueError("This rebalancing has already been undone")
+        
+        # Get strategy
+        strategy_result = await db.execute(
+            select(Strategy).where(Strategy.id == rebalancing.strategy_id)
+        )
+        strategy = strategy_result.scalar_one_or_none()
+        
+        if not strategy:
+            raise ValueError("Strategy not found")
+        
+        # Track cash flow (reverse of execution)
+        cash_from_sales = 0.0
+        cash_for_purchases = 0.0
+        
+        # Reverse each action (BUY becomes SELL, SELL becomes BUY)
+        for action in rebalancing.actions:
+            stock_id = action["stock_id"]
+            quantity = action["quantity"]
+            price = action["price"]
+            action_type = action["action"]
+            action_total = quantity * price
+            
+            # Get ALL existing holdings for this stock
+            holding_result = await db.execute(
+                select(Holding).where(
+                    Holding.strategy_id == rebalancing.strategy_id,
+                    Holding.stock_id == stock_id
+                )
+            )
+            holdings = holding_result.scalars().all()
+            holding = holdings[0] if holdings else None
+            
+            if action_type == "buy":
+                # Original was BUY, so we need to SELL to undo
+                # Return cash by selling
+                cash_from_sales += action_total
+                
+                if holding:
+                    holding.quantity -= quantity
+                    if holding.quantity <= 0:
+                        await db.delete(holding)
+                    else:
+                        # Recalculate average price if needed
+                        holding.current_value = holding.quantity * price
+            
+            elif action_type == "sell":
+                # Original was SELL, so we need to BUY to undo
+                # Spend cash to buy back
+                cash_for_purchases += action_total
+                
+                if holding:
+                    # Update existing holding
+                    total_cost = (holding.quantity * holding.average_price) + (quantity * price)
+                    holding.quantity += quantity
+                    holding.average_price = total_cost / holding.quantity
+                    holding.current_value = holding.quantity * price
+                else:
+                    # Create new holding (if it was completely sold)
+                    holding = Holding(
+                        user_id=strategy.user_id,
+                        strategy_id=rebalancing.strategy_id,
+                        stock_id=stock_id,
+                        quantity=quantity,
+                        average_price=price,
+                        current_value=quantity * price
+                    )
+                    db.add(holding)
+        
+        # Update strategy remaining cash (reverse of execution)
+        # Cash IN from undoing buys - Cash OUT for undoing sells
+        net_cash_change = cash_from_sales - cash_for_purchases
+        strategy.remaining_cash += net_cash_change
+        
+        # Mark rebalancing as undone
+        rebalancing.undone = True
+        from datetime import datetime
+        rebalancing.undone_at = datetime.utcnow()
+        
+        await db.commit()
+    
     async def handle_portfolio_change(
         self,
         db: AsyncSession,

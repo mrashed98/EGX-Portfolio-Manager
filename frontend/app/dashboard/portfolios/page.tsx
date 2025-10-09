@@ -28,6 +28,14 @@ interface Portfolio {
   created_at: string;
 }
 
+interface PortfolioPerformance {
+  current_value: number;
+  initial_value: number;
+  change: number;
+  change_percent: number;
+  time_series: { date: string; value: number }[];
+}
+
 interface Stock {
   id: number;
   symbol: string;
@@ -38,6 +46,7 @@ interface Stock {
 export default function PortfoliosPage() {
   const router = useRouter();
   const [portfolios, setPortfolios] = useState<Portfolio[]>([]);
+  const [portfolioPerformances, setPortfolioPerformances] = useState<Record<number, PortfolioPerformance>>({});
   const [stocks, setStocks] = useState<Stock[]>([]);
   const [loading, setLoading] = useState(true);
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -68,6 +77,20 @@ export default function PortfoliosPage() {
       ]);
       setPortfolios(portfoliosRes.data);
       setStocks(stocksRes.data);
+
+      // Load performance data for each portfolio
+      const performances: Record<number, PortfolioPerformance> = {};
+      await Promise.all(
+        portfoliosRes.data.map(async (portfolio: Portfolio) => {
+          try {
+            const perfRes = await api.get(`/portfolios/${portfolio.id}/performance`);
+            performances[portfolio.id] = perfRes.data;
+          } catch (error) {
+            console.error(`Failed to load performance for portfolio ${portfolio.id}:`, error);
+          }
+        })
+      );
+      setPortfolioPerformances(performances);
     } catch (error) {
       console.error("Failed to load data:", error);
     } finally {
@@ -285,20 +308,6 @@ export default function PortfoliosPage() {
     }
   };
 
-  // Calculate portfolio value
-  const getPortfolioValue = (portfolio: Portfolio) => {
-    return portfolio.stock_ids.reduce((sum, stockId) => {
-      const stock = stocks.find((s) => s.id === stockId);
-      return sum + (stock?.current_price || 0);
-    }, 0);
-  };
-
-  // Generate mock trend data for portfolios
-  const generateTrendData = (value: number) => {
-    return Array.from({ length: 10 }, () =>
-      Math.max(0, value * (0.95 + Math.random() * 0.1))
-    );
-  };
 
   if (loading) {
     return (
@@ -347,10 +356,11 @@ export default function PortfoliosPage() {
       ) : (
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {portfolios.map((portfolio) => {
-            const value = getPortfolioValue(portfolio);
-            const trendData = generateTrendData(value);
-            const changePercent = Math.random() * 10 - 5; // Mock data
+            const performance = portfolioPerformances[portfolio.id];
+            const value = performance?.current_value || 0;
+            const changePercent = performance?.change_percent || 0;
             const isPositive = changePercent >= 0;
+            const trendData = performance?.time_series || [];
 
             return (
               <Card
@@ -415,10 +425,10 @@ export default function PortfoliosPage() {
                     </Badge>
                   </div>
 
-                  {trendData.length > 0 && (
+                  {trendData.length > 1 && (
                     <div className="pt-2">
                       <TrendSparkline
-                        data={trendData}
+                        data={trendData.map((point) => point.value)}
                         color={isPositive ? "#16a34a" : "#dc2626"}
                         width={250}
                         height={50}

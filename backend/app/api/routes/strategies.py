@@ -286,6 +286,54 @@ async def execute_rebalancing(
     return {"message": "Rebalancing executed successfully"}
 
 
+@router.post("/{strategy_id}/rebalance/{rebalancing_id}/undo", status_code=status.HTTP_200_OK)
+async def undo_rebalancing(
+    strategy_id: int,
+    rebalancing_id: int,
+    db: AsyncSession = Depends(get_db),
+    user_id: int = Depends(get_current_user_id)
+):
+    """Undo an executed rebalancing action"""
+    # Verify strategy ownership
+    result = await db.execute(
+        select(Strategy).where(
+            Strategy.id == strategy_id,
+            Strategy.user_id == user_id
+        )
+    )
+    strategy = result.scalar_one_or_none()
+    
+    if not strategy:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Strategy not found"
+        )
+    
+    # Verify rebalancing record belongs to this strategy
+    rebalancing_result = await db.execute(
+        select(RebalancingHistory).where(
+            RebalancingHistory.id == rebalancing_id,
+            RebalancingHistory.strategy_id == strategy_id
+        )
+    )
+    rebalancing = rebalancing_result.scalar_one_or_none()
+    
+    if not rebalancing:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Rebalancing record not found"
+        )
+    
+    try:
+        await rebalancing_service.undo_rebalancing(db, rebalancing_id)
+        return {"message": "Rebalancing undone successfully"}
+    except ValueError as e:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=str(e)
+        )
+
+
 @router.get("/{strategy_id}/snapshots", response_model=list[StrategySnapshotResponse])
 async def get_strategy_snapshots(
     strategy_id: int,

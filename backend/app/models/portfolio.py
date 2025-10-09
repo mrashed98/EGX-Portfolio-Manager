@@ -16,4 +16,6 @@ class Portfolio(Base):
 
     # Relationships
     user: Mapped["User"] = relationship(back_populates="portfolios")
+    snapshots: Mapped[list["PortfolioSnapshot"]] = relationship(back_populates="portfolio", cascade="all, delete-orphan")
+    history: Mapped[list["PortfolioHistory"]] = relationship(back_populates="portfolio", cascade="all, delete-orphan")
 

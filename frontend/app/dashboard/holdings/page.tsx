@@ -261,7 +261,7 @@ export default function HoldingsPage() {
             title="Holdings Value Over Time"
             description="Historical value of all holdings"
             type="area"
-            height={350}
+            height={500}
           />
         </div>
 

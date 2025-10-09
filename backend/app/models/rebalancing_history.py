@@ -1,6 +1,7 @@
 from datetime import datetime
 from sqlalchemy import DateTime, Integer, Boolean, ForeignKey, JSON
 from sqlalchemy.orm import Mapped, mapped_column, relationship
+from typing import Optional
 
 from app.core.database import Base
 
@@ -13,6 +14,8 @@ class RebalancingHistory(Base):
     # actions structure: [{"action": "buy|sell", "stock_id": 1, "quantity": 10, "price": 100.5}]
     actions: Mapped[dict] = mapped_column(JSON, nullable=False, default=dict)
     executed: Mapped[bool] = mapped_column(Boolean, default=False)
+    undone: Mapped[bool] = mapped_column(Boolean, default=False)
+    undone_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
     # Relationships

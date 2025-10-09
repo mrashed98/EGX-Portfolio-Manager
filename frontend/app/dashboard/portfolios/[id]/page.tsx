@@ -22,8 +22,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
+import { Badge } from "@/components/ui/badge";
+import { PortfolioPerformanceChart } from "@/components/charts/PortfolioPerformanceChart";
+import { SectorAllocationChart } from "@/components/charts/SectorAllocationChart";
+import { StockLogo } from "@/components/StockLogo";
 import api from "@/lib/api";
-import { ArrowLeft, Edit, Trash2, Plus, X } from "lucide-react";
+import { ArrowLeft, Edit, Trash2, Plus, X, History, TrendingUp, TrendingDown } from "lucide-react";
 
 interface Portfolio {
   id: number;
@@ -37,6 +41,25 @@ interface Stock {
   symbol: string;
   name: string;
   current_price: number;
+  logo_url?: string | null;
+}
+
+interface PerformanceData {
+  current_value: number;
+  initial_value: number;
+  change: number;
+  change_percent: number;
+  initial_date: string;
+  time_series: { date: string; value: number }[];
+  stock_count: number;
+}
+
+interface SectorAllocation {
+  sector: string;
+  allocation_percent: number;
+  stock_count: number;
+  avg_change_percent: number;
+  stocks: any[];
 }
 
 export default function PortfolioDetailPage() {
@@ -46,6 +69,8 @@ export default function PortfolioDetailPage() {
   const portfolioId = parseInt(params.id as string);
 
   const [portfolio, setPortfolio] = useState<Portfolio | null>(null);
+  const [performance, setPerformance] = useState<PerformanceData | null>(null);
+  const [sectorAllocation, setSectorAllocation] = useState<SectorAllocation[]>([]);
   const [stocks, setStocks] = useState<Stock[]>([]);
   const [portfolioStocks, setPortfolioStocks] = useState<Stock[]>([]);
   const [loading, setLoading] = useState(true);
@@ -69,13 +94,17 @@ export default function PortfolioDetailPage() {
 
   const loadData = async () => {
     try {
-      const [portfolioRes, stocksRes] = await Promise.all([
+      const [portfolioRes, stocksRes, performanceRes, sectorRes] = await Promise.all([
         api.get(`/portfolios/${portfolioId}`),
         api.get("/stocks"),
+        api.get(`/portfolios/${portfolioId}/performance`),
+        api.get(`/portfolios/${portfolioId}/sector-allocation`),
       ]);
 
       setPortfolio(portfolioRes.data);
       setStocks(stocksRes.data);
+      setPerformance(performanceRes.data);
+      setSectorAllocation(sectorRes.data);
 
       // Filter stocks that are in this portfolio
       const portfolioStocksList = stocksRes.data.filter((stock: Stock) =>
@@ -269,6 +298,13 @@ export default function PortfolioDetailPage() {
         </Button>
         <h1 className="text-3xl font-bold">{portfolio.name}</h1>
         <div className="ml-auto flex gap-2">
+          <Button 
+            variant="outline" 
+            onClick={() => router.push(`/dashboard/portfolios/${portfolioId}/history`)}
+          >
+            <History className="mr-2 h-4 w-4" />
+            History
+          </Button>
           <Button variant="outline" onClick={handleEdit}>
             <Edit className="mr-2 h-4 w-4" />
             Edit
@@ -281,6 +317,71 @@ export default function PortfolioDetailPage() {
       </div>
 
       <div className="grid gap-6">
+        {/* Performance Overview */}
+        {performance && (
+          <Card>
+            <CardHeader>
+              <CardTitle>Performance Overview</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-6 md:grid-cols-3">
+                <div>
+                  <p className="text-sm text-muted-foreground">Total Change</p>
+                  <p className={`text-3xl font-bold ${performance.change >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                    {performance.change >= 0 ? '+' : ''}{performance.change.toFixed(2)} EGP
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Since {new Date(performance.initial_date).toLocaleDateString()}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">Change Percentage</p>
+                  <div className="flex items-center gap-2">
+                    {performance.change_percent >= 0 ? (
+                      <TrendingUp className="h-6 w-6 text-green-600" />
+                    ) : (
+                      <TrendingDown className="h-6 w-6 text-red-600" />
+                    )}
+                    <p className={`text-3xl font-bold ${performance.change_percent >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                      {performance.change_percent >= 0 ? '+' : ''}{performance.change_percent.toFixed(2)}%
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">Status</p>
+                  <Badge 
+                    variant={performance.change >= 0 ? "default" : "secondary"}
+                    className={`text-lg px-3 py-1 ${performance.change >= 0 ? 'bg-green-600 hover:bg-green-700' : 'bg-red-600 hover:bg-red-700'}`}
+                  >
+                    {performance.change >= 0 ? 'Profitable' : 'Loss'}
+                  </Badge>
+                  <p className="text-xs text-muted-foreground mt-2">
+                    {performance.stock_count} stocks
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Charts */}
+        <div className="grid gap-6 md:grid-cols-2">
+          {performance && performance.time_series.length > 0 && (
+            <PortfolioPerformanceChart
+              data={performance.time_series}
+              title="Portfolio Change Over Time"
+              description={`Total change: ${performance.change >= 0 ? '+' : ''}${performance.change.toFixed(2)} EGP (${performance.change_percent >= 0 ? '+' : ''}${performance.change_percent.toFixed(2)}%)`}
+            />
+          )}
+          {sectorAllocation.length > 0 && (
+            <SectorAllocationChart
+              data={sectorAllocation}
+              title="Sector Allocation"
+              description="Equal-weight distribution by sector"
+            />
+          )}
+        </div>
+
         <Card>
           <CardHeader>
             <CardTitle>Portfolio Information</CardTitle>
@@ -315,10 +416,18 @@ export default function PortfolioDetailPage() {
                     key={stock.id}
                     className="flex items-center justify-between p-4 border rounded-lg hover:bg-muted/50 transition-colors"
                   >
-                    <div className="flex-1">
-                      <div className="font-semibold">{stock.symbol}</div>
-                      <div className="text-sm text-muted-foreground">
-                        {stock.name}
+                    <div className="flex items-center gap-3 flex-1">
+                      <StockLogo 
+                        symbol={stock.symbol}
+                        name={stock.name}
+                        logoUrl={stock.logo_url}
+                        size={40}
+                      />
+                      <div>
+                        <div className="font-semibold">{stock.symbol}</div>
+                        <div className="text-sm text-muted-foreground">
+                          {stock.name}
+                        </div>
                       </div>
                     </div>
                     <div className="text-right">

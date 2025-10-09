@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { StockLogo } from "@/components/StockLogo";
+import { PortfolioPerformanceChart } from "@/components/charts/PortfolioPerformanceChart";
 import api from "@/lib/api";
 import { ArrowLeft, Edit, Trash2, RefreshCw, TrendingUp, TrendingDown, ArrowUpDown, ArrowUp, ArrowDown, History } from "lucide-react";
 
@@ -357,6 +358,18 @@ export default function StrategyDetailPage() {
             </CardContent>
           </Card>
         </div>
+
+        {/* Performance Chart */}
+        {snapshots.length > 0 && (
+          <PortfolioPerformanceChart
+            data={snapshots.map(snapshot => ({
+              date: snapshot.snapshot_date,
+              value: snapshot.total_value
+            }))}
+            title="Strategy Performance Over Time"
+            description={`Current value: ${currentTotalValue.toFixed(2)} EGP | Performance: ${currentPerformance >= 0 ? '+' : ''}${currentPerformance.toFixed(2)}%`}
+          />
+        )}
 
         {/* Rebalancing Actions Section - Only show if actions exist */}
         {rebalancingActions.length > 0 && (

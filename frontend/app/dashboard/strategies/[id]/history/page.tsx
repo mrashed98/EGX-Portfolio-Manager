@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowLeft, ChevronDown, ChevronUp, Undo2 } from "lucide-react";
 import api from "@/lib/api";
 import { useToast } from "@/components/ui/use-toast";
 
@@ -13,6 +13,8 @@ interface RebalancingHistory {
   strategy_id: number;
   actions: any;
   executed: boolean;
+  undone: boolean;
+  undone_at: string | null;
   created_at: string;
 }
 
@@ -33,6 +35,7 @@ export default function RebalancingHistoryPage() {
   const [stocks, setStocks] = useState<Stock[]>([]);
   const [loading, setLoading] = useState(true);
   const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
+  const [undoingId, setUndoingId] = useState<number | null>(null);
 
   useEffect(() => {
     loadData();
@@ -78,6 +81,33 @@ export default function RebalancingHistoryPage() {
       }
       return newSet;
     });
+  };
+
+  const handleUndo = async (recordId: number) => {
+    if (!confirm("Are you sure you want to undo this rebalancing? This will reverse all the executed actions.")) {
+      return;
+    }
+
+    setUndoingId(recordId);
+    try {
+      await api.post(`/strategies/${strategyId}/rebalance/${recordId}/undo`);
+      
+      toast({
+        title: "Success",
+        description: "Rebalancing has been undone successfully",
+      });
+
+      // Reload data to show updated status
+      await loadData();
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.response?.data?.detail || "Failed to undo rebalancing",
+        variant: "destructive",
+      });
+    } finally {
+      setUndoingId(null);
+    }
   };
 
   if (loading) {
@@ -136,9 +166,31 @@ export default function RebalancingHistoryPage() {
                         </p>
                       </div>
                     </div>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                      Executed
-                    </span>
+                    <div className="flex items-center gap-2">
+                      {record.undone ? (
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                          Undone
+                        </span>
+                      ) : (
+                        <>
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                            Executed
+                          </span>
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleUndo(record.id);
+                            }}
+                            disabled={undoingId === record.id}
+                          >
+                            <Undo2 className="h-3 w-3 mr-1" />
+                            {undoingId === record.id ? "Undoing..." : "Undo"}
+                          </Button>
+                        </>
+                      )}
+                    </div>
                   </div>
                 </CardHeader>
                 
