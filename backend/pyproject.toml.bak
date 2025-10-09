@@ -23,6 +23,7 @@ dependencies = [
     "tradingview-screener>=3.0.0",
     "tradingview-scraper>=0.4.8",
     "tvdatafeed",
+    "rookiepy>=0.4.5",
 ]
 
 [build-system]

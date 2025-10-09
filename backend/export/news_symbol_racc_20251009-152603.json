@@ -1,0 +1,223 @@
+[
+  {
+    "id": "tag:reuters.com,2024:newsml_FWN3MJ09J:0",
+    "title": "Raya Customer Experience 9-Month Consol Profit Rises",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1731397149,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:RACC",
+        "logoid": "raya-contact-center"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_FWN3MJ09J:0-raya-customer-experience-9-month-consol-profit-rises/"
+  },
+  {
+    "id": "tag:reuters.com,2024:newsml_FWN3JW28I:0",
+    "title": "Raya Contact Center Q2 Consol Profit Rises",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1723358078,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:RACC",
+        "logoid": "raya-contact-center"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_FWN3JW28I:0-raya-contact-center-q2-consol-profit-rises/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_FWN3CF1LC:0",
+    "title": "Raya Contact Center Posts Q3 Consol Profit",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1699959715,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:RACC",
+        "logoid": "raya-contact-center"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_FWN3CF1LC:0-raya-contact-center-posts-q3-consol-profit/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_FWN39U07E:0",
+    "title": "Raya Contact Center H1 Profit Rises",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1691996906,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:RACC",
+        "logoid": "raya-contact-center"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_FWN39U07E:0-raya-contact-center-h1-profit-rises/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_FWN37P01K:0",
+    "title": "Raya Contact Center Q1 Consol Profit Rises",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1685345695,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:RACC",
+        "logoid": "raya-contact-center"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_FWN37P01K:0-raya-contact-center-q1-consol-profit-rises/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_FWN35I1LL:0",
+    "title": "Raya Contact Center FY Consol Profit Rises",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1678607321,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:RACC",
+        "logoid": "raya-contact-center"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_FWN35I1LL:0-raya-contact-center-fy-consol-profit-rises/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L4N2ZR174:0",
+    "title": "Raya Customer Experience H1 Profit Rises",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1660541299,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:RACC",
+        "logoid": "raya-contact-center"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L4N2ZR174:0-raya-customer-experience-h1-profit-rises/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_FWN2X51RP:0",
+    "title": "Raya Contact Center Q1 Profit Rises",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1652599087,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:RACC",
+        "logoid": "raya-contact-center"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_FWN2X51RP:0-raya-contact-center-q1-profit-rises/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_FWN2VC0ZY:0",
+    "title": "Raya Contact Center FY Consol Profit Falls",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1646896422,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:RACC",
+        "logoid": "raya-contact-center"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_FWN2VC0ZY:0-raya-contact-center-fy-consol-profit-falls/"
+  },
+  {
+    "id": "tag:reuters.com,2021:newsml_FWN2S610U:0",
+    "title": "Raya Contact Center Q3 Consol Profit Rises",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1636966459,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:RACC",
+        "logoid": "raya-contact-center"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2021:newsml_FWN2S610U:0-raya-contact-center-q3-consol-profit-rises/"
+  },
+  {
+    "id": "tag:reuters.com,2021:newsml_FWN2N600X:0",
+    "title": "Raya Contact Center Updates On Binding Offer To Acquire Stake In A Company In Gulf Region",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1621411317,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:RACC",
+        "logoid": "raya-contact-center"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2021:newsml_FWN2N600X:0-raya-contact-center-updates-on-binding-offer-to-acquire-stake-in-a-company-in-gulf-region/"
+  },
+  {
+    "id": "tag:reuters.com,2021:newsml_FWN2MX0E3:0",
+    "title": "Raya Contact Center Q1 Consol Profit Of EGP 2.1 Mln",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1620631869,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:RACC",
+        "logoid": "raya-contact-center"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2021:newsml_FWN2MX0E3:0-raya-contact-center-q1-consol-profit-of-egp-2-1-mln/"
+  },
+  {
+    "id": "tag:reuters.com,2021:newsml_FWN2KW29I:0",
+    "title": "Raya Contact Center FY Profit Falls",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1615104722,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:RACC",
+        "logoid": "raya-contact-center"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2021:newsml_FWN2KW29I:0-raya-contact-center-fy-profit-falls/"
+  }
+]

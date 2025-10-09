@@ -35,7 +35,8 @@ async def list_holdings(
             stock_symbol=stock.symbol,
             stock_name=stock.name,
             stock_logo_url=stock.logo_url,
-            current_stock_price=stock.current_price
+            current_stock_price=stock.current_price,
+            stock_sector=stock.sector
         )
         for holding, stock in holdings_with_stocks
     ]
@@ -69,7 +70,8 @@ async def list_strategy_holdings(
             stock_symbol=stock.symbol,
             stock_name=stock.name,
             stock_logo_url=stock.logo_url,
-            current_stock_price=stock.current_price
+            current_stock_price=stock.current_price,
+            stock_sector=stock.sector
         )
         for holding, stock in holdings_with_stocks
     ]

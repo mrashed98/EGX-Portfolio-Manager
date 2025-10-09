@@ -37,14 +37,32 @@ export function PerformanceBar({
         {description && <CardDescription>{description}</CardDescription>}
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig} className={`h-[${height}px]`}>
+        <ChartContainer config={chartConfig} style={{ height: `${height}px` }}>
           <ResponsiveContainer width="100%" height={height}>
             <BarChart data={data}>
               <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
-              <XAxis dataKey="name" tickLine={false} axisLine={false} />
-              <YAxis tickLine={false} axisLine={false} />
-              <ChartTooltip content={<ChartTooltipContent />} />
-              <Bar dataKey={dataKey} fill="hsl(var(--chart-1))" radius={[4, 4, 0, 0]} />
+              <XAxis 
+                dataKey="name" 
+                tickLine={false} 
+                axisLine={false}
+                className="text-xs"
+              />
+              <YAxis 
+                tickLine={false} 
+                axisLine={false}
+                className="text-xs"
+                tickFormatter={(value) => `${(value / 1000).toFixed(0)}K`}
+              />
+              <ChartTooltip 
+                content={<ChartTooltipContent />}
+                formatter={(value: any) => [`${Number(value).toFixed(2)} EGP`, 'Value']}
+              />
+              <Bar 
+                dataKey={dataKey} 
+                fill="hsl(var(--chart-1))" 
+                radius={[4, 4, 0, 0]}
+                maxBarSize={80}
+              />
             </BarChart>
           </ResponsiveContainer>
         </ChartContainer>

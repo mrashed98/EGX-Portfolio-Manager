@@ -51,6 +51,7 @@ interface Holding {
   average_price: number;
   current_stock_price: number;
   stock_logo_url?: string | null;
+  stock_sector?: string | null;
 }
 
 interface Strategy {
@@ -182,6 +183,29 @@ export default function DashboardPage() {
     id: h.stock_id || h.id,
   }));
 
+  // Prepare sector allocation data
+  const sectorAllocationData = holdingsWithPL.reduce((acc, h) => {
+    const sector = h.stock_sector || 'Unknown';
+    const value = h.quantity * h.current_stock_price;
+    
+    if (acc[sector]) {
+      acc[sector].value += value;
+    } else {
+      acc[sector] = {
+        name: sector,
+        value: value,
+      };
+    }
+    
+    return acc;
+  }, {} as Record<string, { name: string; value: number }>);
+
+  const sectorAllocationArray = Object.values(sectorAllocationData);
+
+  // Use real data if available, otherwise show empty state
+  const displayAllocationData = allocationData.length > 0 ? allocationData : [];
+  const displaySectorData = sectorAllocationArray.length > 0 ? sectorAllocationArray : [];
+
   // Prepare strategy comparison data
   const strategyComparisonData = strategies.map((s) => {
     const strategyHoldings = holdings.filter((h) => {
@@ -260,67 +284,111 @@ export default function DashboardPage() {
         />
       </div>
 
-      {/* Charts Row */}
-      <div className="grid gap-4 md:grid-cols-7">
-        <Card className="md:col-span-4">
-          <CardHeader>
-            <div className="flex items-center justify-between">
-              <div>
-                <CardTitle>Total Balance Overview</CardTitle>
-                <CardDescription>Your portfolio value over time</CardDescription>
-              </div>
-              <Tabs value={selectedPeriod} onValueChange={setSelectedPeriod}>
-                <TabsList>
-                  <TabsTrigger value="1W">1W</TabsTrigger>
-                  <TabsTrigger value="1M">1M</TabsTrigger>
-                  <TabsTrigger value="3M">3M</TabsTrigger>
-                  <TabsTrigger value="1Y">1Y</TabsTrigger>
-                  <TabsTrigger value="ALL">ALL</TabsTrigger>
-                </TabsList>
-              </Tabs>
-            </div>
-          </CardHeader>
-          <CardContent>
-            {portfolioHistory.length > 0 ? (
-              <PortfolioChart
-                data={portfolioHistory}
-                title=""
-                type="area"
-                height={300}
-              />
-            ) : (
-              <div className="h-[300px] flex items-center justify-center text-muted-foreground">
-                No historical data available
-              </div>
-            )}
-          </CardContent>
-        </Card>
+      {/* Quick Actions - Moved to Top */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Quick Actions</CardTitle>
+          <CardDescription>Manage your portfolio</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="flex flex-wrap gap-3">
+            <Button onClick={() => router.push("/dashboard/strategies")}>
+              <Plus className="mr-2 h-4 w-4" />
+              Create Strategy
+            </Button>
+            <Button variant="outline" onClick={() => router.push("/dashboard/portfolios")}>
+              <Plus className="mr-2 h-4 w-4" />
+              New Portfolio
+            </Button>
+            <Button variant="outline" onClick={() => router.push("/dashboard/stocks")}>
+              <Activity className="mr-2 h-4 w-4" />
+              Browse Stocks
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
 
-        <Card className="md:col-span-3">
-          <CardHeader>
-            <CardTitle>Portfolio Composition</CardTitle>
-            <CardDescription>Holdings allocation by value</CardDescription>
-          </CardHeader>
-          <CardContent>
-            {allocationData.length > 0 ? (
-              <AllocationChart
-                data={allocationData}
-                title=""
-                innerRadius={60}
-                outerRadius={90}
-                onStockClick={(stockSymbol, stockId) => {
-                  if (stockId) {
-                    router.push(`/dashboard/stocks/${stockId}`);
-                  }
-                }}
-              />
-            ) : (
-              <div className="h-[300px] flex items-center justify-center text-muted-foreground">
+      {/* Total Balance Overview - Full Width */}
+      <Card className="flex flex-col">
+        <CardHeader>
+          <div className="flex items-center justify-between">
+            <div>
+              <CardTitle>Total Balance Overview</CardTitle>
+              <CardDescription>Your portfolio value over time</CardDescription>
+            </div>
+            <Tabs value={selectedPeriod} onValueChange={setSelectedPeriod}>
+              <TabsList>
+                <TabsTrigger value="1W">1W</TabsTrigger>
+                <TabsTrigger value="1M">1M</TabsTrigger>
+                <TabsTrigger value="3M">3M</TabsTrigger>
+                <TabsTrigger value="1Y">1Y</TabsTrigger>
+                <TabsTrigger value="ALL">ALL</TabsTrigger>
+              </TabsList>
+            </Tabs>
+          </div>
+        </CardHeader>
+        <CardContent className="flex-1 flex items-center justify-center">
+          {portfolioHistory.length > 0 ? (
+            <PortfolioChart
+              data={portfolioHistory}
+              title=""
+              type="area"
+              height={350}
+            />
+          ) : (
+            <div className="h-[350px] flex items-center justify-center text-muted-foreground">
+              No historical data available
+            </div>
+          )}
+        </CardContent>
+      </Card>
+
+      {/* Allocation Charts Row */}
+      <div className="grid gap-4 md:grid-cols-2">
+        {displayAllocationData.length > 0 ? (
+          <AllocationChart
+            data={displayAllocationData}
+            title="Portfolio Composition"
+            description="Holdings allocation by value"
+            onStockClick={(stockSymbol, stockId) => {
+              if (stockId) {
+                router.push(`/dashboard/stocks/${stockId}`);
+              }
+            }}
+          />
+        ) : (
+          <Card className="flex flex-col">
+            <CardHeader>
+              <CardTitle>Portfolio Composition</CardTitle>
+              <CardDescription>Holdings allocation by value</CardDescription>
+            </CardHeader>
+            <CardContent className="flex-1 flex items-center justify-center">
+              <div className="h-[350px] flex items-center justify-center text-muted-foreground">
                 No holdings to display
               </div>
-            )}
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        )}
+
+        {displaySectorData.length > 0 ? (
+          <AllocationChart
+            data={displaySectorData}
+            title="Sector Allocation"
+            description="Portfolio allocation by sector"
+          />
+        ) : (
+          <Card className="flex flex-col">
+            <CardHeader>
+              <CardTitle>Sector Allocation</CardTitle>
+              <CardDescription>Portfolio allocation by sector</CardDescription>
+            </CardHeader>
+            <CardContent className="flex-1 flex items-center justify-center">
+              <div className="h-[350px] flex items-center justify-center text-muted-foreground">
+                No sector data available
+              </div>
+            </CardContent>
+          </Card>
+        )}
       </div>
 
       {/* Performance Comparison */}
@@ -422,29 +490,6 @@ export default function DashboardPage() {
         </Card>
       </div>
 
-      {/* Quick Actions */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Quick Actions</CardTitle>
-          <CardDescription>Manage your portfolio</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="flex flex-wrap gap-3">
-            <Button onClick={() => router.push("/dashboard/strategies")}>
-              <Plus className="mr-2 h-4 w-4" />
-              Create Strategy
-            </Button>
-            <Button variant="outline" onClick={() => router.push("/dashboard/portfolios")}>
-              <Plus className="mr-2 h-4 w-4" />
-              New Portfolio
-            </Button>
-            <Button variant="outline" onClick={() => router.push("/dashboard/stocks")}>
-              <Activity className="mr-2 h-4 w-4" />
-              Browse Stocks
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

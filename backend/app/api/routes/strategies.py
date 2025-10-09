@@ -7,6 +7,7 @@ from app.core.security import get_current_user_id
 from app.models.strategy import Strategy
 from app.models.strategy_snapshot import StrategySnapshot
 from app.models.rebalancing_history import RebalancingHistory
+from app.models.stock import Stock
 from app.schemas.strategy import StrategyCreate, StrategyUpdate, StrategyResponse, StrategySnapshotResponse
 from app.services.strategy_service import strategy_service
 from app.services.rebalancing_service import rebalancing_service

@@ -22,9 +22,24 @@ class StockResponse(StockBase):
     logo_url: str | None = None
     sector: str | None = None
     industry: str | None = None
+    open_price: float | None = None
+    high_price: float | None = None
+    low_price: float | None = None
     change: float | None = None
     change_percent: float | None = None
     volume: float | None = None
+    recommendation: str | None = None
+    market_cap: float | None = None
+    pe_ratio: float | None = None
+    eps: float | None = None
+    dividend_yield: float | None = None
+    beta: float | None = None
+    price_to_book: float | None = None
+    price_to_sales: float | None = None
+    roe: float | None = None
+    debt_to_equity: float | None = None
+    current_ratio: float | None = None
+    quick_ratio: float | None = None
     last_updated: datetime
 
     class Config:
@@ -40,4 +55,15 @@ class StockDetailResponse(StockResponse):
     change: float | None = None
     change_percent: float | None = None
     recommendation: str | None = None
+    market_cap: float | None = None
+    pe_ratio: float | None = None
+    eps: float | None = None
+    dividend_yield: float | None = None
+    beta: float | None = None
+    price_to_book: float | None = None
+    price_to_sales: float | None = None
+    roe: float | None = None
+    debt_to_equity: float | None = None
+    current_ratio: float | None = None
+    quick_ratio: float | None = None
 

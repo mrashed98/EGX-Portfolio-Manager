@@ -19,4 +19,5 @@ class HoldingWithStock(HoldingResponse):
     stock_name: str
     stock_logo_url: str | None = None
     current_stock_price: float
+    stock_sector: str | None = None
 

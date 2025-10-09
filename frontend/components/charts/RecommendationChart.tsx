@@ -29,42 +29,48 @@ export function RecommendationChart({
   // Map recommendation to values and colors
   const recommendationMap: Record<
     string,
-    { value: number; label: string; color: string; icon: any }
+    { value: number; label: string; color: string; bgColor: string; icon: any }
   > = {
     STRONG_BUY: {
       value: 90,
       label: "Strong Buy",
-      color: "hsl(142 76% 36%)",
+      color: "#10b981", // Green
+      bgColor: "#d1fae5",
       icon: TrendingUp,
     },
     BUY: {
       value: 70,
       label: "Buy",
-      color: "hsl(142 76% 46%)",
+      color: "#22c55e", // Light Green
+      bgColor: "#dcfce7",
       icon: TrendingUp,
     },
     NEUTRAL: {
       value: 50,
       label: "Neutral",
-      color: "hsl(43 74% 66%)",
+      color: "#eab308", // Yellow
+      bgColor: "#fef9c3",
       icon: Minus,
     },
     HOLD: {
       value: 50,
       label: "Hold",
-      color: "hsl(43 74% 66%)",
+      color: "#eab308", // Yellow
+      bgColor: "#fef9c3",
       icon: Minus,
     },
     SELL: {
       value: 30,
       label: "Sell",
-      color: "hsl(0 84% 60%)",
+      color: "#f97316", // Orange
+      bgColor: "#fed7aa",
       icon: TrendingDown,
     },
     STRONG_SELL: {
       value: 10,
       label: "Strong Sell",
-      color: "hsl(0 84% 50%)",
+      color: "#ef4444", // Red
+      bgColor: "#fee2e2",
       icon: TrendingDown,
     },
   };
@@ -75,13 +81,13 @@ export function RecommendationChart({
 
   const chartData = [
     {
-      recommendation: recData.value,
+      value: recData.value,
       fill: recData.color,
     },
   ];
 
   const chartConfig = {
-    recommendation: {
+    value: {
       label: "Recommendation",
       color: recData.color,
     },
@@ -98,63 +104,47 @@ export function RecommendationChart({
         <CardTitle>Analyst Recommendation</CardTitle>
         <CardDescription>Based on TradingView analysis</CardDescription>
       </CardHeader>
-      <CardContent className="flex flex-1 items-center pb-0">
-        <ChartContainer
-          config={chartConfig}
-          className="mx-auto aspect-square w-full max-w-[250px]"
-        >
+      <CardContent className="flex flex-1 items-center justify-center pb-0">
+        <div className="w-full h-[400px] flex items-center justify-center relative">
           <RadialBarChart
             data={chartData}
             startAngle={180}
             endAngle={0}
-            innerRadius={80}
-            outerRadius={130}
+            innerRadius={100}
+            outerRadius={160}
+            width={400}
+            height={400}
           >
-            <ChartTooltip
-              cursor={false}
-              content={<ChartTooltipContent hideLabel />}
-            />
-            <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
-              <Label
-                content={({ viewBox }) => {
-                  if (viewBox && "cx" in viewBox && "cy" in viewBox) {
-                    return (
-                      <text x={viewBox.cx} y={viewBox.cy} textAnchor="middle">
-                        <tspan
-                          x={viewBox.cx}
-                          y={(viewBox.cy || 0) - 16}
-                          className="fill-foreground text-2xl font-bold"
-                        >
-                          {recData.value}%
-                        </tspan>
-                        <tspan
-                          x={viewBox.cx}
-                          y={(viewBox.cy || 0) + 8}
-                          className="fill-muted-foreground text-sm"
-                        >
-                          {recData.label}
-                        </tspan>
-                      </text>
-                    );
-                  }
-                }}
-              />
-            </PolarRadiusAxis>
             <RadialBar
-              dataKey="recommendation"
+              dataKey="value"
               cornerRadius={10}
               fill={recData.color}
-              className="stroke-transparent stroke-2"
+            />
+            <Label
+              content={() => {
+                return (
+                  <text
+                    x="50%"
+                    y="50%"
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    className="text-3xl font-bold fill-foreground"
+                    style={{ color: recData.color }}
+                  >
+                    {recData.value}%
+                  </text>
+                );
+              }}
             />
           </RadialBarChart>
-        </ChartContainer>
+        </div>
       </CardContent>
       <div className="flex flex-col gap-2 text-sm p-6 pt-0">
         <div className="flex items-center justify-center gap-2">
           <Badge
             variant="secondary"
-            className="text-base px-4 py-2"
-            style={{ backgroundColor: `${recData.color}20`, color: recData.color }}
+            className="text-base px-4 py-2 font-semibold"
+            style={{ backgroundColor: recData.bgColor, color: recData.color, borderColor: recData.color }}
           >
             <Icon className="h-4 w-4 mr-2" />
             {recData.label}

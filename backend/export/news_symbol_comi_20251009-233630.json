@@ -1,0 +1,6417 @@
+[
+  {
+    "id": "tag:reuters.com,2025-10-09:newsml_Zaw9qBgdX:0",
+    "title": "SNG: Egypt: CIB records $147mln block trading transaction",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1760008436,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-10-09:newsml_Zaw9qBgdX:0-sng-egypt-cib-records-147mln-block-trading-transaction/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_FWN3VO2QZ:0",
+    "title": "Egypt'S CIB's 73.5 Million Shares Block Traded For EGP 7.09 Billion - EGX",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1759907230,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_FWN3VO2QZ:0-egypt-s-cib-s-73-5-million-shares-block-traded-for-egp-7-09-billion-egx/"
+  },
+  {
+    "id": "tag:reuters.com,2025-10-08:newsml_Zaw1y9MXm:0",
+    "title": "SNG: Egypt: CIB, CI Capital complete securitisation bond issuance for Halan",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1759895978,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-10-08:newsml_Zaw1y9MXm:0-sng-egypt-cib-ci-capital-complete-securitisation-bond-issuance-for-halan/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L6N3VM01E:0",
+    "title": "Gulf bourses gain on optimism over further US rate cuts",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1759672110,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:4030",
+        "logoid": "national-shipping-company-of-saudi-arabia"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L6N3VM01E:0-gulf-bourses-gain-on-optimism-over-further-us-rate-cuts/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L6N3VJ0OO:0",
+    "title": "Gulf markets end mixed on weak oil, US rate cut hopes",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1759411323,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QIBK",
+        "logoid": "qatar-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L6N3VJ0OO:0-gulf-markets-end-mixed-on-weak-oil-us-rate-cut-hopes/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L6N3VI0NR:0",
+    "title": "Most Gulf markets slightly higher amid US shutdown concerns",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1759326099,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1211",
+        "logoid": "saudi-arabian-mining-co"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "DFM:SPINNEYS",
+        "logoid": "spinneys-1961-hold"
+      },
+      {
+        "symbol": "PSE:AC",
+        "logoid": "ayala"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L6N3VI0NR:0-most-gulf-markets-slightly-higher-amid-us-shutdown-concerns/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L6N3VH0M9:0",
+    "title": "Gulf markets end mixed on further US rate cut hopes, falling oil",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1759238570,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:4300",
+        "logoid": "dar-alarkan-real-estate-development-co"
+      },
+      {
+        "symbol": "LSE:DAR",
+        "logoid": "dar-global-plc-ord-usd001"
+      },
+      {
+        "symbol": "TADAWUL:2222",
+        "logoid": "saudi-arabian-oil"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L6N3VH0M9:0-gulf-markets-end-mixed-on-further-us-rate-cut-hopes-falling-oil/"
+  },
+  {
+    "id": "tag:reuters.com,2025-09-29:newsml_Zaw6tm458:0",
+    "title": "SNG: Egypt: CIB’s OGM greenlights $62.4mln capital hike",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1759141032,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-09-29:newsml_Zaw6tm458:0-sng-egypt-cib-s-ogm-greenlights-62-4mln-capital-hike/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L6N3VF01V:0",
+    "title": "Saudi bourse extends losses on profit-taking; Qatar edges higher",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1759063509,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QIBK",
+        "logoid": "qatar-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L6N3VF01V:0-saudi-bourse-extends-losses-on-profit-taking-qatar-edges-higher/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_FWN3VC1K7:0",
+    "title": "CIB Egypt Shareholders Approve To Utilize Portion Of General Reserve To Increase Capital",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1758812347,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_FWN3VC1K7:0-cib-egypt-shareholders-approve-to-utilize-portion-of-general-reserve-to-increase-capital/"
+  },
+  {
+    "id": "tag:reuters.com,2025-09-25:newsml_RSY8805Aa:0",
+    "title": "REG - Commercial Int Bank - Summary of Resolutions - GAM September 2025",
+    "provider": "lse",
+    "sourceLogoId": "rdp-lse",
+    "published": 1758812103,
+    "source": "London Stock Exchange",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-09-25:newsml_RSY8805Aa:0-reg-commercial-int-bank-summary-of-resolutions-gam-september-2025/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L2N3VB0FO:0",
+    "title": "Saudi stocks soar to 5-year high on foreign ownership reform hopes",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1758722465,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "TADAWUL:2222",
+        "logoid": "saudi-arabian-oil"
+      },
+      {
+        "symbol": "BME:REP",
+        "logoid": "repsol"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "DFM:EMIRATESNBD",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "DFM:TABREED",
+        "logoid": "ncc-tabreed"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "ADX:ADNOCGAS",
+        "logoid": "adnoc-drilling-company-pjsc"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QIBK",
+        "logoid": "qatar-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "NYSE:MSCI",
+        "logoid": "msci"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L2N3VB0FO:0-saudi-stocks-soar-to-5-year-high-on-foreign-ownership-reform-hopes/"
+  },
+  {
+    "id": "tag:reuters.com,2025-09-24:newsml_Zaw5GqKX5:0",
+    "title": "PRESSR: EFG Hermes successfully finalizes debt advisory for Nawy Now",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1758700309,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "DFM:EMIRATESNBD",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "EGX:HRHO",
+        "logoid": "egyptian-financial-hermes-company"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-09-24:newsml_Zaw5GqKX5:0-pressr-efg-hermes-successfully-finalizes-debt-advisory-for-nawy-now/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L3N3V20PZ:0",
+    "title": "Gulf bourses mixed ahead of Fed meeting; Egypt stocks rally",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1757943200,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "ICEEUR:BRN1!",
+        "logoid": "crude-oil"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:GULFNAV",
+        "logoid": "gulf-navigation"
+      },
+      {
+        "symbol": "DFM:EMIRATESNBD",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "ADX:ADCB",
+        "logoid": "abu-dhabi-commercial-bank"
+      },
+      {
+        "symbol": "ADX:ADIB",
+        "logoid": "abu-dhabi-islamic-bank"
+      },
+      {
+        "symbol": "ADX:ALDAR",
+        "logoid": "al-dar-properties"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:7020",
+        "logoid": "etihad-etisalat-co"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:4240",
+        "logoid": "fawaz-abdulaziz-alhokair-co"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:IQCD",
+        "logoid": "industries-qatar-qpsc"
+      },
+      {
+        "symbol": "QSE:ORDS",
+        "logoid": "ooredoo-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "EGX:ARCC",
+        "logoid": "arabian-cement-company"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L3N3V20PZ:0-gulf-bourses-mixed-ahead-of-fed-meeting-egypt-stocks-rally/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L2N3UY0GX:0",
+    "title": "Middle East markets rise as Fed rate cut hopes offset regional tensions",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1757599213,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:IQCD",
+        "logoid": "industries-qatar-qpsc"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:4013",
+        "logoid": "dr-sulaiman-al-habib-medical-services-group"
+      },
+      {
+        "symbol": "TADAWUL:2222",
+        "logoid": "saudi-arabian-oil"
+      },
+      {
+        "symbol": "TADAWUL:4326"
+      },
+      {
+        "symbol": "DFM:EMIRATESNBD",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "ADX:ALDAR",
+        "logoid": "al-dar-properties"
+      },
+      {
+        "symbol": "EGX:ORAS",
+        "logoid": "orascom-construction-plc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L2N3UY0GX:0-middle-east-markets-rise-as-fed-rate-cut-hopes-offset-regional-tensions/"
+  },
+  {
+    "id": "tag:reuters.com,2025-09-09:newsml_Zaw2Gr9sw:0",
+    "title": "SNG: USD/EGP exchange rates stable at Egyptian banks",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1757412912,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:SAUD",
+        "logoid": "al-baraka-bank-egypt"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-09-09:newsml_Zaw2Gr9sw:0-sng-usd-egp-exchange-rates-stable-at-egyptian-banks/"
+  },
+  {
+    "id": "tag:reuters.com,2025-09-04:newsml_ZawrdkZm:0",
+    "title": "SNG: Egypt: EFG Hermes advises on Bedaya Mortgage Finance’s $32mln securitization issuance",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1756979234,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "ADX:ADCB",
+        "logoid": "abu-dhabi-commercial-bank"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "EGX:HRHO",
+        "logoid": "egyptian-financial-hermes-company"
+      },
+      {
+        "symbol": "EGX:SAUD",
+        "logoid": "al-baraka-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-09-04:newsml_ZawrdkZm:0-sng-egypt-efg-hermes-advises-on-bedaya-mortgage-finance-s-32mln-securitization-issuance/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L4N3UC0XJ:0",
+    "title": "Most Gulf equities end lower ahead of Powell's Jackson Hole speech",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1755696682,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QIBK",
+        "logoid": "qatar-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "DFM:EMIRATESNBD",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "ADX:ADIB",
+        "logoid": "abu-dhabi-islamic-bank"
+      },
+      {
+        "symbol": "ADX:ADNOCDRILL",
+        "logoid": "adnoc-drilling-company-pjsc"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:1080",
+        "logoid": "arab-national-bank"
+      },
+      {
+        "symbol": "TADAWUL:2010",
+        "logoid": "saudi-basic"
+      },
+      {
+        "symbol": "TADAWUL:2082",
+        "logoid": "acwa-power-co"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "EGX:JUFO",
+        "logoid": "juhayna-food-industries"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L4N3UC0XJ:0-most-gulf-equities-end-lower-ahead-of-powell-s-jackson-hole-speech/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L4N3UB0VY:0",
+    "title": "Most Gulf shares muted on lower oil prices; Fed symposium in focus",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1755611269,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:ORDS",
+        "logoid": "ooredoo-qpsc"
+      },
+      {
+        "symbol": "QSE:CBQK",
+        "logoid": "the-commercial-bank-psqc"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "ADX:ADIB",
+        "logoid": "abu-dhabi-islamic-bank"
+      },
+      {
+        "symbol": "ADX:E7",
+        "logoid": "e7-group"
+      },
+      {
+        "symbol": "ADX:PUREHEALTH",
+        "logoid": "puretech-health"
+      },
+      {
+        "symbol": "ADX:TAQA",
+        "logoid": "abu-dhabi-national-energy-company"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:2082",
+        "logoid": "acwa-power-co"
+      },
+      {
+        "symbol": "TADAWUL:2222",
+        "logoid": "saudi-arabian-oil"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "DFM:DEWA",
+        "logoid": "dubai-electricity-and-water-authority"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "EGX:FWRY",
+        "logoid": "fawry-for-banking-technology-and-electronic-payment"
+      },
+      {
+        "symbol": "EGX:ARCC",
+        "logoid": "arabian-cement-company"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L4N3UB0VY:0-most-gulf-shares-muted-on-lower-oil-prices-fed-symposium-in-focus/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L1N3U902F:0",
+    "title": "Most Gulf markets dip as Trump-Putin talks fell short; Saudi gains",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1755436213,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:4300",
+        "logoid": "dar-alarkan-real-estate-development-co"
+      },
+      {
+        "symbol": "TADAWUL:2222",
+        "logoid": "saudi-arabian-oil"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "NYSE:BLK",
+        "logoid": "blackrock"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L1N3U902F:0-most-gulf-markets-dip-as-trump-putin-talks-fell-short-saudi-gains/"
+  },
+  {
+    "id": "tag:reuters.com,2025-08-15:newsml_Zaw5Yy5SN:0",
+    "title": "SNG: USD/EGP exchange rates maintain stability at Egyptian banks",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1755236222,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-08-15:newsml_Zaw5Yy5SN:0-sng-usd-egp-exchange-rates-maintain-stability-at-egyptian-banks/"
+  },
+  {
+    "id": "tag:reuters.com,2025-08-12:newsml_ZawbQS1Tj:0",
+    "title": "ZAWYA: Code Cracked: EGX's listed banks distressed-like valuations explained",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1754996404,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-08-12:newsml_ZawbQS1Tj:0-zawya-code-cracked-egx-s-listed-banks-distressed-like-valuations-explained/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L4N3TO02A:0",
+    "title": "Most Gulf stocks firm as markets brace for pivotal week",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1753621974,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:4013",
+        "logoid": "dr-sulaiman-al-habib-medical-services-group"
+      },
+      {
+        "symbol": "TADAWUL:2020",
+        "logoid": "sabic-agri-nutrients"
+      },
+      {
+        "symbol": "TADAWUL:2290",
+        "logoid": "yanbu-national-petrochemical-co"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QIIK",
+        "logoid": "qatar-international-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L4N3TO02A:0-most-gulf-stocks-firm-as-markets-brace-for-pivotal-week/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L4N3TK124:0",
+    "title": "Most Gulf stocks rebound on earnings, US-Japan trade deal",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1753276508,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "ADX:FAB",
+        "logoid": "first-abu-dhabi-bank"
+      },
+      {
+        "symbol": "ADX:BOS",
+        "logoid": "bank-of-sharjah"
+      },
+      {
+        "symbol": "ADX:SPACE42",
+        "logoid": "space42"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMIRATESNBD",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L4N3TK124:0-most-gulf-stocks-rebound-on-earnings-us-japan-trade-deal/"
+  },
+  {
+    "id": "tag:reuters.com,2025-07-23:newsml_Zaw1h1p4Y:0",
+    "title": "SNG: Egypt: CIB posts 21.05% YoY increase in H1 2025 consolidated profit",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1753267467,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-07-23:newsml_Zaw1h1p4Y:0-sng-egypt-cib-posts-21-05-yoy-increase-in-h1-2025-consolidated-profit/"
+  },
+  {
+    "id": "tag:reuters.com,2025-07-23:newsml_Zaw5QcRsS:0",
+    "title": "SNG: Commercial International Bank reports Q2 2025 consolidated revenue of $566mln",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1753247163,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-07-23:newsml_Zaw5QcRsS:0-sng-commercial-international-bank-reports-q2-2025-consolidated-revenue-of-566mln/"
+  },
+  {
+    "id": "tag:reuters.com,2025-07-22:newsml_RSV9517Ra:0",
+    "title": "REG - Commercial Int Bank - CIB 1H2025 Condensed Consolidated Financials",
+    "provider": "lse",
+    "sourceLogoId": "rdp-lse",
+    "published": 1753164008,
+    "source": "London Stock Exchange",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-07-22:newsml_RSV9517Ra:0-reg-commercial-int-bank-cib-1h2025-condensed-consolidated-financials/"
+  },
+  {
+    "id": "tag:reuters.com,2025-07-22:newsml_Zaw7PXXTt:0",
+    "title": "SNG: Egypt: CIB completes fifth securitisation issuance for B.TECH worth EGP $17.43mln",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1753162486,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-07-22:newsml_Zaw7PXXTt:0-sng-egypt-cib-completes-fifth-securitisation-issuance-for-b-tech-worth-egp-17-43mln/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_S8N3SJ07V:0",
+    "title": "Commercial International Bank Egypt (CIB) Revenue Up 13% YoY In Q2 2025 To $565 Million",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1753128510,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_S8N3SJ07V:0-commercial-international-bank-egypt-cib-revenue-up-13-yoy-in-q2-2025-to-565-million/"
+  },
+  {
+    "id": "tag:reuters.com,2025-07-10:newsml_Zaw67HLRX:0",
+    "title": "SNG: Egypt: CIB inks $19.4mln financing deal with OSL for Giza Pyramids sound and light project",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1752144200,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-07-10:newsml_Zaw67HLRX:0-sng-egypt-cib-inks-19-4mln-financing-deal-with-osl-for-giza-pyramids-sound-and-light-project/"
+  },
+  {
+    "id": "tag:reuters.com,2025-07-07:newsml_Zaw2296C5:0",
+    "title": "SNG: Juhayna partners with Saudi Al Rashed Distribution to expand business",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1751874470,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-07-07:newsml_Zaw2296C5:0-sng-juhayna-partners-with-saudi-al-rashed-distribution-to-expand-business/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L4N3SW01V:0",
+    "title": "Most Gulf markets end higher on Iran ceasefire, US rate cut expectations",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1751202277,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:1010",
+        "logoid": "riyad-bank"
+      },
+      {
+        "symbol": "TADAWUL:2222",
+        "logoid": "saudi-arabian-oil"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L4N3SW01V:0-most-gulf-markets-end-higher-on-iran-ceasefire-us-rate-cut-expectations/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L1N3SS0E9:0",
+    "title": "Most Gulf markets gain on Iran-Israel truce",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1750856034,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMIRATESNBD",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L1N3SS0E9:0-most-gulf-markets-gain-on-iran-israel-truce/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L1N3SP078:0",
+    "title": "Most Gulf bourses end higher despite US strikes on Iran",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1750597789,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:ORDS",
+        "logoid": "ooredoo-qpsc"
+      },
+      {
+        "symbol": "QSE:QGTS",
+        "logoid": "qatar-gas-transport-ltd-qpsc"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:4264",
+        "logoid": "flynas-co"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L1N3SP078:0-most-gulf-bourses-end-higher-despite-us-strikes-on-iran/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L1N3SJ0H8:0",
+    "title": "Gulf markets rebound amid Israel-Iran conflict",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1750080267,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:2082",
+        "logoid": "acwa-power-co"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:DEWA",
+        "logoid": "dubai-electricity-and-water-authority"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L1N3SJ0H8:0-gulf-markets-rebound-amid-israel-iran-conflict/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L1N3SE0HN:0",
+    "title": "Gulf bourses end mixed on US-China trade-talks",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1749648188,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMIRATESNBD",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "ADX:ADNOCGAS",
+        "logoid": "adnoc-drilling-company-pjsc"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QGTS",
+        "logoid": "qatar-gas-transport-ltd-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L1N3SE0HN:0-gulf-bourses-end-mixed-on-us-china-trade-talks/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L2N3S403L:0",
+    "title": "Most Gulf markets in red on US tariff uncertainty",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1748783753,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "TADAWUL:2222",
+        "logoid": "saudi-arabian-oil"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L2N3S403L:0-most-gulf-markets-in-red-on-us-tariff-uncertainty/"
+  },
+  {
+    "id": "tag:reuters.com,2025-05-28:newsml_RSb4618Ka:0",
+    "title": "REG - Commercial Int Bank - Changes to the Board of Directors",
+    "provider": "lse",
+    "sourceLogoId": "rdp-lse",
+    "published": 1748451600,
+    "source": "London Stock Exchange",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-05-28:newsml_RSb4618Ka:0-reg-commercial-int-bank-changes-to-the-board-of-directors/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_FWN3S00P2:0",
+    "title": "Juhayna Food Industries Signs Medium- Term Loan Of Around EGP 1.9 Bln With CIB",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1748413116,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:JUFO",
+        "logoid": "juhayna-food-industries"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_FWN3S00P2:0-juhayna-food-industries-signs-medium-term-loan-of-around-egp-1-9-bln-with-cib/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L4N3RN0VX:0",
+    "title": "JPMorgan executives take center stage with succession, tariffs in focus",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1747648800,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "NYSE:JPM",
+        "logoid": "jpmorgan-chase"
+      },
+      {
+        "symbol": "NYSE:GS",
+        "logoid": "golden-sachs-etf-trust-goldman"
+      },
+      {
+        "symbol": "SSE:601939",
+        "logoid": "china-construction-bank"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L4N3RN0VX:0-jpmorgan-executives-take-center-stage-with-succession-tariffs-in-focus/"
+  },
+  {
+    "id": "tag:reuters.com,2025-05-14:newsml_Zaw55Cmt:0",
+    "title": "SNG: Egypt: CIB’s consolidated profits surge 39.5% YoY in Q1 2025",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1747214255,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-05-14:newsml_Zaw55Cmt:0-sng-egypt-cib-s-consolidated-profits-surge-39-5-yoy-in-q1-2025/"
+  },
+  {
+    "id": "tag:reuters.com,2025-05-13:newsml_RSM4195Ia:0",
+    "title": "REG - Commercial Int Bank - Separate- Q12025",
+    "provider": "lse",
+    "sourceLogoId": "rdp-lse",
+    "published": 1747116002,
+    "source": "London Stock Exchange",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-05-13:newsml_RSM4195Ia:0-reg-commercial-int-bank-separate-q12025/"
+  },
+  {
+    "id": "tag:reuters.com,2025-05-13:newsml_RSM4191Ia:0",
+    "title": "REG - Commercial Int Bank - 1Q25 Press Release",
+    "provider": "lse",
+    "sourceLogoId": "rdp-lse",
+    "published": 1747116001,
+    "source": "London Stock Exchange",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-05-13:newsml_RSM4191Ia:0-reg-commercial-int-bank-1q25-press-release/"
+  },
+  {
+    "id": "tag:reuters.com,2025-05-13:newsml_RSM4189Ia:0",
+    "title": "REG - Commercial Int Bank - Consolidated Financial Position at March 31.2025",
+    "provider": "lse",
+    "sourceLogoId": "rdp-lse",
+    "published": 1747116001,
+    "source": "London Stock Exchange",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-05-13:newsml_RSM4189Ia:0-reg-commercial-int-bank-consolidated-financial-position-at-march-31-2025/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_S8N3R20EK:0",
+    "title": "Commercial International Bank Egypt (Cib) Revenue Up 24% YoY In Q1 2025 To $535 Million",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1747080957,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_S8N3R20EK:0-commercial-international-bank-egypt-cib-revenue-up-24-yoy-in-q1-2025-to-535-million/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L4N3RK19Y:0",
+    "title": "Most Gulf shares gain on US-China tariff deal; Egypt snaps losing streak",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1747058684,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:2222",
+        "logoid": "saudi-arabian-oil"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "QSE:QEWS",
+        "logoid": "qatar-electricity-and-water-qpsc"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:PARKIN",
+        "logoid": "parkin-company-pjs"
+      },
+      {
+        "symbol": "DFM:TALABAT",
+        "logoid": "talabat-pl"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "ADX:ALDAR",
+        "logoid": "al-dar-properties"
+      },
+      {
+        "symbol": "ADX:FERTIGLB",
+        "logoid": "fertiglobe-plc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "EGX:ADIB",
+        "logoid": "abu-dhabi-islamic-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L4N3RK19Y:0-most-gulf-shares-gain-on-us-china-tariff-deal-egypt-snaps-losing-streak/"
+  },
+  {
+    "id": "tag:reuters.com,2025-05-07:newsml_Zaw6SkhL2:0",
+    "title": "SNG: CIB Egypt extends $48mln bridge loan to SODIC for North Coast ‘June’ project",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1746597597,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "EGX:OCDI",
+        "logoid": "six-of-october-development-and-investment-sodic"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-05-07:newsml_Zaw6SkhL2:0-sng-cib-egypt-extends-48mln-bridge-loan-to-sodic-for-north-coast-june-project/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L1N3R502L:0",
+    "title": "Gulf bourses little changed amid trade talks uncertainty",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1745758819,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "TADAWUL:1111",
+        "logoid": "saudi-tadawul-co"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:IQCD",
+        "logoid": "industries-qatar-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L1N3R502L:0-gulf-bourses-little-changed-amid-trade-talks-uncertainty/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L1N3QV0H2:0",
+    "title": "Gulf markets end mixed on tariff concerns",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1744895866,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:1211",
+        "logoid": "saudi-arabian-mining-co"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:PARKIN",
+        "logoid": "parkin-company-pjs"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QIBK",
+        "logoid": "qatar-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L1N3QV0H2:0-gulf-markets-end-mixed-on-tariff-concerns/"
+  },
+  {
+    "id": "tag:reuters.com,2025-04-09:newsml_Zaw4zdpB:0",
+    "title": "PRESSR: Unionaire-Egypt partners with Banque Misr, the National Bank of Egypt, and CIB",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1744203872,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:FWRY",
+        "logoid": "fawry-for-banking-technology-and-electronic-payment"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "ADX:FAB",
+        "logoid": "first-abu-dhabi-bank"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-04-09:newsml_Zaw4zdpB:0-pressr-unionaire-egypt-partners-with-banque-misr-the-national-bank-of-egypt-and-cib/"
+  },
+  {
+    "id": "tag:reuters.com,2025-03-25:newsml_Zaw30gCkt:0",
+    "title": "SNG: Egypt: CIB to distribute EGP 2.5/share dividend for 2024",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1742904109,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-03-25:newsml_Zaw30gCkt:0-sng-egypt-cib-to-distribute-egp-2-5-share-dividend-for-2024/"
+  },
+  {
+    "id": "tag:reuters.com,2025-03-25:newsml_Zaw2Xmlmy:0",
+    "title": "SNG: WE and CIB partner to offer advanced digital financial services in Egypt",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1742881220,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-03-25:newsml_Zaw2Xmlmy:0-sng-we-and-cib-partner-to-offer-advanced-digital-financial-services-in-egypt/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L4N3Q00XS:0",
+    "title": "Most Gulf markets in black on China stimulus prospect",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1742216550,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "TADAWUL:2081",
+        "logoid": "alkhorayef-water-and-power-technologies"
+      },
+      {
+        "symbol": "TADAWUL:2287",
+        "logoid": "arabian-company-for-agricultural-and-industrial-investment"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QIBK",
+        "logoid": "qatar-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L4N3Q00XS:0-most-gulf-markets-in-black-on-china-stimulus-prospect/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_FWN3PL01E:0",
+    "title": "Juhayna Food Industries Secures EGP 400 Mln From CIB Egypt",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1740985682,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:JUFO",
+        "logoid": "juhayna-food-industries"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_FWN3PL01E:0-juhayna-food-industries-secures-egp-400-mln-from-cib-egypt/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L2N3PL03G:0",
+    "title": "Saudi bourse extends losses on lacklustre earnings; Egypt gains",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1740920711,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:1010",
+        "logoid": "riyad-bank"
+      },
+      {
+        "symbol": "TADAWUL:1111",
+        "logoid": "saudi-tadawul-co"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "EGX:FWRY",
+        "logoid": "fawry-for-banking-technology-and-electronic-payment"
+      },
+      {
+        "symbol": "EGX:EFIH",
+        "logoid": "e-finance-for-digital-and-financial-investments"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L2N3PL03G:0-saudi-bourse-extends-losses-on-lacklustre-earnings-egypt-gains/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L2N3PE035:0",
+    "title": "Gulf bourses subdued, Saudi closed for public holiday",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1740316430,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QGTS",
+        "logoid": "qatar-gas-transport-ltd-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L2N3PE035:0-gulf-bourses-subdued-saudi-closed-for-public-holiday/"
+  },
+  {
+    "id": "tag:reuters.com,2025-02-20:newsml_Zaw3bCspp:0",
+    "title": "SNG: Egypt's CIB reports full-year 2024 consolidated net income of $1.09bln, up 86% YoY",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1740029250,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-02-20:newsml_Zaw3bCspp:0-sng-egypt-s-cib-reports-full-year-2024-consolidated-net-income-of-1-09bln-up-86-yoy/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L2N3PA0E7:0",
+    "title": "Gulf markets end mixed on Trump's tariff threats",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1739972275,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:2082",
+        "logoid": "acwa-power-co"
+      },
+      {
+        "symbol": "TADAWUL:4263",
+        "logoid": "sal-saudi-logistics-services-co"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "EURONEXT:ENGI",
+        "logoid": "engie"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L2N3PA0E7:0-gulf-markets-end-mixed-on-trump-s-tariff-threats/"
+  },
+  {
+    "id": "tag:reuters.com,2025-02-19:newsml_Zaw78jXbs:0",
+    "title": "SNG: CIB unveils 86% YoY jump in 2024 consolidated profits; board nods to capital raise",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1739970083,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-02-19:newsml_Zaw78jXbs:0-sng-cib-unveils-86-yoy-jump-in-2024-consolidated-profits-board-nods-to-capital-raise/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_FWN3PA097:0",
+    "title": "CIB Egypt Board Approves Capital Increase",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1739950188,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_FWN3PA097:0-cib-egypt-board-approves-capital-increase/"
+  },
+  {
+    "id": "tag:reuters.com,2025-02-19:newsml_RSS6690Xa:0",
+    "title": "REG - Commercial Int Bank - CIB FY2024 Earnings Release",
+    "provider": "lse",
+    "sourceLogoId": "rdp-lse",
+    "published": 1739948403,
+    "source": "London Stock Exchange",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-02-19:newsml_RSS6690Xa:0-reg-commercial-int-bank-cib-fy2024-earnings-release/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_S8N3OF00P:0",
+    "title": "Commercial International Bank Egypt (CIB) Net Income Up 86% YoY in 2024 to $1.09 Bln",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1739912928,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_S8N3OF00P:0-commercial-international-bank-egypt-cib-net-income-up-86-yoy-in-2024-to-1-09-bln/"
+  },
+  {
+    "id": "tag:reuters.com,2025-02-17:newsml_Zaw8yMD4T:0",
+    "title": "SNG: Arkan Palm, CIB partner to develop 16,000 sqm headquarters in Sheikh Zayed’s Financial District",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1739773660,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-02-17:newsml_Zaw8yMD4T:0-sng-arkan-palm-cib-partner-to-develop-16-000-sqm-headquarters-in-sheikh-zayed-s-financial-district/"
+  },
+  {
+    "id": "tag:reuters.com,2025-02-13:newsml_Zaw1qbgjV:0",
+    "title": "PRESSR: Amazon Egypt enables customers to contribute to community development by participating in impactful initiatives",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1739442017,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "LSE:VOD",
+        "logoid": "vodafone"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "EURONEXT:ACA",
+        "logoid": "credit-agricole"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-02-13:newsml_Zaw1qbgjV:0-pressr-amazon-egypt-enables-customers-to-contribute-to-community-development-by-participating-in-impactful-initiatives/"
+  },
+  {
+    "id": "tag:reuters.com,2025-02-13:newsml_Zaw2hCNLQ:0",
+    "title": "SNG: Egypt's CIB signs financing agreement with CRC for Solana project in New Zayed",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1739422807,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-02-13:newsml_Zaw2hCNLQ:0-sng-egypt-s-cib-signs-financing-agreement-with-crc-for-solana-project-in-new-zayed/"
+  },
+  {
+    "id": "tag:reuters.com,2025-02-10:newsml_Zaw576V01:0",
+    "title": "SNG: IFC, CIB partner to support decarbonization across key sectors in Egypt",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1739169595,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-02-10:newsml_Zaw576V01:0-sng-ifc-cib-partner-to-support-decarbonization-across-key-sectors-in-egypt/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L1N3OW0N7:0",
+    "title": "Most Gulf markets subdued as Trump's Gaza remarks spark concerns",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1738763374,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:2082",
+        "logoid": "acwa-power-co"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "ADX:FAB",
+        "logoid": "first-abu-dhabi-bank"
+      },
+      {
+        "symbol": "ADX:RAKPROP",
+        "logoid": "rak-properties"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L1N3OW0N7:0-most-gulf-markets-subdued-as-trump-s-gaza-remarks-spark-concerns/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L2N3ON0HF:0",
+    "title": "Most Gulf markets fall amid US trade concerns",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1737984911,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:1211",
+        "logoid": "saudi-arabian-mining-co"
+      },
+      {
+        "symbol": "TADAWUL:4250",
+        "logoid": "jabal-omar-development-company"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:CBQK",
+        "logoid": "the-commercial-bank-psqc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L2N3ON0HF:0-most-gulf-markets-fall-amid-us-trade-concerns/"
+  },
+  {
+    "id": "tag:reuters.com,2025-01-22:newsml_Zaw9RlfyW:0",
+    "title": "SNG: Egypt's CIB, MSMEDA sign strategic partnership to support SMEs",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1737523376,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-01-22:newsml_Zaw9RlfyW:0-sng-egypt-s-cib-msmeda-sign-strategic-partnership-to-support-smes/"
+  },
+  {
+    "id": "tag:reuters.com,2025-01-20:newsml_Zaw7JflFs:0",
+    "title": "SNG: Egypt: CIB completes $31mln securitization deal for B.TECH, serving as financial advisor, arranger, and manager",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1737352871,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-01-20:newsml_Zaw7JflFs:0-sng-egypt-cib-completes-31mln-securitization-deal-for-b-tech-serving-as-financial-advisor-arranger-and-manager/"
+  },
+  {
+    "id": "tag:reuters.com,2025-01-16:newsml_ZawKKWPv:0",
+    "title": "SNG: Egypt: CIB completes $36mln securitization transaction for GB Leasing",
+    "provider": "zawya",
+    "sourceLogoId": "zawya",
+    "published": 1737007864,
+    "source": "Zawya",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025-01-16:newsml_ZawKKWPv:0-sng-egypt-cib-completes-36mln-securitization-transaction-for-gb-leasing/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L4N3OA10H:0",
+    "title": "Most Gulf shares gain as Gaza ceasefire hopes rise; Egypt snaps losing streak",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1736861995,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QGTS",
+        "logoid": "qatar-gas-transport-ltd-qpsc"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "QSE:QIBK",
+        "logoid": "qatar-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:2082",
+        "logoid": "acwa-power-co"
+      },
+      {
+        "symbol": "TADAWUL:1010",
+        "logoid": "riyad-bank"
+      },
+      {
+        "symbol": "TADAWUL:4193",
+        "logoid": "nice-one-beauty-digital-marketing-co"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "ADX:ALPHADHABI",
+        "logoid": "alpha-dhabi-pjsc"
+      },
+      {
+        "symbol": "ADX:ADNOCDRILL",
+        "logoid": "adnoc-drilling-company-pjsc"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:ARMX",
+        "logoid": "aramex"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "EGX:TMGH",
+        "logoid": "t-m-g"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "ADX:ALDAR",
+        "logoid": "al-dar-properties"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L4N3OA10H:0-most-gulf-shares-gain-as-gaza-ceasefire-hopes-rise-egypt-snaps-losing-streak/"
+  },
+  {
+    "id": "tag:reuters.com,2025:newsml_L1N3NY09V:0",
+    "title": "Most Gulf markets in red; Saudi gains",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1735823854,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:7203",
+        "logoid": "elm-co"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMIRATESNBD",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "ADX:IHC",
+        "logoid": "international-company-pjsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2025:newsml_L1N3NY09V:0-most-gulf-markets-in-red-saudi-gains/"
+  },
+  {
+    "id": "tag:reuters.com,2024:newsml_L4N3NU050:0",
+    "title": "Most Gulf markets gain on rising oil",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1735476285,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "TADAWUL:2082",
+        "logoid": "acwa-power-co"
+      },
+      {
+        "symbol": "TADAWUL:1820",
+        "logoid": "abdulmohsen-alhokair-for-tourism-and-development"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_L4N3NU050:0-most-gulf-markets-gain-on-rising-oil/"
+  },
+  {
+    "id": "tag:reuters.com,2024:newsml_L4N3NO0PH:0",
+    "title": "Most Gulf shares gain on US inflation relief; Egypt extends losses",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1734960346,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:8030",
+        "logoid": "the-mediterranean-and-gulf-insurance-and-reinsurance-co"
+      },
+      {
+        "symbol": "TADAWUL:5110",
+        "logoid": "saudi-electricity-company"
+      },
+      {
+        "symbol": "TADAWUL:4310",
+        "logoid": "knowledge-economic-city"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "ADX:MAIR",
+        "logoid": "mair-group-pjsc"
+      },
+      {
+        "symbol": "ADX:TAQA",
+        "logoid": "abu-dhabi-national-energy-company"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "DFM:EMIRATESNBD",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "QSE:ORDS",
+        "logoid": "ooredoo-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "EGX:HRHO",
+        "logoid": "egyptian-financial-hermes-company"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_L4N3NO0PH:0-most-gulf-shares-gain-on-us-inflation-relief-egypt-extends-losses/"
+  },
+  {
+    "id": "tag:reuters.com,2024:newsml_L4N3NG02G:0",
+    "title": "Most Gulf markets muted ahead of Fed rate decision; Qatar extends gains",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1734269493,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1010",
+        "logoid": "riyad-bank"
+      },
+      {
+        "symbol": "TADAWUL:4300",
+        "logoid": "dar-alarkan-real-estate-development-co"
+      },
+      {
+        "symbol": "TADAWUL:2110",
+        "logoid": "saudi-cable-co"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QFLS",
+        "logoid": "qatar-fuel-qpsc"
+      },
+      {
+        "symbol": "QSE:GISS",
+        "logoid": "gulf-international-services-qpsc"
+      },
+      {
+        "symbol": "QSE:QFBQ",
+        "logoid": "qatar-first-bank-llc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:TMGH",
+        "logoid": "t-m-g"
+      },
+      {
+        "symbol": "EGX:EAST",
+        "logoid": "eastern-company"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "EGX:PHDC",
+        "logoid": "palm-hills-development-company"
+      },
+      {
+        "symbol": "EGX:TALM",
+        "logoid": "taaleem-management-services"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "QSE:QNNS",
+        "logoid": "qatar-navigation-qpsc"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_L4N3NG02G:0-most-gulf-markets-muted-ahead-of-fed-rate-decision-qatar-extends-gains/"
+  },
+  {
+    "id": "tag:reuters.com,2024:newsml_L2N3MW0CZ:0",
+    "title": "Gulf bourses end mixed as oil prices slip",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1732540780,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:2082",
+        "logoid": "acwa-power-co"
+      },
+      {
+        "symbol": "TADAWUL:2222",
+        "logoid": "saudi-arabian-oil"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:SALIK",
+        "logoid": "salik-company-pj"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_L2N3MW0CZ:0-gulf-bourses-end-mixed-as-oil-prices-slip/"
+  },
+  {
+    "id": "tag:reuters.com,2024:newsml_L1N3MJ0J4:0",
+    "title": "Most Gulf markets ease on weak oil, caution ahead of US data",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1731417725,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:4143",
+        "logoid": "al-taiseer-talco-industrial-co"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "QSE:IQCD",
+        "logoid": "industries-qatar-qpsc"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:SALIK",
+        "logoid": "salik-company-pj"
+      },
+      {
+        "symbol": "DFM:EMAARDEV",
+        "logoid": "emaar-development"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_L1N3MJ0J4:0-most-gulf-markets-ease-on-weak-oil-caution-ahead-of-us-data/"
+  },
+  {
+    "id": "tag:reuters.com,2024-11-06:newsml_RSF1574La:0",
+    "title": "REG - Commercial Int Bank - CIB gets regulatory approvals to changes to BoD",
+    "provider": "lse",
+    "sourceLogoId": "rdp-lse",
+    "published": 1730879924,
+    "source": "London Stock Exchange",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024-11-06:newsml_RSF1574La:0-reg-commercial-int-bank-cib-gets-regulatory-approvals-to-changes-to-bod/"
+  },
+  {
+    "id": "tag:reuters.com,2024-11-04:newsml_RSD7502Ka:0",
+    "title": "REG - Commercial Int Bank - CIB-Consolidated Financial Statements 3Q.2024",
+    "provider": "lse",
+    "sourceLogoId": "rdp-lse",
+    "published": 1730703603,
+    "source": "London Stock Exchange",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024-11-04:newsml_RSD7502Ka:0-reg-commercial-int-bank-cib-consolidated-financial-statements-3q-2024/"
+  },
+  {
+    "id": "tag:reuters.com,2024-11-04:newsml_RSD7504Ka:0",
+    "title": "REG - Commercial Int Bank - CIB-Separate Financial Statements 3Q.2024",
+    "provider": "lse",
+    "sourceLogoId": "rdp-lse",
+    "published": 1730703603,
+    "source": "London Stock Exchange",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024-11-04:newsml_RSD7504Ka:0-reg-commercial-int-bank-cib-separate-financial-statements-3q-2024/"
+  },
+  {
+    "id": "tag:reuters.com,2024-11-04:newsml_RSD7507Ka:0",
+    "title": "REG - Commercial Int Bank - Earnings Release 3Q.2024",
+    "provider": "lse",
+    "sourceLogoId": "rdp-lse",
+    "published": 1730703603,
+    "source": "London Stock Exchange",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024-11-04:newsml_RSD7507Ka:0-reg-commercial-int-bank-earnings-release-3q-2024/"
+  },
+  {
+    "id": "tag:reuters.com,2024:newsml_S8N3KS07V:0",
+    "title": "Commercial International Bank Egypt (CiB) - Q3 net income 14.8 bln EGP, up 77% y/y",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1730658912,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_S8N3KS07V:0-commercial-international-bank-egypt-cib-q3-net-income-14-8-bln-egp-up-77-y-y/"
+  },
+  {
+    "id": "tag:reuters.com,2024:newsml_L1N3M50QD:0",
+    "title": "Most Gulf markets gain on earnings; geopolitics weigh",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1730210025,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:1211",
+        "logoid": "saudi-arabian-mining-co"
+      },
+      {
+        "symbol": "TADAWUL:7030",
+        "logoid": "mobile-telecommunication-company-saudi-arabia"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "ADX:BOROUGE",
+        "logoid": "borouge-plc"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:SALIK",
+        "logoid": "salik-company-pj"
+      },
+      {
+        "symbol": "DFM:EMPOWER",
+        "logoid": "emirates-central-c"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "QSE:IQCD",
+        "logoid": "industries-qatar-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_L1N3M50QD:0-most-gulf-markets-gain-on-earnings-geopolitics-weigh/"
+  },
+  {
+    "id": "tag:reuters.com,2024:newsml_L1N3LW04N:0",
+    "title": "Most Gulf markets slip on regional tensions, weak oil",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1729430115,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:2082",
+        "logoid": "acwa-power-co"
+      },
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_L1N3LW04N:0-most-gulf-markets-slip-on-regional-tensions-weak-oil/"
+  },
+  {
+    "id": "tag:reuters.com,2024:newsml_L1N3LQ0HV:0",
+    "title": "Gulf markets end mixed on regional conflict, ahead of earnings",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1728911404,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:2082",
+        "logoid": "acwa-power-co"
+      },
+      {
+        "symbol": "TADAWUL:4143",
+        "logoid": "al-taiseer-talco-industrial-co"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:IQCD",
+        "logoid": "industries-qatar-qpsc"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMIRATESNBD",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_L1N3LQ0HV:0-gulf-markets-end-mixed-on-regional-conflict-ahead-of-earnings/"
+  },
+  {
+    "id": "tag:reuters.com,2024:newsml_L1N3LM0JW:0",
+    "title": "Most Gulf bourses end subdued on regional tensions",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1728566478,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:4143",
+        "logoid": "al-taiseer-talco-industrial-co"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:DIB",
+        "logoid": "dubai-islamic-bank"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_L1N3LM0JW:0-most-gulf-bourses-end-subdued-on-regional-tensions/"
+  },
+  {
+    "id": "tag:reuters.com,2024:newsml_FWN3LD0G2:0",
+    "title": "Commercial International Bank Egypt Signs Loan Facility Agreement With IFC - Statement",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1727787849,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_FWN3LD0G2:0-commercial-international-bank-egypt-signs-loan-facility-agreement-with-ifc-statement/"
+  },
+  {
+    "id": "tag:reuters.com,2024:newsml_L1N3LD0JP:0",
+    "title": "Most Gulf markets fall on geopolitics, weak oil",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1727787754,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "DFM:DEWA",
+        "logoid": "dubai-electricity-and-water-authority"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:4143",
+        "logoid": "al-taiseer-talco-industrial-co"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_L1N3LD0JP:0-most-gulf-markets-fall-on-geopolitics-weak-oil/"
+  },
+  {
+    "id": "tag:reuters.com,2024-10-01:newsml_RSA5079Ga:0",
+    "title": "REG - Commercial Int Bank - CIB obtaining Long term loan from IFC",
+    "provider": "lse",
+    "sourceLogoId": "rdp-lse",
+    "published": 1727787637,
+    "source": "London Stock Exchange",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024-10-01:newsml_RSA5079Ga:0-reg-commercial-int-bank-cib-obtaining-long-term-loan-from-ifc/"
+  },
+  {
+    "id": "tag:reuters.com,2024:newsml_L1N3KY0G0:0",
+    "title": "Gulf markets end mixed ahead of Fed rate decision",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1726492957,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:DTC",
+        "logoid": "dubai-taxi-company"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1150",
+        "logoid": "alinma-bank"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:2222",
+        "logoid": "saudi-arabian-oil"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QIBK",
+        "logoid": "qatar-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_L1N3KY0G0:0-gulf-markets-end-mixed-ahead-of-fed-rate-decision/"
+  },
+  {
+    "id": "tag:reuters.com,2024-09-16:newsml_RSP2993Ea:0",
+    "title": "REG - Commercial Int Bank - Changes in CIB's Board of Directors",
+    "provider": "lse",
+    "sourceLogoId": "rdp-lse",
+    "published": 1726470001,
+    "source": "London Stock Exchange",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024-09-16:newsml_RSP2993Ea:0-reg-commercial-int-bank-changes-in-cib-s-board-of-directors/"
+  },
+  {
+    "id": "tag:reuters.com,2024:newsml_FWN3KV12A:0",
+    "title": "Commercial International Bank Egypt CIB Selects Neveen Sabbour As Non-Executive Chair",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1726468059,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_FWN3KV12A:0-commercial-international-bank-egypt-cib-selects-neveen-sabbour-as-non-executive-chair/"
+  },
+  {
+    "id": "tag:reuters.com,2024:newsml_L1N3K20IS:0",
+    "title": "Most Gulf markets in black on US rate-cut hopes",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1723728100,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:2082",
+        "logoid": "acwa-power-co"
+      },
+      {
+        "symbol": "TADAWUL:4016",
+        "logoid": "middle-east-pharmaceutical-industries-co"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:DIB",
+        "logoid": "dubai-islamic-bank"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QGTS",
+        "logoid": "qatar-gas-transport-ltd-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_L1N3K20IS:0-most-gulf-markets-in-black-on-us-rate-cut-hopes/"
+  },
+  {
+    "id": "tag:reuters.com,2024:newsml_L1N3JN0TH:0",
+    "title": "Most Gulf markets in red after killing of Hamas leader",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1722431310,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_L1N3JN0TH:0-most-gulf-markets-in-red-after-killing-of-hamas-leader/"
+  },
+  {
+    "id": "tag:reuters.com,2024-07-22:newsml_RSV1835Xa:0",
+    "title": "REG - Commercial Int Bank - CIB H1-2024 Consolidated Financial Statements",
+    "provider": "lse",
+    "sourceLogoId": "rdp-lse",
+    "published": 1721628003,
+    "source": "London Stock Exchange",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024-07-22:newsml_RSV1835Xa:0-reg-commercial-int-bank-cib-h1-2024-consolidated-financial-statements/"
+  },
+  {
+    "id": "tag:reuters.com,2024-07-22:newsml_RSV1836Xa:0",
+    "title": "REG - Commercial Int Bank - CIB H1-2024 Separate Financial Statements - E",
+    "provider": "lse",
+    "sourceLogoId": "rdp-lse",
+    "published": 1721628003,
+    "source": "London Stock Exchange",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024-07-22:newsml_RSV1836Xa:0-reg-commercial-int-bank-cib-h1-2024-separate-financial-statements-e/"
+  },
+  {
+    "id": "tag:reuters.com,2024-07-22:newsml_RSV1837Xa:0",
+    "title": "REG - Commercial Int Bank - H1.2024 Press Release",
+    "provider": "lse",
+    "sourceLogoId": "rdp-lse",
+    "published": 1721628003,
+    "source": "London Stock Exchange",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024-07-22:newsml_RSV1837Xa:0-reg-commercial-int-bank-h1-2024-press-release/"
+  },
+  {
+    "id": "tag:reuters.com,2024:newsml_S8N3IO04E:0",
+    "title": "Commercial International Bank Egypt 2024 Q2 net income up 96% year-on-year",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1721576829,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_S8N3IO04E:0-commercial-international-bank-egypt-2024-q2-net-income-up-96-year-on-year/"
+  },
+  {
+    "id": "tag:reuters.com,2024:newsml_L1N3JD03B:0",
+    "title": "Major Gulf markets gain as focus shifts to earnings",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1721567617,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:4143",
+        "logoid": "al-taiseer-talco-industrial-co"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:2160",
+        "logoid": "saudi-arabian-amiantit-co"
+      },
+      {
+        "symbol": "TADAWUL:1111",
+        "logoid": "saudi-tadawul-co"
+      },
+      {
+        "symbol": "TADAWUL:2310",
+        "logoid": "sahara-international-petrochemical-co"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:IQCD",
+        "logoid": "industries-qatar-qpsc"
+      },
+      {
+        "symbol": "QSE:QIIK",
+        "logoid": "qatar-international-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2024:newsml_L1N3JD03B:0-major-gulf-markets-gain-as-focus-shifts-to-earnings/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L1N3DQ05V:0",
+    "title": "Egyptian bourse registers biggest annual gain since 2016",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1704028732,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "EGX:EAST",
+        "logoid": "eastern-company"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "LSE:63WB"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L1N3DQ05V:0-egyptian-bourse-registers-biggest-annual-gain-since-2016/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L1N3D507K:0",
+    "title": "Saudi bourse gains on rising oil prices; Qatar falls",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1702214747,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:7040",
+        "logoid": "etihad-atheeb-telecommunication-co"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L1N3D507K:0-saudi-bourse-gains-on-rising-oil-prices-qatar-falls/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L1N3CR06E:0",
+    "title": "Most Gulf markets in the red on falling oil prices",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1701005825,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QIBK",
+        "logoid": "qatar-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "QSE:IQCD",
+        "logoid": "industries-qatar-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:7203",
+        "logoid": "elm-co"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L1N3CR06E:0-most-gulf-markets-in-the-red-on-falling-oil-prices/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L1N3CK08W:0",
+    "title": "Most Gulf markets gain on rising oil prices",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1700399412,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "LSE:63WB"
+      },
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L1N3CK08W:0-most-gulf-markets-gain-on-rising-oil-prices/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L8N3CH6HL:0",
+    "title": "Egypt's CIB bank secures $150 million loan from EBRD",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1700149254,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L8N3CH6HL:0-egypt-s-cib-bank-secures-150-million-loan-from-ebrd/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L1N3CF0QE:0",
+    "title": "Fitch downgrades ratings on four Egyptian banks",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1699956980,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L1N3CF0QE:0-fitch-downgrades-ratings-on-four-egyptian-banks/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L1N3CA1LE:0",
+    "title": "Most Gulf markets in red as investors assess Fed rate comments",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1699538737,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:7040",
+        "logoid": "etihad-atheeb-telecommunication-co"
+      },
+      {
+        "symbol": "TADAWUL:7203",
+        "logoid": "elm-co"
+      },
+      {
+        "symbol": "TADAWUL:1831",
+        "logoid": "maharah-human-resources-co"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:SALIK",
+        "logoid": "salik-company-pj"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QIBK",
+        "logoid": "qatar-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L1N3CA1LE:0-most-gulf-markets-in-red-as-investors-assess-fed-rate-comments/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L1N3BH193:0",
+    "title": "Moody's downgrades five Egyptian banks by one notch - note",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1697028773,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "MIL:ISP",
+        "logoid": "intesa"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L1N3BH193:0-moody-s-downgrades-five-egyptian-banks-by-one-notch-note/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L4N3AH367:0",
+    "title": "Gulf markets drop as weak China data drives oil lower",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1693921008,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "ICEEUR:BRN1!",
+        "logoid": "crude-oil"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "ADX:IHC",
+        "logoid": "international-company-pjsc"
+      },
+      {
+        "symbol": "ADX:MULTIPLY",
+        "logoid": "multiply-pjsc"
+      },
+      {
+        "symbol": "LSE:10RJ"
+      },
+      {
+        "symbol": "ADX:ADIB",
+        "logoid": "abu-dhabi-islamic-bank"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "QSE:QGTS",
+        "logoid": "qatar-gas-transport-ltd-qpsc"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:SALIK",
+        "logoid": "salik-company-pj"
+      },
+      {
+        "symbol": "LSE:78SU",
+        "logoid": "ncc-tabreed"
+      },
+      {
+        "symbol": "FWB:AU007864",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "LSE:63WB"
+      },
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "EGX:EAST",
+        "logoid": "eastern-company"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L4N3AH367:0-gulf-markets-drop-as-weak-china-data-drives-oil-lower/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L1N3AC1CG:0",
+    "title": "Gulf markets end mixed on Fed pause bets, volatile energy prices",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1693487961,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMPOWER",
+        "logoid": "emirates-central-c"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "ADX:IHC",
+        "logoid": "international-company-pjsc"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QIBK",
+        "logoid": "qatar-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:4013",
+        "logoid": "dr-sulaiman-al-habib-medical-services-group"
+      },
+      {
+        "symbol": "TADAWUL:2010",
+        "logoid": "saudi-basic"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L1N3AC1CG:0-gulf-markets-end-mixed-on-fed-pause-bets-volatile-energy-prices/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L1N3A90W7:0",
+    "title": "Major Gulf bourses fall on Fed chair's hawkish tone",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1693228295,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "ADX:ADIB",
+        "logoid": "abu-dhabi-islamic-bank"
+      },
+      {
+        "symbol": "LSE:10RJ"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "QSE:CBQK",
+        "logoid": "the-commercial-bank-psqc"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:4013",
+        "logoid": "dr-sulaiman-al-habib-medical-services-group"
+      },
+      {
+        "symbol": "LSE:63WB"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:1050",
+        "logoid": "banque-saudi-fransi"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:SALIK",
+        "logoid": "salik-company-pj"
+      },
+      {
+        "symbol": "LSE:78SU",
+        "logoid": "ncc-tabreed"
+      },
+      {
+        "symbol": "FWB:AU007864",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "EGX:PHDC",
+        "logoid": "palm-hills-development-company"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L1N3A90W7:0-major-gulf-bourses-fall-on-fed-chair-s-hawkish-tone/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L1N38R182:0",
+    "title": "Saudi bourse ends three sessions of gains; Abu Dhabi rises",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1688565304,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:4013",
+        "logoid": "dr-sulaiman-al-habib-medical-services-group"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "FWB:AU007864",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L1N38R182:0-saudi-bourse-ends-three-sessions-of-gains-abu-dhabi-rises/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L1N38Q11A:0",
+    "title": "Most Gulf markets track oil prices higher; Dubai at 8-year high",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1688478669,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1060",
+        "logoid": "saudi-british-bank"
+      },
+      {
+        "symbol": "TADAWUL:6004",
+        "logoid": "saudi-airlines-catering-co"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "FWB:AU007864",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L1N38Q11A:0-most-gulf-markets-track-oil-prices-higher-dubai-at-8-year-high/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L1N38B0Z0:0",
+    "title": "Gulf stock markets end mixed amid China growth uncertainties",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1687182330,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "ICEEUR:BRN1!",
+        "logoid": "crude-oil"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "LSE:63WB"
+      },
+      {
+        "symbol": "TADAWUL:4013",
+        "logoid": "dr-sulaiman-al-habib-medical-services-group"
+      },
+      {
+        "symbol": "TADAWUL:4002",
+        "logoid": "mouwasat-medical-services-co"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "DFM:DEWA",
+        "logoid": "dubai-electricity-and-water-authority"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:ORDS",
+        "logoid": "ooredoo-qpsc"
+      },
+      {
+        "symbol": "QSE:QNNS",
+        "logoid": "qatar-navigation-qpsc"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "LSE:35ZV",
+        "logoid": "abu-dhabi-national-energy-company"
+      },
+      {
+        "symbol": "ADX:BURJEEL",
+        "logoid": "burjeel-plc"
+      },
+      {
+        "symbol": "LSE:10RJ"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "EGX:HRHO",
+        "logoid": "egyptian-financial-hermes-company"
+      },
+      {
+        "symbol": "EGX:ETEL",
+        "logoid": "telecom-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L1N38B0Z0:0-gulf-stock-markets-end-mixed-amid-china-growth-uncertainties/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L1N37W07L:0",
+    "title": "Most Gulf markets gain after US debt deal, job data",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1685885077,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:1010",
+        "logoid": "riyad-bank"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QIBK",
+        "logoid": "qatar-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L1N37W07L:0-most-gulf-markets-gain-after-us-debt-deal-job-data/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_C6N374006:0",
+    "title": "Commercial International Bank Egypt Sae Q1 2023 Consolidated Revenue Rose 54 %",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1684086521,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_C6N374006:0-commercial-international-bank-egypt-sae-q1-2023-consolidated-revenue-rose-54/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L1N36Y0KV:0",
+    "title": "Most Gulf markets in red as Fed seen hiking rates",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1682947742,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:2010",
+        "logoid": "saudi-basic"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "FWB:AU007864",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "LSE:10RJ"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L1N36Y0KV:0-most-gulf-markets-in-red-as-fed-seen-hiking-rates/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L1N35T147:0",
+    "title": "Most Gulf bourses rise as banking crisis worries ease",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1679406927,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "TADAWUL:1010",
+        "logoid": "riyad-bank"
+      },
+      {
+        "symbol": "TADAWUL:2381",
+        "logoid": "arabian-drilling-co"
+      },
+      {
+        "symbol": "TADAWUL:7204",
+        "logoid": "perfect-presentation-for-commercial-services-co"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:SALIK",
+        "logoid": "salik-company-pj"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "FWB:AU007864",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "QSE:CBQK",
+        "logoid": "the-commercial-bank-psqc"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "ADX:NMDC",
+        "logoid": "national-marine-dredging-co"
+      },
+      {
+        "symbol": "LSE:10RJ"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "EGX:FWRY",
+        "logoid": "fawry-for-banking-technology-and-electronic-payment"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:4322",
+        "logoid": "retal-urban-development-co"
+      },
+      {
+        "symbol": "TADAWUL:4001",
+        "logoid": "abdullah-al-othaim-markets-co"
+      },
+      {
+        "symbol": "TADAWUL:1060",
+        "logoid": "saudi-british-bank"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L1N35T147:0-most-gulf-bourses-rise-as-banking-crisis-worries-ease/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_S8N34N01L:0",
+    "title": "Egypt's CIB launches 3-yr, 5.25% savings certificates in Saudi and Qatari riyals, UAE dirhams- CNBC Arabia",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1677602781,
+    "source": "Reuters",
+    "urgency": 1,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_S8N34N01L:0-egypt-s-cib-launches-3-yr-5-25-savings-certificates-in-saudi-and-qatari-riyals-uae-dirhams-cnbc-arabia/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_C6N34R00O:0",
+    "title": "Egypt's Commercial International Bank posts FY 32.9 billion in revenues I 2022",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1676235557,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_C6N34R00O:0-egypt-s-commercial-international-bank-posts-fy-32-9-billion-in-revenues-i-2022/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L4N34M2O4:0",
+    "title": "Egypt outperforms; Saudi Arabia extends losses",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1675688904,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "ICEEUR:BRN1!",
+        "logoid": "crude-oil"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "ADX:AMR",
+        "logoid": "americana-restaurants-international-plc"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:SALIK",
+        "logoid": "salik-company-pj"
+      },
+      {
+        "symbol": "DFM:DIB",
+        "logoid": "dubai-islamic-bank"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "ADX:ALDAR",
+        "logoid": "al-dar-properties"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L4N34M2O4:0-egypt-outperforms-saudi-arabia-extends-losses/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L8N34F1RW:0",
+    "title": "Egypt's CIB takes full ownership of Kenyan lender Mayfair",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1675069084,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "NSEKE:EQTY",
+        "logoid": "equity-group-holdings"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L8N34F1RW:0-egypt-s-cib-takes-full-ownership-of-kenyan-lender-mayfair/"
+  },
+  {
+    "id": "tag:reuters.com,2023:newsml_L1N33Q0YM:0",
+    "title": "Most major Gulf stock markets fall on hawkish Fed, Egypt extends rally",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1672926739,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "LSE:63WB"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "LSE:10RJ"
+      },
+      {
+        "symbol": "ADX:FERTIGLB",
+        "logoid": "fertiglobe-plc"
+      },
+      {
+        "symbol": "ADX:ALPHADHABI",
+        "logoid": "alpha-dhabi-pjsc"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "FWB:AU007864",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2023:newsml_L1N33Q0YM:0-most-major-gulf-stock-markets-fall-on-hawkish-fed-egypt-extends-rally/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L1N3251EB:0",
+    "title": "Saudi index extends losses on oil; Egypt outperforms",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1668002335,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "LSE:63WB"
+      },
+      {
+        "symbol": "TADAWUL:1832",
+        "logoid": "sadr-logistics-co"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "ADX:IHC",
+        "logoid": "international-company-pjsc"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L1N3251EB:0-saudi-index-extends-losses-on-oil-egypt-outperforms/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L1N31Q1BZ:0",
+    "title": "Saudi index tracks oil drop; Egypt up on tax-break prospects",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1666706045,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "LSE:63WB"
+      },
+      {
+        "symbol": "TADAWUL:1020",
+        "logoid": "bank-aljazira"
+      },
+      {
+        "symbol": "TADAWUL:8180",
+        "logoid": "al-sagr-cooperative-insurance-co"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "EGX:ORHD",
+        "logoid": "orascom-development-egypt"
+      },
+      {
+        "symbol": "EGX:OCDI",
+        "logoid": "six-of-october-development-and-investment-sodic"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L1N31Q1BZ:0-saudi-index-tracks-oil-drop-egypt-up-on-tax-break-prospects/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L8N31B3X2:0",
+    "title": "Egyptian banks tighten dollar limits after currency pressure mounts",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1665430161,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "LSE:HSBA",
+        "logoid": "hsbc"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "LSE:10RJ"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L8N31B3X2:0-egyptian-banks-tighten-dollar-limits-after-currency-pressure-mounts/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L1N30W082:0",
+    "title": "Saudi leads Gulf bourses lower on recession worries",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1664111689,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TVC:SXXP",
+        "logoid": "indices/stoxx-600"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:4322",
+        "logoid": "retal-urban-development-co"
+      },
+      {
+        "symbol": "LSE:63WB"
+      },
+      {
+        "symbol": "TADAWUL:3001"
+      },
+      {
+        "symbol": "TADAWUL:3040",
+        "logoid": "qassim-cement-co"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:IQCD",
+        "logoid": "industries-qatar-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L1N30W082:0-saudi-leads-gulf-bourses-lower-on-recession-worries/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L1N30405X:0",
+    "title": "Gulf stocks fall on tight monetary policy outlook",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1661692741,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "LSE:63WB"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:EFIH",
+        "logoid": "e-finance-for-digital-and-financial-investments"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L1N30405X:0-gulf-stocks-fall-on-tight-monetary-policy-outlook/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L3N20U2P6:0",
+    "title": "Commercial International Bank Egypt Q2 Profit Rises",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1658723771,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L3N20U2P6:0-commercial-international-bank-egypt-q2-profit-rises/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L1N2YE0GH:0",
+    "title": "Egypt's MNT-Halan closes $150 million securitised bond issuance",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1656320036,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L1N2YE0GH:0-egypt-s-mnt-halan-closes-150-million-securitised-bond-issuance/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L1N2Y810E:0",
+    "title": "Most Gulf bourses rebound but investors cautious on growth fears",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1655817733,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "LSE:63WB"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:DIB",
+        "logoid": "dubai-islamic-bank"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "LSE:10RJ"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:IQCD",
+        "logoid": "industries-qatar-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L1N2Y810E:0-most-gulf-bourses-rebound-but-investors-cautious-on-growth-fears/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L1N2Y607A:0",
+    "title": "Saudi leads decline in Gulf bourses on growth worries",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1655644214,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "LSE:63WB"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:IQCD",
+        "logoid": "industries-qatar-qpsc"
+      },
+      {
+        "symbol": "QSE:QIBK",
+        "logoid": "qatar-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L1N2Y607A:0-saudi-leads-decline-in-gulf-bourses-on-growth-worries/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L1N2Y3130:0",
+    "title": "Most Gulf bourses in red after rate hikes",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1655386500,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:DIB",
+        "logoid": "dubai-islamic-bank"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "LSE:10RJ"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:IQCD",
+        "logoid": "industries-qatar-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L1N2Y3130:0-most-gulf-bourses-in-red-after-rate-hikes/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L1N2XZ08K:0",
+    "title": "Major Gulf markets track global peers, oil prices lower",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1655043031,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "LSE:63WB"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:7010",
+        "logoid": "saudi-telecom-co"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QIBK",
+        "logoid": "qatar-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "QSE:IQCD",
+        "logoid": "industries-qatar-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "EGX:EAST",
+        "logoid": "eastern-company"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L1N2XZ08K:0-major-gulf-markets-track-global-peers-oil-prices-lower/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L2N2WO14N:0",
+    "title": "Major Gulf bourses end mixed; Egypt gains",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1650979307,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "LSE:63WB"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:DU",
+        "logoid": "emirate-integrated"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L2N2WO14N:0-major-gulf-bourses-end-mixed-egypt-gains/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L2N2W8068:0",
+    "title": "Qatar stocks outperform the region; Egypt in red",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1649595885,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QIIK",
+        "logoid": "qatar-international-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "QSE:QIBK",
+        "logoid": "qatar-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "QSE:QATI",
+        "logoid": "qatar-insurance-qspc"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:2280",
+        "logoid": "almarai-co"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L2N2W8068:0-qatar-stocks-outperform-the-region-egypt-in-red/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L2N2W109I:0",
+    "title": "Most Gulf bourses in red; Egypt outperforms",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1648990849,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "TADAWUL:1010",
+        "logoid": "riyad-bank"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:IQCD",
+        "logoid": "industries-qatar-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L2N2W109I:0-most-gulf-bourses-in-red-egypt-outperforms/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L2N2VU08O:0",
+    "title": "Most Gulf bourses close higher; Egypt extends losses",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1648386621,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "LSE:63WB"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QIBK",
+        "logoid": "qatar-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L2N2VU08O:0-most-gulf-bourses-close-higher-egypt-extends-losses/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L2N2VN086:0",
+    "title": "Aramco fuels Saudi index as 2021 profit soars",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1647782594,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "LSE:63WB"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "NASDAQ:MSFT",
+        "logoid": "microsoft"
+      },
+      {
+        "symbol": "NASDAQ:AAPL",
+        "logoid": "apple"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L2N2VN086:0-aramco-fuels-saudi-index-as-2021-profit-soars/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L1N2V20FT:0",
+    "title": "Major Middle East stocks track global rally",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1645968339,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1211",
+        "logoid": "saudi-arabian-mining-co"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "EGX:CLHO",
+        "logoid": "cleopatra-hospital-company"
+      },
+      {
+        "symbol": "QSE:QGTS",
+        "logoid": "qatar-gas-transport-ltd-qpsc"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L1N2V20FT:0-major-middle-east-stocks-track-global-rally/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L4N2UX1A1:0",
+    "title": "Commercial International Bank Egypt Q4 Profit Rises",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1645502665,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L4N2UX1A1:0-commercial-international-bank-egypt-q4-profit-rises/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L1N2UC0VE:0",
+    "title": "Most stock markets end higher; Dubai extends losses",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1643721976,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QGTS",
+        "logoid": "qatar-gas-transport-ltd-qpsc"
+      },
+      {
+        "symbol": "ADX:IHC",
+        "logoid": "international-company-pjsc"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L1N2UC0VE:0-most-stock-markets-end-higher-dubai-extends-losses/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L1N2U40YM:0",
+    "title": "Dubai sees biggest fall in over a month after Houthi attack intercepted",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1643030849,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "FWB:AU007864",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "ADX:IHC",
+        "logoid": "international-company-pjsc"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:CBQK",
+        "logoid": "the-commercial-bank-psqc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L1N2U40YM:0-dubai-sees-biggest-fall-in-over-a-month-after-houthi-attack-intercepted/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L1N2TZ12E:0",
+    "title": "Abu Dhabi leads most Gulf markets higher",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1642598459,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "ADX:FADGI",
+        "logoid": "indices/ftse-adx-index"
+      },
+      {
+        "symbol": "LSE:10RJ"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:2010",
+        "logoid": "saudi-basic"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "FWB:AU007864",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:IQCD",
+        "logoid": "industries-qatar-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L1N2TZ12E:0-abu-dhabi-leads-most-gulf-markets-higher/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_L1N2TJ0MO:0",
+    "title": "Most Gulf bourses fall as COVID-19 cases rise",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1641215692,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "ADX:ALPHADHABI",
+        "logoid": "alpha-dhabi-pjsc"
+      },
+      {
+        "symbol": "ADX:ALDAR",
+        "logoid": "al-dar-properties"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:DFM",
+        "logoid": "dubai-financial"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:IQCD",
+        "logoid": "industries-qatar-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_L1N2TJ0MO:0-most-gulf-bourses-fall-as-covid-19-cases-rise/"
+  },
+  {
+    "id": "tag:reuters.com,2022:newsml_C6N2SR00A:0",
+    "title": "National Bank of Egypt increases its stake in CIB to 9.13% - document",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1641192121,
+    "source": "Reuters",
+    "urgency": 1,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2022:newsml_C6N2SR00A:0-national-bank-of-egypt-increases-its-stake-in-cib-to-9-13-document/"
+  },
+  {
+    "id": "tag:reuters.com,2021:newsml_L1N2S22N7:0",
+    "title": "Egypt's CIB Q3 Profit Rises",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1636665503,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2021:newsml_L1N2S22N7:0-egypt-s-cib-q3-profit-rises/"
+  },
+  {
+    "id": "tag:reuters.com,2021:newsml_L1N2QN16B:0",
+    "title": "Most Gulf bourses in the red; Abu Dhabi edges up",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1632229944,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "FWB:AU007864",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "DFM:EMAAR",
+        "logoid": "emaar-properties"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:4013",
+        "logoid": "dr-sulaiman-al-habib-medical-services-group"
+      },
+      {
+        "symbol": "ADX:IHC",
+        "logoid": "international-company-pjsc"
+      },
+      {
+        "symbol": "ADX:ALPHADHABI",
+        "logoid": "alpha-dhabi-pjsc"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:MPHC",
+        "logoid": "mesaieed-petrochemical-holding-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2021:newsml_L1N2QN16B:0-most-gulf-bourses-in-the-red-abu-dhabi-edges-up/"
+  },
+  {
+    "id": "tag:reuters.com,2021:newsml_L1N2PH12F:0",
+    "title": "Major Gulf bourses ease, banks buoy Saudi index",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1628603699,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "TADAWUL:4004",
+        "logoid": "dallah-healthcare-co"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:DIB",
+        "logoid": "dubai-islamic-bank"
+      },
+      {
+        "symbol": "LSE:10RJ"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:CBQK",
+        "logoid": "the-commercial-bank-psqc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "NYSE:JNJ",
+        "logoid": "johnson-and-johnson"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "TADAWUL:9519"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2021:newsml_L1N2PH12F:0-major-gulf-bourses-ease-banks-buoy-saudi-index/"
+  },
+  {
+    "id": "tag:reuters.com,2021:newsml_L1N2PF07N:0",
+    "title": "Major Gulf bourses gain, Saudi Aramco's Q2 profit surges",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1628428966,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:4013",
+        "logoid": "dr-sulaiman-al-habib-medical-services-group"
+      },
+      {
+        "symbol": "TADAWUL:7010",
+        "logoid": "saudi-telecom-co"
+      },
+      {
+        "symbol": "TADAWUL:1180",
+        "logoid": "saudi-national-bank"
+      },
+      {
+        "symbol": "LSE:63WB"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:ARMX",
+        "logoid": "aramex"
+      },
+      {
+        "symbol": "ADX:IHC",
+        "logoid": "international-company-pjsc"
+      },
+      {
+        "symbol": "LSE:10RJ"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "QSE:MPHC",
+        "logoid": "mesaieed-petrochemical-holding-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2021:newsml_L1N2PF07N:0-major-gulf-bourses-gain-saudi-aramco-s-q2-profit-surges/"
+  },
+  {
+    "id": "tag:reuters.com,2021:newsml_L1N2P107O:0",
+    "title": "Abu Dhabi hits record high as most Gulf markets gain",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1627220009,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      },
+      {
+        "symbol": "TADAWUL:1120",
+        "logoid": "al-rajhi-bank"
+      },
+      {
+        "symbol": "TADAWUL:1211",
+        "logoid": "saudi-arabian-mining-co"
+      },
+      {
+        "symbol": "TADAWUL:2290",
+        "logoid": "yanbu-national-petrochemical-co"
+      },
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "FWB:AU007864",
+        "logoid": "emirates-nbd"
+      },
+      {
+        "symbol": "ADX:ADIB",
+        "logoid": "abu-dhabi-islamic-bank"
+      },
+      {
+        "symbol": "ADX:DANA",
+        "logoid": "dana-gas-pjsc"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "QSE:QNBK",
+        "logoid": "qatar-national-bank-qpsc"
+      },
+      {
+        "symbol": "QSE:QIBK",
+        "logoid": "qatar-islamic-bank-qpsc"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2021:newsml_L1N2P107O:0-abu-dhabi-hits-record-high-as-most-gulf-markets-gain/"
+  },
+  {
+    "id": "tag:reuters.com,2021:newsml_L1N2OU08Q:0",
+    "title": "UAE bourses tread water ahead of eid holidays; Egypt gains",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1626614185,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "DFM:DFMGI",
+        "logoid": "indices/dfm-index"
+      },
+      {
+        "symbol": "DFM:DIB",
+        "logoid": "dubai-islamic-bank"
+      },
+      {
+        "symbol": "ADX:ADCB",
+        "logoid": "abu-dhabi-commercial-bank"
+      },
+      {
+        "symbol": "EGX:EGX30",
+        "logoid": "indices/egx-30-index"
+      },
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      },
+      {
+        "symbol": "BAHRAIN:BHBX",
+        "logoid": "indices/bahrain-all-share-index"
+      },
+      {
+        "symbol": "QSE:GNRI",
+        "logoid": "indices/qe-index"
+      },
+      {
+        "symbol": "TADAWUL:TASI",
+        "logoid": "indices/tadawul-all-shares-index"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2021:newsml_L1N2OU08Q:0-uae-bourses-tread-water-ahead-of-eid-holidays-egypt-gains/"
+  },
+  {
+    "id": "tag:reuters.com,2021:newsml_L4N2OP10M:0",
+    "title": "Commercial International Bank Q2 Consol Profit Rises",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1626149658,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2021:newsml_L4N2OP10M:0-commercial-international-bank-q2-consol-profit-rises/"
+  },
+  {
+    "id": "tag:reuters.com,2021:newsml_C6N2O501V:0",
+    "title": "Egypt's Commercial International Bank reports Q2 2021 consolidated revenue of 6.36 bln EGP, up 2% year-on-year -statement",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1626122157,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2021:newsml_C6N2O501V:0-egypt-s-commercial-international-bank-reports-q2-2021-consolidated-revenue-of-6-36-bln-egp-up-2-year-on-year-statement/"
+  },
+  {
+    "id": "tag:reuters.com,2021:newsml_C6N2MI006:0",
+    "title": "Egypt's Commercial International Bank Reports Q1 consolidated revenue of 6.27 billion Egyptian pounds - Statement",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1621628933,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2021:newsml_C6N2MI006:0-egypt-s-commercial-international-bank-reports-q1-consolidated-revenue-of-6-27-billion-egyptian-pounds-statement/"
+  },
+  {
+    "id": "tag:reuters.com,2021:newsml_L3N2KZ14M:0",
+    "title": "Commercial International Bank Q4 Profit Falls",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1614571246,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2021:newsml_L3N2KZ14M:0-commercial-international-bank-q4-profit-falls/"
+  },
+  {
+    "id": "tag:reuters.com,2020:newsml_L1N2IW0FA:0",
+    "title": "Egyptian lender CIB boosts provisions after c.bank review",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1608113076,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2020:newsml_L1N2IW0FA:0-egyptian-lender-cib-boosts-provisions-after-c-bank-review/"
+  },
+  {
+    "id": "tag:reuters.com,2020:newsml_C6N2FJ013:0",
+    "title": "Egyptian lender CIB makes loss provisions in accordance with central bank remarks",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1608101182,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2020:newsml_C6N2FJ013:0-egyptian-lender-cib-makes-loss-provisions-in-accordance-with-central-bank-remarks/"
+  },
+  {
+    "id": "tag:reuters.com,2020:newsml_L4N2IW18V:0",
+    "title": "Commercial International Bank Egypt Q3 Net Income Down 26%",
+    "provider": "reuters",
+    "sourceLogoId": "reuters",
+    "published": 1608094175,
+    "source": "Reuters",
+    "urgency": 2,
+    "permission": "preview",
+    "relatedSymbols": [
+      {
+        "symbol": "EGX:COMI",
+        "logoid": "commercial-international-bank-egypt"
+      }
+    ],
+    "storyPath": "/news/reuters.com,2020:newsml_L4N2IW18V:0-commercial-international-bank-egypt-q3-net-income-down-26/"
+  }
+]

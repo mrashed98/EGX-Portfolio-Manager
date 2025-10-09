@@ -122,6 +122,118 @@ async def get_stock_history(
         )
 
 
+@router.get("/{stock_id}/news", status_code=status.HTTP_200_OK)
+async def get_stock_news(
+    stock_id: int,
+    limit: int = QueryParam(default=10, description="Maximum number of news items"),
+    db: AsyncSession = Depends(get_db),
+    user_id: int = Depends(get_current_user_id)
+):
+    """Get news headlines for a stock"""
+    result = await db.execute(select(Stock).where(Stock.id == stock_id))
+    stock = result.scalar_one_or_none()
+    
+    if not stock:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Stock not found"
+        )
+    
+    try:
+        news_data = await tradingview_service.get_stock_news(
+            symbol=stock.symbol,
+            limit=limit
+        )
+        
+        return {
+            "symbol": stock.symbol,
+            "news": news_data
+        }
+    except Exception as e:
+        logger.error(f"Error fetching news for stock {stock.symbol}: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to fetch news: {str(e)}"
+        )
+
+
+@router.get("/{stock_id}/ideas", status_code=status.HTTP_200_OK)
+async def get_stock_ideas(
+    stock_id: int,
+    limit: int = QueryParam(default=5, description="Maximum number of ideas"),
+    db: AsyncSession = Depends(get_db),
+    user_id: int = Depends(get_current_user_id)
+):
+    """Get trading ideas for a stock"""
+    result = await db.execute(select(Stock).where(Stock.id == stock_id))
+    stock = result.scalar_one_or_none()
+    
+    if not stock:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Stock not found"
+        )
+    
+    try:
+        ideas_data = await tradingview_service.get_stock_ideas(
+            symbol=stock.symbol,
+            limit=limit
+        )
+        
+        return {
+            "symbol": stock.symbol,
+            "ideas": ideas_data
+        }
+    except Exception as e:
+        logger.error(f"Error fetching ideas for stock {stock.symbol}: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to fetch trading ideas: {str(e)}"
+        )
+
+
+@router.get("/calendar/earnings", status_code=status.HTTP_200_OK)
+async def get_earnings_calendar(
+    symbol: str = QueryParam(default=None, description="Optional symbol to filter by"),
+    db: AsyncSession = Depends(get_db),
+    user_id: int = Depends(get_current_user_id)
+):
+    """Get earnings calendar events"""
+    try:
+        earnings_data = await tradingview_service.get_earnings_calendar(symbol=symbol)
+        
+        return {
+            "earnings": earnings_data
+        }
+    except Exception as e:
+        logger.error(f"Error fetching earnings calendar: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to fetch earnings calendar: {str(e)}"
+        )
+
+
+@router.get("/calendar/dividends", status_code=status.HTTP_200_OK)
+async def get_dividend_calendar(
+    symbol: str = QueryParam(default=None, description="Optional symbol to filter by"),
+    db: AsyncSession = Depends(get_db),
+    user_id: int = Depends(get_current_user_id)
+):
+    """Get dividend calendar events"""
+    try:
+        dividends_data = await tradingview_service.get_dividend_calendar(symbol=symbol)
+        
+        return {
+            "dividends": dividends_data
+        }
+    except Exception as e:
+        logger.error(f"Error fetching dividend calendar: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to fetch dividend calendar: {str(e)}"
+        )
+
+
 @router.get("/{stock_id}/details", response_model=StockDetailResponse)
 async def get_stock_details(
     stock_id: int,
@@ -156,6 +268,17 @@ async def get_stock_details(
         change=stock.change,
         change_percent=stock.change_percent,
         recommendation=stock.recommendation,
+        market_cap=stock.market_cap,
+        pe_ratio=stock.pe_ratio,
+        eps=stock.eps,
+        dividend_yield=stock.dividend_yield,
+        beta=stock.beta,
+        price_to_book=stock.price_to_book,
+        price_to_sales=stock.price_to_sales,
+        roe=stock.roe,
+        debt_to_equity=stock.debt_to_equity,
+        current_ratio=stock.current_ratio,
+        quick_ratio=stock.quick_ratio,
     )
 
 
@@ -204,6 +327,17 @@ async def sync_all_stocks(
             existing_stock.change = tv_stock.get("change")
             existing_stock.change_percent = tv_stock.get("change_percent")
             existing_stock.recommendation = tv_stock.get("recommendation")
+            existing_stock.market_cap = tv_stock.get("market_cap")
+            existing_stock.pe_ratio = tv_stock.get("pe_ratio")
+            existing_stock.eps = tv_stock.get("eps")
+            existing_stock.dividend_yield = tv_stock.get("dividend_yield")
+            existing_stock.beta = tv_stock.get("beta")
+            existing_stock.price_to_book = tv_stock.get("price_to_book")
+            existing_stock.price_to_sales = tv_stock.get("price_to_sales")
+            existing_stock.roe = tv_stock.get("roe")
+            existing_stock.debt_to_equity = tv_stock.get("debt_to_equity")
+            existing_stock.current_ratio = tv_stock.get("current_ratio")
+            existing_stock.quick_ratio = tv_stock.get("quick_ratio")
             updated_count += 1
         else:
             # Add new stock
@@ -226,7 +360,18 @@ async def sync_all_stocks(
                 volume=tv_stock.get("volume"),
                 change=tv_stock.get("change"),
                 change_percent=tv_stock.get("change_percent"),
-                recommendation=tv_stock.get("recommendation")
+                recommendation=tv_stock.get("recommendation"),
+                market_cap=tv_stock.get("market_cap"),
+                pe_ratio=tv_stock.get("pe_ratio"),
+                eps=tv_stock.get("eps"),
+                dividend_yield=tv_stock.get("dividend_yield"),
+                beta=tv_stock.get("beta"),
+                price_to_book=tv_stock.get("price_to_book"),
+                price_to_sales=tv_stock.get("price_to_sales"),
+                roe=tv_stock.get("roe"),
+                debt_to_equity=tv_stock.get("debt_to_equity"),
+                current_ratio=tv_stock.get("current_ratio"),
+                quick_ratio=tv_stock.get("quick_ratio")
             )
             db.add(new_stock)
             added_count += 1
@@ -410,4 +555,137 @@ async def refresh_stock_prices(
         await strategy_service.create_snapshot(db, strategy.id)
     
     return {"message": "Stock prices and holdings refreshed successfully"}
+
+
+@router.get("/{stock_id}/ideas", status_code=status.HTTP_200_OK)
+async def get_stock_ideas(
+    stock_id: int,
+    limit: int = QueryParam(default=10, ge=1, le=50, description="Maximum number of ideas to return"),
+    db: AsyncSession = Depends(get_db),
+    user_id: int = Depends(get_current_user_id)
+):
+    """Get trading ideas for a stock from TradingView"""
+    result = await db.execute(select(Stock).where(Stock.id == stock_id))
+    stock = result.scalar_one_or_none()
+    
+    if not stock:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Stock not found"
+        )
+    
+    try:
+        ideas = await tradingview_service.get_stock_ideas(stock.symbol, limit=limit)
+        
+        return {
+            "symbol": stock.symbol,
+            "name": stock.name,
+            "ideas": ideas,
+            "count": len(ideas)
+        }
+    except Exception as e:
+        logger.error(f"Error fetching ideas for {stock.symbol}: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to fetch trading ideas: {str(e)}"
+        )
+
+
+@router.get("/{stock_id}/indicators", status_code=status.HTTP_200_OK)
+async def get_stock_indicators(
+    stock_id: int,
+    timeframe: str = QueryParam(default="1d", description="Timeframe (1d, 4h, 1h, etc.)"),
+    db: AsyncSession = Depends(get_db),
+    user_id: int = Depends(get_current_user_id)
+):
+    """Get all technical indicators for a stock from TradingView"""
+    result = await db.execute(select(Stock).where(Stock.id == stock_id))
+    stock = result.scalar_one_or_none()
+    
+    if not stock:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Stock not found"
+        )
+    
+    try:
+        indicators = await tradingview_service.get_technical_indicators(
+            stock.symbol,
+            timeframe=timeframe
+        )
+        
+        return {
+            "symbol": stock.symbol,
+            "name": stock.name,
+            "timeframe": timeframe,
+            "indicators": indicators,
+            "count": len(indicators)
+        }
+    except Exception as e:
+        logger.error(f"Error fetching indicators for {stock.symbol}: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to fetch technical indicators: {str(e)}"
+        )
+
+
+@router.get("/{stock_id}/metrics", status_code=status.HTTP_200_OK)
+async def get_stock_metrics(
+    stock_id: int,
+    db: AsyncSession = Depends(get_db),
+    user_id: int = Depends(get_current_user_id)
+):
+    """Get fundamental metrics for a stock from TradingView"""
+    result = await db.execute(select(Stock).where(Stock.id == stock_id))
+    stock = result.scalar_one_or_none()
+    
+    if not stock:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Stock not found"
+        )
+    
+    try:
+        metrics = await tradingview_service.get_stock_metrics(stock.symbol)
+        
+        return {
+            "symbol": stock.symbol,
+            "name": stock.name,
+            "metrics": metrics
+        }
+    except Exception as e:
+        logger.error(f"Error fetching metrics for {stock.symbol}: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to fetch stock metrics: {str(e)}"
+        )
+
+
+@router.get("/news/{story_path:path}/content", status_code=status.HTTP_200_OK)
+async def get_news_content(
+    story_path: str,
+    user_id: int = Depends(get_current_user_id)
+):
+    """Get full content for a specific news article from TradingView"""
+    try:
+        content = await tradingview_service.get_news_content(story_path)
+        
+        if not content:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="News content not found"
+            )
+        
+        return {
+            "story_path": story_path,
+            "content": content
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error fetching news content for {story_path}: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to fetch news content: {str(e)}"
+        )
 

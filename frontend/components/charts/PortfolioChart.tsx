@@ -6,7 +6,6 @@ import {
   CartesianGrid,
   Line,
   LineChart,
-  ResponsiveContainer,
   XAxis,
   YAxis,
 } from "recharts";
@@ -45,6 +44,90 @@ export function PortfolioChart({
     },
   };
 
+  // Check if we should render with Card wrapper or just the chart
+  const hasTitle = title && title !== "";
+  
+  const chartElement = (
+    <ChartContainer config={chartConfig} className="h-[350px] w-full">
+      {type === "area" ? (
+        <AreaChart data={data}>
+          <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
+          <XAxis
+            dataKey="date"
+            tickLine={false}
+            axisLine={false}
+            className="text-xs"
+            tickFormatter={(value) => {
+              const date = new Date(value);
+              return date.toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+              });
+            }}
+          />
+          <YAxis
+            tickLine={false}
+            axisLine={false}
+            className="text-xs"
+            tickFormatter={(value) => `${(value / 1000).toFixed(0)}K`}
+          />
+          <ChartTooltip 
+            content={<ChartTooltipContent />}
+            formatter={(value: any) => [`${Number(value).toFixed(2)} EGP`, 'Value']}
+          />
+          <Area
+            type="monotone"
+            dataKey={dataKey}
+            stroke="hsl(var(--chart-1))"
+            fill="hsl(var(--chart-1))"
+            fillOpacity={0.2}
+            strokeWidth={2}
+          />
+        </AreaChart>
+      ) : (
+        <LineChart data={data}>
+          <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
+          <XAxis
+            dataKey="date"
+            tickLine={false}
+            axisLine={false}
+            className="text-xs"
+            tickFormatter={(value) => {
+              const date = new Date(value);
+              return date.toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+              });
+            }}
+          />
+          <YAxis
+            tickLine={false}
+            axisLine={false}
+            className="text-xs"
+            tickFormatter={(value) => `${(value / 1000).toFixed(0)}K`}
+          />
+          <ChartTooltip 
+            content={<ChartTooltipContent />}
+            formatter={(value: any) => [`${Number(value).toFixed(2)} EGP`, 'Value']}
+          />
+          <Line
+            type="monotone"
+            dataKey={dataKey}
+            stroke="hsl(var(--chart-1))"
+            strokeWidth={2}
+            dot={false}
+          />
+        </LineChart>
+      )}
+    </ChartContainer>
+  );
+
+  // If no title/description, return just the chart (for use inside Card)
+  if (!hasTitle && !description) {
+    return chartElement;
+  }
+
+  // Otherwise, render with Card wrapper
   return (
     <Card>
       <CardHeader>
@@ -52,70 +135,7 @@ export function PortfolioChart({
         {description && <CardDescription>{description}</CardDescription>}
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig} className={`h-[${height}px]`}>
-          <ResponsiveContainer width="100%" height={height}>
-            {type === "area" ? (
-              <AreaChart data={data}>
-                <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
-                <XAxis
-                  dataKey="date"
-                  tickLine={false}
-                  axisLine={false}
-                  tickFormatter={(value) => {
-                    const date = new Date(value);
-                    return date.toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                    });
-                  }}
-                />
-                <YAxis
-                  tickLine={false}
-                  axisLine={false}
-                  tickFormatter={(value) => `${value.toFixed(0)}`}
-                />
-                <ChartTooltip content={<ChartTooltipContent />} />
-                <Area
-                  type="monotone"
-                  dataKey={dataKey}
-                  stroke="hsl(var(--chart-1))"
-                  fill="hsl(var(--chart-1))"
-                  fillOpacity={0.2}
-                  strokeWidth={2}
-                />
-              </AreaChart>
-            ) : (
-              <LineChart data={data}>
-                <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
-                <XAxis
-                  dataKey="date"
-                  tickLine={false}
-                  axisLine={false}
-                  tickFormatter={(value) => {
-                    const date = new Date(value);
-                    return date.toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                    });
-                  }}
-                />
-                <YAxis
-                  tickLine={false}
-                  axisLine={false}
-                  tickFormatter={(value) => `${value.toFixed(0)}`}
-                />
-                <ChartTooltip content={<ChartTooltipContent />} />
-                <Line
-                  type="monotone"
-                  dataKey={dataKey}
-                  stroke="hsl(var(--chart-1))"
-                  strokeWidth={2}
-                  dot={false}
-                />
-              </LineChart>
-            )}
-          </ResponsiveContainer>
-        </ChartContainer>
+        {chartElement}
       </CardContent>
     </Card>
   );

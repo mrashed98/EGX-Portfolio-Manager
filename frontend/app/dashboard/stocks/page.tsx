@@ -41,6 +41,7 @@ import {
   TrendingDown,
   Activity,
   BarChart3,
+  DollarSign,
 } from "lucide-react";
 
 interface Stock {
@@ -56,6 +57,18 @@ interface Stock {
   change?: number | null;
   change_percent?: number | null;
   volume?: number | null;
+  recommendation?: string | null;
+  market_cap?: number | null;
+  pe_ratio?: number | null;
+  eps?: number | null;
+  dividend_yield?: number | null;
+  beta?: number | null;
+  price_to_book?: number | null;
+  price_to_sales?: number | null;
+  roe?: number | null;
+  debt_to_equity?: number | null;
+  current_ratio?: number | null;
+  quick_ratio?: number | null;
 }
 
 type SortColumn =
@@ -63,6 +76,9 @@ type SortColumn =
   | "current_price"
   | "last_updated"
   | "change_percent"
+  | "recommendation"
+  | "market_cap"
+  | "pe_ratio"
   | "volume";
 type SortDirection = "asc" | "desc" | null;
 
@@ -73,6 +89,13 @@ const SCREENER_FILTERS = [
   { id: "high_volume", label: "High Volume", icon: Activity },
   { id: "large_cap", label: "Large Cap", icon: TrendingUp },
   { id: "small_cap", label: "Small Cap", icon: TrendingDown },
+  { id: "low_pe", label: "Low P/E", icon: TrendingUp },
+  { id: "high_dividend", label: "High Dividend", icon: DollarSign },
+  { id: "strong_buy", label: "Strong Buy", icon: TrendingUp },
+  { id: "buy", label: "Buy", icon: TrendingUp },
+  { id: "neutral", label: "Neutral", icon: Activity },
+  { id: "sell", label: "Sell", icon: TrendingDown },
+  { id: "strong_sell", label: "Strong Sell", icon: TrendingDown },
 ];
 
 export default function StocksPage() {
@@ -182,6 +205,34 @@ export default function StocksPage() {
         return stocks
           .filter((s) => s.current_price <= 10)
           .sort((a, b) => a.current_price - b.current_price);
+      case "low_pe":
+        return stocks
+          .filter((s) => s.pe_ratio !== null && s.pe_ratio! > 0 && s.pe_ratio! < 15)
+          .sort((a, b) => (a.pe_ratio || 0) - (b.pe_ratio || 0));
+      case "high_dividend":
+        return stocks
+          .filter((s) => s.dividend_yield !== null && s.dividend_yield! > 3)
+          .sort((a, b) => (b.dividend_yield || 0) - (a.dividend_yield || 0));
+      case "strong_buy":
+        return stocks
+          .filter((s) => s.recommendation === "STRONG_BUY")
+          .sort((a, b) => (b.change_percent || 0) - (a.change_percent || 0));
+      case "buy":
+        return stocks
+          .filter((s) => s.recommendation === "BUY")
+          .sort((a, b) => (b.change_percent || 0) - (a.change_percent || 0));
+      case "neutral":
+        return stocks
+          .filter((s) => s.recommendation === "NEUTRAL")
+          .sort((a, b) => (b.change_percent || 0) - (a.change_percent || 0));
+      case "sell":
+        return stocks
+          .filter((s) => s.recommendation === "SELL")
+          .sort((a, b) => (a.change_percent || 0) - (b.change_percent || 0));
+      case "strong_sell":
+        return stocks
+          .filter((s) => s.recommendation === "STRONG_SELL")
+          .sort((a, b) => (a.change_percent || 0) - (b.change_percent || 0));
       default:
         return stocks;
     }
@@ -489,6 +540,39 @@ export default function StocksPage() {
                     </Button>
                   </TableHead>
                   <TableHead className="text-right">Trend</TableHead>
+                  <TableHead className="text-center">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="h-8 px-2 mx-auto flex"
+                      onClick={() => handleSort("recommendation")}
+                    >
+                      Recommendation
+                      {getSortIcon("recommendation")}
+                    </Button>
+                  </TableHead>
+                  <TableHead className="text-right">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="h-8 px-2 ml-auto flex"
+                      onClick={() => handleSort("market_cap")}
+                    >
+                      Market Cap
+                      {getSortIcon("market_cap")}
+                    </Button>
+                  </TableHead>
+                  <TableHead className="text-right">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="h-8 px-2 ml-auto flex"
+                      onClick={() => handleSort("pe_ratio")}
+                    >
+                      P/E Ratio
+                      {getSortIcon("pe_ratio")}
+                    </Button>
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -565,6 +649,38 @@ export default function StocksPage() {
                           width={80}
                           height={30}
                         />
+                      </TableCell>
+                      <TableCell className="text-center">
+                        {stock.recommendation ? (
+                          <Badge
+                            variant="secondary"
+                            className={
+                              stock.recommendation.toLowerCase().includes("buy")
+                                ? "bg-green-100 text-green-800"
+                                : stock.recommendation.toLowerCase().includes("sell")
+                                ? "bg-red-100 text-red-800"
+                                : "bg-yellow-100 text-yellow-800"
+                            }
+                          >
+                            {stock.recommendation}
+                          </Badge>
+                        ) : (
+                          <span className="text-muted-foreground">-</span>
+                        )}
+                      </TableCell>
+                      <TableCell className="text-right font-mono text-sm">
+                        {stock.market_cap ? (
+                          `${(stock.market_cap / 1000000).toFixed(0)}M`
+                        ) : (
+                          <span className="text-muted-foreground">-</span>
+                        )}
+                      </TableCell>
+                      <TableCell className="text-right font-mono text-sm">
+                        {stock.pe_ratio ? (
+                          stock.pe_ratio.toFixed(2)
+                        ) : (
+                          <span className="text-muted-foreground">-</span>
+                        )}
                       </TableCell>
                     </TableRow>
                   );

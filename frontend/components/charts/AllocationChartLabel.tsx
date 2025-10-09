@@ -16,7 +16,7 @@ interface AllocationData {
   id?: number;
 }
 
-interface AllocationChartProps {
+interface AllocationChartLabelProps {
   data: AllocationData[];
   title?: string;
   description?: string;
@@ -38,14 +38,14 @@ const COLORS = [
   "hsl(27 87% 87%)", // Light orange
 ];
 
-export function AllocationChart({
+export function AllocationChartLabel({
   data,
   title = "Allocation",
   description,
   innerRadius = 60,
   outerRadius = 100,
   onStockClick,
-}: AllocationChartProps) {
+}: AllocationChartLabelProps) {
   // Calculate total value
   const totalValue = data.reduce((sum, item) => sum + item.value, 0);
 
@@ -70,7 +70,30 @@ export function AllocationChart({
     }, {} as any),
   } satisfies ChartConfig;
 
+  // Custom label renderer that shows symbol and percentage outside the chart
+  const renderCustomLabel = (props: any) => {
+    const { cx, cy, midAngle, outerRadius, name, percentage } = props;
+    const RADIAN = Math.PI / 180;
+    const radius = outerRadius + 30;
+    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
+    // Only show label if percentage is > 2% to avoid clutter
+    if (percentage < 2) return null;
+
+    return (
+      <text
+        x={x}
+        y={y}
+        fill="hsl(var(--foreground))"
+        textAnchor={x > cx ? "start" : "end"}
+        dominantBaseline="central"
+        className="text-xs font-medium"
+      >
+        {`${name}: ${percentage.toFixed(0)}%`}
+      </text>
+    );
+  };
 
   if (data.length === 0) {
     return (
@@ -97,9 +120,9 @@ export function AllocationChart({
       <CardContent className="flex-1 flex flex-col items-center justify-center pb-2">
         <ChartContainer
           config={chartConfig}
-          className="mx-auto aspect-square w-full h-[300px]"
+          className="mx-auto aspect-square max-h-[250px]"
         >
-          <PieChart width={300} height={300}>
+          <PieChart>
             <ChartTooltip
               cursor={false}
               content={<ChartTooltipContent hideLabel />}
@@ -112,11 +135,8 @@ export function AllocationChart({
               data={chartData}
               dataKey="value"
               nameKey="name"
-              cx="50%"
-              cy="50%"
-              outerRadius={100}
-              innerRadius={40}
               stroke="0"
+              label={renderCustomLabel}
               onClick={(data) => onStockClick?.(data.name, data.id)}
               className="cursor-pointer"
             >

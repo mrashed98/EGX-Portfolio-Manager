@@ -15,6 +15,7 @@ import {
   LogOut,
   Menu,
   X,
+  Calendar,
 } from "lucide-react";
 import { authService } from "@/lib/auth";
 import { Toaster } from "@/components/ui/toaster";
@@ -70,6 +71,7 @@ export default function DashboardLayout({
     { href: "/dashboard/strategies", label: "Strategies", icon: Target },
     { href: "/dashboard/holdings", label: "Holdings", icon: TrendingUp },
     { href: "/dashboard/watchlists", label: "Watchlists", icon: Eye },
+    { href: "/dashboard/calendar", label: "Calendar", icon: Calendar },
   ];
 
   return (
