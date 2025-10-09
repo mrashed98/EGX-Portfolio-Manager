@@ -1,10 +1,12 @@
 import asyncio
 from typing import List, Dict
-from datetime import datetime
+from datetime import datetime, timedelta
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from tradingview_screener import Query
 import logging
+import random
+import math
 
 from app.models.stock import Stock
 
@@ -445,6 +447,108 @@ class TradingViewService:
         except Exception as e:
             logger.error(f"Error fetching stock {symbol}: {str(e)}")
             return None
+    
+    async def get_stock_history(
+        self, 
+        symbol: str, 
+        interval: str = "1D", 
+        range_param: str = "1M"
+    ) -> List[Dict]:
+        """
+        Generate realistic historical stock data based on current price.
+        
+        Note: This is a temporary implementation that generates realistic mock data.
+        For production, integrate with a proper historical data provider like:
+        - Yahoo Finance API
+        - Alpha Vantage
+        - TradingView's historical data API (requires subscription)
+        
+        Args:
+            symbol: Stock symbol
+            interval: Time interval (1D, 1W, 1M, etc.)
+            range_param: Time range (1W, 1M, 3M, 6M, 1Y, ALL)
+        
+        Returns:
+            List of OHLCV data points
+        """
+        try:
+            # Fetch current stock info
+            stock_info = await self.fetch_stock_by_symbol(symbol)
+            if not stock_info:
+                return []
+            
+            current_price = stock_info.get("price", 100.0)
+            
+            # Determine number of data points based on range
+            range_days_map = {
+                "1W": 7,
+                "1M": 30,
+                "3M": 90,
+                "6M": 180,
+                "1Y": 365,
+                "ALL": 730  # 2 years
+            }
+            days = range_days_map.get(range_param, 30)
+            
+            # Generate historical data
+            history = []
+            base_volatility = 0.02  # 2% daily volatility
+            trend = random.uniform(-0.0005, 0.0005)  # Small trend
+            
+            # Start from a historical price and work forward to current
+            start_price = current_price / (1 + random.uniform(-0.15, 0.15))
+            
+            current_date = datetime.now() - timedelta(days=days)
+            price = start_price
+            
+            for i in range(days + 1):
+                # Generate realistic OHLC
+                # Daily return with drift and volatility
+                daily_return = trend + random.gauss(0, base_volatility)
+                
+                # Add some momentum/mean reversion
+                if i > 0:
+                    prev_return = (price - history[-1]["close"]) / history[-1]["close"]
+                    momentum = 0.1 * prev_return  # 10% momentum
+                    daily_return += momentum
+                
+                # Calculate OHLC
+                open_price = price
+                high_price = open_price * (1 + abs(random.gauss(0, base_volatility / 2)))
+                low_price = open_price * (1 - abs(random.gauss(0, base_volatility / 2)))
+                close_price = open_price * (1 + daily_return)
+                
+                # Ensure high and low make sense
+                high_price = max(high_price, open_price, close_price)
+                low_price = min(low_price, open_price, close_price)
+                
+                # Adjust final point to match current price
+                if i == days:
+                    close_price = current_price
+                    high_price = max(high_price, current_price)
+                    low_price = min(low_price, current_price)
+                
+                # Generate volume with some randomness
+                base_volume = 1000000
+                volume = base_volume * random.uniform(0.5, 2.0)
+                
+                history.append({
+                    "date": current_date.isoformat(),
+                    "open": round(open_price, 2),
+                    "high": round(high_price, 2),
+                    "low": round(low_price, 2),
+                    "close": round(close_price, 2),
+                    "volume": int(volume)
+                })
+                
+                price = close_price
+                current_date += timedelta(days=1)
+            
+            return history
+            
+        except Exception as e:
+            logger.error(f"Error generating stock history for {symbol}: {str(e)}")
+            return []
 
 
 tradingview_service = TradingViewService()

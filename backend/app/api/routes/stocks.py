@@ -82,6 +82,46 @@ async def get_stock(
     return stock
 
 
+@router.get("/{stock_id}/history", status_code=status.HTTP_200_OK)
+async def get_stock_history(
+    stock_id: int,
+    interval: str = QueryParam(default="1D", description="Time interval (1D, 1W, 1M)"),
+    range: str = QueryParam(default="1M", description="Time range (1W, 1M, 3M, 6M, 1Y, ALL)"),
+    db: AsyncSession = Depends(get_db),
+    user_id: int = Depends(get_current_user_id)
+):
+    """Get historical price data for a stock"""
+    result = await db.execute(select(Stock).where(Stock.id == stock_id))
+    stock = result.scalar_one_or_none()
+    
+    if not stock:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Stock not found"
+        )
+    
+    try:
+        # Fetch historical data from TradingView service
+        history = await tradingview_service.get_stock_history(
+            symbol=stock.symbol,
+            interval=interval,
+            range_param=range
+        )
+        
+        return {
+            "symbol": stock.symbol,
+            "interval": interval,
+            "range": range,
+            "data": history
+        }
+    except Exception as e:
+        logger.error(f"Error fetching history for stock {stock.symbol}: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to fetch historical data: {str(e)}"
+        )
+
+
 @router.get("/{stock_id}/details", response_model=StockDetailResponse)
 async def get_stock_details(
     stock_id: int,

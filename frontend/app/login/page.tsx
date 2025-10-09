@@ -1,98 +1,41 @@
-"use client";
-
-import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { authService } from "@/lib/auth";
-import { useToast } from "@/components/ui/use-toast";
+import { BarChart3 } from "lucide-react";
+import { LoginForm } from "@/components/login-form";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
-  const router = useRouter();
-  const { toast } = useToast();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      await authService.login({ email, password });
-      toast({
-        title: "Success",
-        description: "Logged in successfully!",
-      });
-      router.push("/dashboard");
-    } catch (error: any) {
-      toast({
-        title: "Error",
-        description: error.response?.data?.detail || "Login failed",
-        variant: "destructive",
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
-    <div className="flex min-h-screen items-center justify-center p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader>
-          <CardTitle>Login</CardTitle>
-          <CardDescription>
-            Enter your credentials to access your portfolio
-          </CardDescription>
-        </CardHeader>
-        <form onSubmit={handleSubmit}>
-          <CardContent className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="your@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
+    <div className="grid min-h-svh lg:grid-cols-2">
+      <div className="flex flex-col gap-4 p-6 md:p-10">
+        <div className="flex justify-center gap-2 md:justify-start">
+          <Link href="/" className="flex items-center gap-2 font-medium">
+            <div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary text-primary-foreground">
+              <BarChart3 className="size-4" />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-          </CardContent>
-          <CardFooter className="flex flex-col space-y-4">
-            <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? "Logging in..." : "Login"}
-            </Button>
-            <p className="text-sm text-muted-foreground text-center">
-              Don&apos;t have an account?{" "}
-              <Link href="/register" className="text-primary hover:underline">
-                Register
-              </Link>
+            <span className="font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+              FinSet
+            </span>
+          </Link>
+        </div>
+        <div className="flex flex-1 items-center justify-center">
+          <div className="w-full max-w-xs">
+            <LoginForm />
+          </div>
+        </div>
+      </div>
+      <div className="relative hidden bg-muted lg:block">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-background" />
+        <div className="absolute inset-0 flex items-center justify-center p-10">
+          <div className="max-w-md text-center space-y-4">
+            <h2 className="text-4xl font-bold tracking-tight">
+              Manage Your EGX Portfolio
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Track your investments, analyze performance, and make informed decisions
+              with comprehensive analytics and real-time data.
             </p>
-          </CardFooter>
-        </form>
-      </Card>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
-

@@ -4,13 +4,17 @@ import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator";
 import {
-  LayoutDashboard,
+  BarChart3,
   TrendingUp,
   Briefcase,
   Target,
   Eye,
   LogOut,
+  Menu,
+  X,
 } from "lucide-react";
 import { authService } from "@/lib/auth";
 import { Toaster } from "@/components/ui/toaster";
@@ -23,25 +27,44 @@ export default function DashboardLayout({
   const router = useRouter();
   const pathname = usePathname();
   const [loading, setLoading] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [userEmail, setUserEmail] = useState<string>("");
 
   useEffect(() => {
     if (!authService.isAuthenticated()) {
       router.push("/login");
     } else {
+      loadUser();
       setLoading(false);
     }
   }, [router]);
+
+  const loadUser = async () => {
+    try {
+      const user = await authService.getCurrentUser();
+      setUserEmail(user.email);
+    } catch (error) {
+      console.error("Failed to load user:", error);
+    }
+  };
 
   const handleLogout = () => {
     authService.logout();
   };
 
   if (loading) {
-    return <div className="flex min-h-screen items-center justify-center">Loading...</div>;
+    return (
+      <div className="flex min-h-screen items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Loading...</p>
+        </div>
+      </div>
+    );
   }
 
   const navItems = [
-    { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+    { href: "/dashboard", label: "Analytics", icon: BarChart3 },
     { href: "/dashboard/stocks", label: "Stocks", icon: TrendingUp },
     { href: "/dashboard/portfolios", label: "Portfolios", icon: Briefcase },
     { href: "/dashboard/strategies", label: "Strategies", icon: Target },
@@ -50,52 +73,130 @@ export default function DashboardLayout({
   ];
 
   return (
-    <div className="flex min-h-screen">
-      {/* Sidebar - Fixed */}
-      <div className="fixed left-0 top-0 h-screen w-64 border-r bg-muted/10 flex flex-col">
-        <div className="p-6">
-          <h2 className="text-2xl font-bold">EGX Portfolio</h2>
+    <div className="flex min-h-screen bg-background">
+      {/* Sidebar */}
+      <aside
+        className={`fixed left-0 top-0 h-screen border-r bg-card transition-all duration-300 z-50 ${
+          sidebarOpen ? "w-64" : "w-0 -translate-x-full"
+        }`}
+      >
+        <div className="flex h-full flex-col">
+          {/* Logo */}
+          <div className="p-6 border-b">
+            <Link href="/dashboard">
+              <h2 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+                FinSet
+              </h2>
+              <p className="text-xs text-muted-foreground mt-1">
+                EGX Portfolio Manager
+              </p>
+            </Link>
+          </div>
+
+          {/* Navigation */}
+          <nav className="flex-1 space-y-1 p-3 overflow-y-auto">
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              const isActive = pathname === item.href;
+              return (
+                <Link key={item.href} href={item.href}>
+                  <div
+                    className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all ${
+                      isActive
+                        ? "bg-primary text-primary-foreground shadow-sm"
+                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                    }`}
+                  >
+                    <Icon className="h-5 w-5" />
+                    <span>{item.label}</span>
+                  </div>
+                </Link>
+              );
+            })}
+          </nav>
+
+          <Separator />
+
+          {/* User Profile */}
+          <div className="p-4 border-t">
+            <div className="flex items-center gap-3 mb-3">
+              <Avatar>
+                <AvatarFallback className="bg-primary text-primary-foreground">
+                  {userEmail.charAt(0).toUpperCase() || "U"}
+                </AvatarFallback>
+              </Avatar>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-medium truncate">
+                  {userEmail.split("@")[0] || "User"}
+                </p>
+                <p className="text-xs text-muted-foreground">Investor</p>
+              </div>
+            </div>
+            <Button
+              variant="outline"
+              className="w-full justify-start"
+              size="sm"
+              onClick={handleLogout}
+            >
+              <LogOut className="mr-2 h-4 w-4" />
+              Logout
+            </Button>
+          </div>
         </div>
-        <nav className="flex-1 space-y-1 px-3 overflow-y-auto">
-          {navItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = pathname === item.href;
-            return (
-              <Link key={item.href} href={item.href}>
-                <div
-                  className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-colors ${
-                    isActive
-                      ? "bg-primary text-primary-foreground"
-                      : "hover:bg-muted"
-                  }`}
-                >
-                  <Icon className="h-5 w-5" />
-                  <span>{item.label}</span>
-                </div>
-              </Link>
-            );
-          })}
-        </nav>
-        <div className="p-4 border-t">
-          <Button
-            variant="outline"
-            className="w-full justify-start"
-            onClick={handleLogout}
-          >
-            <LogOut className="mr-2 h-4 w-4" />
-            Logout
-          </Button>
-        </div>
+      </aside>
+
+      {/* Mobile Menu Button */}
+      <button
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+        className="fixed top-4 left-4 z-50 lg:hidden p-2 rounded-md bg-card border shadow-sm"
+      >
+        {sidebarOpen ? (
+          <X className="h-5 w-5" />
+        ) : (
+          <Menu className="h-5 w-5" />
+        )}
+      </button>
+
+      {/* Main Content */}
+      <div
+        className={`flex-1 transition-all duration-300 ${
+          sidebarOpen ? "lg:ml-64" : "ml-0"
+        }`}
+      >
+        {/* Top Bar */}
+        <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+          <div className="flex h-16 items-center gap-4 px-8">
+            <button
+              onClick={() => setSidebarOpen(!sidebarOpen)}
+              className="hidden lg:flex p-2 rounded-md hover:bg-muted transition-colors"
+            >
+              {sidebarOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </button>
+            <div className="flex-1" />
+            <div className="flex items-center gap-2">
+              <div className="text-sm text-muted-foreground">
+                {new Date().toLocaleDateString("en-US", {
+                  weekday: "long",
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </div>
+            </div>
+          </div>
+        </header>
+
+        {/* Page Content */}
+        <main className="p-8">
+          {children}
+        </main>
       </div>
 
-      {/* Main Content - With left margin for sidebar */}
-      <div className="flex-1 ml-64">
-        <div className="p-8">
-          {children}
-        </div>
-      </div>
       <Toaster />
     </div>
   );
 }
-

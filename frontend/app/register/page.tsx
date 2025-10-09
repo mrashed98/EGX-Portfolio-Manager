@@ -1,119 +1,55 @@
-"use client";
-
-import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { authService } from "@/lib/auth";
-import { useToast } from "@/components/ui/use-toast";
+import { BarChart3 } from "lucide-react";
+import { SignupForm } from "@/components/signup-form";
 
 export default function RegisterPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [loading, setLoading] = useState(false);
-  const router = useRouter();
-  const { toast } = useToast();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (password !== confirmPassword) {
-      toast({
-        title: "Error",
-        description: "Passwords do not match",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setLoading(true);
-
-    try {
-      await authService.register({ email, password });
-      toast({
-        title: "Success",
-        description: "Account created successfully! Please log in.",
-      });
-      router.push("/login");
-    } catch (error: any) {
-      toast({
-        title: "Error",
-        description: error.response?.data?.detail || "Registration failed",
-        variant: "destructive",
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
-    <div className="flex min-h-screen items-center justify-center p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader>
-          <CardTitle>Register</CardTitle>
-          <CardDescription>
-            Create an account to start managing your portfolio
-          </CardDescription>
-        </CardHeader>
-        <form onSubmit={handleSubmit}>
-          <CardContent className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="your@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
+    <div className="grid min-h-svh lg:grid-cols-2">
+      <div className="flex flex-col gap-4 p-6 md:p-10">
+        <div className="flex justify-center gap-2 md:justify-start">
+          <Link href="/" className="flex items-center gap-2 font-medium">
+            <div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary text-primary-foreground">
+              <BarChart3 className="size-4" />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="confirmPassword">Confirm Password</Label>
-              <Input
-                id="confirmPassword"
-                type="password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                required
-              />
-            </div>
-          </CardContent>
-          <CardFooter className="flex flex-col space-y-4">
-            <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? "Creating account..." : "Register"}
-            </Button>
-            <p className="text-sm text-muted-foreground text-center">
-              Already have an account?{" "}
-              <Link href="/login" className="text-primary hover:underline">
-                Login
-              </Link>
+            <span className="font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+              FinSet
+            </span>
+          </Link>
+        </div>
+        <div className="flex flex-1 items-center justify-center">
+          <div className="w-full max-w-xs">
+            <SignupForm />
+          </div>
+        </div>
+      </div>
+      <div className="relative hidden bg-muted lg:block">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-background" />
+        <div className="absolute inset-0 flex items-center justify-center p-10">
+          <div className="max-w-md text-center space-y-4">
+            <h2 className="text-4xl font-bold tracking-tight">
+              Start Managing Your Portfolio Today
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Join FinSet to track your EGX investments with powerful analytics,
+              portfolio management tools, and real-time market data.
             </p>
-          </CardFooter>
-        </form>
-      </Card>
+            <div className="grid grid-cols-3 gap-4 pt-8">
+              <div className="space-y-2">
+                <div className="text-3xl font-bold text-primary">100+</div>
+                <div className="text-sm text-muted-foreground">EGX Stocks</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-3xl font-bold text-primary">Real-time</div>
+                <div className="text-sm text-muted-foreground">Updates</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-3xl font-bold text-primary">Free</div>
+                <div className="text-sm text-muted-foreground">Forever</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
-
