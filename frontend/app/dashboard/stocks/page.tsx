@@ -34,9 +34,12 @@ interface Stock {
   current_price: number;
   logo_url?: string | null;
   last_updated: string;
+  change?: number | null;
+  change_percent?: number | null;
+  volume?: number | null;
 }
 
-type SortColumn = "exchange" | "current_price" | "last_updated";
+type SortColumn = "exchange" | "current_price" | "last_updated" | "change_percent" | "volume";
 type SortDirection = "asc" | "desc" | null;
 
 export default function StocksPage() {
@@ -303,6 +306,28 @@ export default function StocksPage() {
                     {getSortIcon("current_price")}
                   </Button>
                 </TableHead>
+                <TableHead className="text-right">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="h-8 px-2 hover:bg-muted ml-auto flex"
+                    onClick={() => handleSort("change_percent")}
+                  >
+                    Change
+                    {getSortIcon("change_percent")}
+                  </Button>
+                </TableHead>
+                <TableHead className="text-right">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="h-8 px-2 hover:bg-muted ml-auto flex"
+                    onClick={() => handleSort("volume")}
+                  >
+                    Volume
+                    {getSortIcon("volume")}
+                  </Button>
+                </TableHead>
                 <TableHead>
                   <Button
                     variant="ghost"
@@ -338,6 +363,31 @@ export default function StocksPage() {
                   <TableCell>{stock.exchange}</TableCell>
                   <TableCell className="text-right">
                     {stock.current_price.toFixed(2)} EGP
+                  </TableCell>
+                  <TableCell className="text-right">
+                    {stock.change_percent !== null && stock.change_percent !== undefined ? (
+                      <div className="flex flex-col items-end">
+                        <span className={`font-medium ${stock.change_percent >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                          {stock.change_percent >= 0 ? '+' : ''}{stock.change_percent.toFixed(2)}%
+                        </span>
+                        {stock.change !== null && stock.change !== undefined && (
+                          <span className={`text-xs ${stock.change >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                            {stock.change >= 0 ? '+' : ''}{stock.change.toFixed(2)} EGP
+                          </span>
+                        )}
+                      </div>
+                    ) : (
+                      <span className="text-muted-foreground">-</span>
+                    )}
+                  </TableCell>
+                  <TableCell className="text-right">
+                    {stock.volume !== null && stock.volume !== undefined ? (
+                      <span className="font-mono text-sm">
+                        {stock.volume.toLocaleString()}
+                      </span>
+                    ) : (
+                      <span className="text-muted-foreground">-</span>
+                    )}
                   </TableCell>
                   <TableCell>
                     {new Date(stock.last_updated).toLocaleString()}

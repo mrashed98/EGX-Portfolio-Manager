@@ -22,6 +22,9 @@ class StockResponse(StockBase):
     logo_url: str | None = None
     sector: str | None = None
     industry: str | None = None
+    change: float | None = None
+    change_percent: float | None = None
+    volume: float | None = None
     last_updated: datetime
 
     class Config:
