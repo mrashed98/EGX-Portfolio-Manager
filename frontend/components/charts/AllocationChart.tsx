@@ -97,16 +97,21 @@ export function AllocationChart({
       <CardContent className="flex-1 flex flex-col items-center justify-center pb-2">
         <ChartContainer
           config={chartConfig}
-          className="mx-auto aspect-square w-full h-[300px]"
+          className="mx-auto aspect-square w-full h-[600px] [&_.recharts-pie-label-text]:fill-foreground [&_.recharts-label-line]:stroke-black [&_.recharts-label-line]:stroke-2"
         >
-          <PieChart width={300} height={300}>
+          <PieChart width={1500} height={1500}>
             <ChartTooltip
               cursor={false}
               content={<ChartTooltipContent hideLabel />}
-              formatter={(value: any, name: any) => [
-                `${Number(value).toFixed(2)} EGP`, 
-                name
-              ]}
+              formatter={(value: any, name: any, props: any) => {
+                const percentage = props.payload?.percentage || 0;
+                return [
+                  `${Number(value).toLocaleString('en-US', { 
+                    minimumFractionDigits: 2, 
+                    maximumFractionDigits: 2 
+                  })} EGP (${percentage.toFixed(1)}%)`
+                ];
+              }}
             />
             <Pie
               data={chartData}
@@ -114,9 +119,11 @@ export function AllocationChart({
               nameKey="name"
               cx="50%"
               cy="50%"
-              outerRadius={100}
-              innerRadius={40}
+              outerRadius={260}
+              innerRadius={200}
               stroke="0"
+              label={(entry: any) => entry.name}
+              labelLine={true}
               onClick={(data) => onStockClick?.(data.name, data.id)}
               className="cursor-pointer"
             >

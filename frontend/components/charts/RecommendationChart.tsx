@@ -105,41 +105,36 @@ export function RecommendationChart({
         <CardDescription>Based on TradingView analysis</CardDescription>
       </CardHeader>
       <CardContent className="flex flex-1 items-center justify-center pb-0">
-        <div className="w-full h-[400px] flex items-center justify-center relative">
+        <div className="w-full h-[600px] flex items-center justify-center relative">
           <RadialBarChart
             data={chartData}
             startAngle={180}
             endAngle={0}
-            innerRadius={100}
-            outerRadius={160}
-            width={400}
-            height={400}
+            innerRadius={200}
+            outerRadius={260}
+            width={1500}
+            height={1500}
           >
             <RadialBar
               dataKey="value"
               cornerRadius={10}
               fill={recData.color}
             />
-            <Label
-              content={() => {
-                return (
-                  <text
-                    x="50%"
-                    y="50%"
-                    textAnchor="middle"
-                    dominantBaseline="middle"
-                    className="text-3xl font-bold fill-foreground"
-                    style={{ color: recData.color }}
-                  >
-                    {recData.value}%
-                  </text>
-                );
-              }}
-            />
           </RadialBarChart>
+          {/* Score overlay */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="text-center">
+              <div 
+                className="text-8xl font-bold"
+                style={{ color: recData.color }}
+              >
+                {recData.value}%
+              </div>
+            </div>
+          </div>
         </div>
       </CardContent>
-      <div className="flex flex-col gap-2 text-sm p-6 pt-0">
+      <div className="flex flex-col gap-2 text-sm p-12 pt-0">
         <div className="flex items-center justify-center gap-2">
           <Badge
             variant="secondary"
