@@ -18,4 +18,5 @@ class Portfolio(Base):
     user: Mapped["User"] = relationship(back_populates="portfolios")
     snapshots: Mapped[list["PortfolioSnapshot"]] = relationship(back_populates="portfolio", cascade="all, delete-orphan")
     history: Mapped[list["PortfolioHistory"]] = relationship(back_populates="portfolio", cascade="all, delete-orphan")
+    holdings: Mapped[list["Holding"]] = relationship("Holding", back_populates="portfolio", foreign_keys="[Holding.portfolio_id]")
 

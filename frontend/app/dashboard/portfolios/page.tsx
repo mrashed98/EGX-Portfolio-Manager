@@ -19,7 +19,7 @@ import {
 import { useToast } from "@/components/ui/use-toast";
 import { TrendSparkline } from "@/components/charts/TrendSparkline";
 import api from "@/lib/api";
-import { Plus, Trash2, X, Edit, Eye, TrendingUp, TrendingDown, Briefcase } from "lucide-react";
+import { Plus, Trash2, X, Edit, Eye, TrendingUp, TrendingDown, Briefcase, GitCompare } from "lucide-react";
 
 interface Portfolio {
   id: number;
@@ -331,10 +331,21 @@ export default function PortfoliosPage() {
             Create and manage your stock portfolios
           </p>
         </div>
-        <Button onClick={() => setDialogOpen(true)}>
-          <Plus className="mr-2 h-4 w-4" />
-          Create Portfolio
-        </Button>
+        <div className="flex gap-2">
+          {portfolios.length >= 2 && (
+            <Button 
+              variant="outline"
+              onClick={() => router.push("/dashboard/portfolios/compare")}
+            >
+              <GitCompare className="mr-2 h-4 w-4" />
+              Compare
+            </Button>
+          )}
+          <Button onClick={() => setDialogOpen(true)}>
+            <Plus className="mr-2 h-4 w-4" />
+            Create Portfolio
+          </Button>
+        </div>
       </div>
 
       {portfolios.length === 0 ? (

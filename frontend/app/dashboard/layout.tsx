@@ -16,9 +16,17 @@ import {
   Menu,
   X,
   Calendar,
+  Wallet,
+  Plus,
+  RefreshCw,
+  Settings,
 } from "lucide-react";
 import { authService } from "@/lib/auth";
 import { Toaster } from "@/components/ui/toaster";
+import { useToast } from "@/components/ui/use-toast";
+import { OfflineAlert } from "@/components/layout/OfflineAlert";
+import { useGlobalShortcuts } from "@/hooks/useKeyboardShortcuts";
+import api from "@/lib/api";
 
 export default function DashboardLayout({
   children,
@@ -27,9 +35,15 @@ export default function DashboardLayout({
 }) {
   const router = useRouter();
   const pathname = usePathname();
+  const { toast } = useToast();
   const [loading, setLoading] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [userEmail, setUserEmail] = useState<string>("");
+  const [refreshing, setRefreshing] = useState(false);
+  const [lastRefresh, setLastRefresh] = useState<Date | null>(null);
+
+  // Enable global keyboard shortcuts
+  useGlobalShortcuts();
 
   useEffect(() => {
     if (!authService.isAuthenticated()) {
@@ -53,6 +67,39 @@ export default function DashboardLayout({
     authService.logout();
   };
 
+  const handleRefreshPrices = async () => {
+    setRefreshing(true);
+    try {
+      await api.post("/stocks/refresh");
+      setLastRefresh(new Date());
+      toast({
+        title: "Success",
+        description: "Stock prices refreshed successfully",
+      });
+    } catch (error) {
+      console.error("Failed to refresh prices:", error);
+      toast({
+        title: "Error",
+        description: "Failed to refresh stock prices",
+        variant: "destructive",
+      });
+    } finally {
+      setRefreshing(false);
+    }
+  };
+
+  const handleNewPortfolio = () => {
+    router.push("/dashboard/portfolios?action=new");
+  };
+
+  const handleNewStrategy = () => {
+    router.push("/dashboard/strategies?action=new");
+  };
+
+  const handleNewHolding = () => {
+    router.push("/dashboard/holdings?action=new");
+  };
+
   if (loading) {
     return (
       <div className="flex min-h-screen items-center justify-center">
@@ -69,9 +116,10 @@ export default function DashboardLayout({
     { href: "/dashboard/stocks", label: "Stocks", icon: TrendingUp },
     { href: "/dashboard/portfolios", label: "Portfolios", icon: Briefcase },
     { href: "/dashboard/strategies", label: "Strategies", icon: Target },
-    { href: "/dashboard/holdings", label: "Holdings", icon: TrendingUp },
+    { href: "/dashboard/holdings", label: "Holdings", icon: Wallet },
     { href: "/dashboard/watchlists", label: "Watchlists", icon: Eye },
     { href: "/dashboard/calendar", label: "Calendar", icon: Calendar },
+    { href: "/dashboard/settings", label: "Settings", icon: Settings },
   ];
 
   return (
@@ -116,6 +164,59 @@ export default function DashboardLayout({
               );
             })}
           </nav>
+
+          <Separator />
+
+          {/* Quick Actions */}
+          <div className="p-3 space-y-2">
+            <p className="text-xs font-semibold text-muted-foreground px-3 mb-2">
+              Quick Actions
+            </p>
+            <div className="space-y-1">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="w-full justify-start text-sm"
+                onClick={handleNewPortfolio}
+              >
+                <Plus className="h-4 w-4 mr-2" />
+                New Portfolio
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="w-full justify-start text-sm"
+                onClick={handleNewStrategy}
+              >
+                <Plus className="h-4 w-4 mr-2" />
+                New Strategy
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="w-full justify-start text-sm"
+                onClick={handleNewHolding}
+              >
+                <Plus className="h-4 w-4 mr-2" />
+                Add Holding
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="w-full justify-start text-sm"
+                onClick={handleRefreshPrices}
+                disabled={refreshing}
+              >
+                <RefreshCw className={`h-4 w-4 mr-2 ${refreshing ? "animate-spin" : ""}`} />
+                {refreshing ? "Refreshing..." : "Refresh Prices"}
+              </Button>
+            </div>
+            {lastRefresh && (
+              <p className="text-xs text-muted-foreground px-3 pt-2">
+                Last updated: {lastRefresh.toLocaleTimeString()}
+              </p>
+            )}
+          </div>
 
           <Separator />
 
@@ -198,6 +299,8 @@ export default function DashboardLayout({
         </main>
       </div>
 
+      {/* Global Components */}
+      <OfflineAlert />
       <Toaster />
     </div>
   );
