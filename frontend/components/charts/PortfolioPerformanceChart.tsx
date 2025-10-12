@@ -20,11 +20,16 @@ export function PortfolioPerformanceChart({
   title = "Portfolio Performance",
   description = "Value over time"
 }: PortfolioPerformanceChartProps) {
-  // Get initial value for percentage calculation
-  const initialValue = data.length > 0 ? data[0].value : 0;
+  // Sort data by date to ensure chronological order
+  const sortedData = [...data].sort((a, b) => 
+    new Date(a.date).getTime() - new Date(b.date).getTime()
+  );
+  
+  // Get initial value from the earliest date
+  const initialValue = sortedData.length > 0 ? sortedData[0].value : 0;
   
   // Transform data for chart - calculate percentage change
-  const chartData = data.map((point) => ({
+  const chartData = sortedData.map((point) => ({
     date: new Date(point.date).toLocaleDateString('en-US', { 
       month: 'short', 
       day: 'numeric' 
