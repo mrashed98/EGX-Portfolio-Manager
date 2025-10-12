@@ -324,7 +324,7 @@ export default function StrategyDetailPage() {
 
       <div className="grid gap-6">
         {/* Summary Section */}
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-5 gap-4">
           <Card>
             <CardContent className="pt-6">
               <Label className="text-xs text-muted-foreground">Initial Funds</Label>
@@ -338,6 +338,14 @@ export default function StrategyDetailPage() {
               <Label className="text-xs text-muted-foreground">Current Value</Label>
               <p className="text-2xl font-bold text-blue-600 mt-2">
                 {currentTotalValue.toFixed(2)} EGP
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="pt-6">
+              <Label className="text-xs text-muted-foreground">Profit/Loss</Label>
+              <p className={`text-2xl font-bold mt-2 ${(currentTotalValue - strategy.total_funds) >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                {(currentTotalValue - strategy.total_funds) >= 0 ? '+' : ''}{(currentTotalValue - strategy.total_funds).toFixed(2)} EGP
               </p>
             </CardContent>
           </Card>

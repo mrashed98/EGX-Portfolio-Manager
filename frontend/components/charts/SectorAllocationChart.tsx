@@ -1,8 +1,7 @@
 "use client";
 
-import { Pie, PieChart, Cell, ResponsiveContainer, Legend, Tooltip } from "recharts";
+import { ScatterChart, Scatter, XAxis, YAxis, ZAxis, CartesianGrid, ResponsiveContainer, Legend, Tooltip, Cell } from "recharts";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChartContainer, ChartTooltip } from "@/components/ui/chart";
 
 interface SectorAllocation {
   sector: string;
@@ -36,22 +35,19 @@ export function SectorAllocationChart({
   title = "Sector Allocation",
   description = "Portfolio distribution by sector"
 }: SectorAllocationChartProps) {
-  // Transform data for chart
+  // Transform data for bubble chart
+  // x-axis: index/position (for spreading)
+  // y-axis: allocation percentage
+  // z-axis (bubble size): stock count
   const chartData = data.map((item, index) => ({
+    x: index,
+    y: item.allocation_percent,
+    z: item.stock_count * 100, // Scale for better bubble visibility
     name: item.sector,
-    value: item.allocation_percent,
+    allocation: item.allocation_percent,
     stockCount: item.stock_count,
-    performance: item.avg_change_percent,
     fill: COLORS[index % COLORS.length],
   }));
-
-  const chartConfig = data.reduce((acc, item, index) => {
-    acc[item.sector] = {
-      label: item.sector,
-      color: COLORS[index % COLORS.length],
-    };
-    return acc;
-  }, {} as Record<string, { label: string; color: string }>);
 
   const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
@@ -61,7 +57,7 @@ export function SectorAllocationChart({
           <div className="space-y-1">
             <p className="font-semibold">{data.name}</p>
             <p className="text-sm text-muted-foreground">
-              Allocation: {data.value.toFixed(1)}%
+              Allocation: {(data.allocation || 0).toFixed(1)}%
             </p>
             <p className="text-sm text-muted-foreground">
               Stocks: {data.stockCount}
@@ -73,24 +69,24 @@ export function SectorAllocationChart({
     return null;
   };
 
-  const CustomLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }: any) => {
-    const RADIAN = Math.PI / 180;
-    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-    const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-    if (percent < 0.05) return null; // Don't show label if less than 5%
+  const renderCustomizedLabel = (props: any) => {
+    const { cx, cy, payload } = props;
+    
+    // Check if payload exists and has required properties
+    if (!payload || typeof payload.z === 'undefined' || payload.z < 200) {
+      return <g></g>;
+    }
 
     return (
       <text
-        x={x}
-        y={y}
+        x={cx}
+        y={cy}
         fill="white"
-        textAnchor={x > cx ? "start" : "end"}
+        textAnchor="middle"
         dominantBaseline="central"
         className="text-xs font-medium"
       >
-        {`${(percent * 100).toFixed(0)}%`}
+        {payload.name || 'Unknown'}
       </text>
     );
   };
@@ -111,6 +107,11 @@ export function SectorAllocationChart({
     );
   }
 
+  // Calculate ranges for better axis display
+  const maxAllocation = Math.max(...data.map(d => d.allocation_percent));
+  const minAllocation = Math.min(...data.map(d => d.allocation_percent));
+  const yAxisDomain = [Math.max(0, minAllocation - 5), maxAllocation + 5];
+
   return (
     <Card>
       <CardHeader>
@@ -118,36 +119,60 @@ export function SectorAllocationChart({
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig} className="h-[300px] w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <PieChart>
-              <Pie
-                data={chartData}
-                cx="50%"
-                cy="50%"
-                labelLine={false}
-                label={CustomLabel}
-                outerRadius={110}
-                fill="#8884d8"
-                dataKey="value"
-              >
-                {chartData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.fill} />
-                ))}
-              </Pie>
-              <Tooltip content={<CustomTooltip />} />
-              <Legend
-                verticalAlign="bottom"
-                height={36}
-                formatter={(value, entry: any) => (
-                  <span className="text-sm">
-                    {value} ({entry.payload.stockCount})
-                  </span>
-                )}
+        <ResponsiveContainer width="100%" height={400}>
+          <ScatterChart margin={{ top: 20, right: 20, bottom: 60, left: 20 }}>
+            <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
+            <XAxis
+              type="category"
+              dataKey="name"
+              name="Sector"
+              angle={-45}
+              textAnchor="end"
+              height={100}
+              tick={{ fontSize: 12 }}
+              interval={0}
+            />
+            <YAxis
+              type="number"
+              dataKey="y"
+              name="Allocation"
+              unit="%"
+              domain={yAxisDomain}
+              tick={{ fontSize: 12 }}
+            />
+            <ZAxis
+              type="number"
+              dataKey="z"
+              range={[400, 2000]}
+              name="Stock Count"
+            />
+            <Tooltip content={<CustomTooltip />} cursor={{ strokeDasharray: '3 3' }} />
+            <Scatter
+              data={chartData}
+              shape="circle"
+              label={renderCustomizedLabel}
+            >
+              {chartData.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={entry.fill} />
+              ))}
+            </Scatter>
+          </ScatterChart>
+        </ResponsiveContainer>
+        
+        {/* Legend */}
+        <div className="flex flex-wrap gap-3 justify-center mt-4">
+          {chartData.map((entry, index) => (
+            <div key={index} className="flex items-center gap-2">
+              <div
+                className="w-3 h-3 rounded-full"
+                style={{ backgroundColor: entry.fill }}
               />
-            </PieChart>
-          </ResponsiveContainer>
-        </ChartContainer>
+              <span className="text-xs text-muted-foreground">
+                {entry.name} ({entry.stockCount})
+              </span>
+            </div>
+          ))}
+        </div>
       </CardContent>
     </Card>
   );

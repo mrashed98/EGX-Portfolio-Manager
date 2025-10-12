@@ -8,9 +8,11 @@ from app.core.security import get_current_user_id
 from app.models.stock import Stock
 from app.models.strategy import Strategy
 from app.models.holding import Holding
+from app.models.portfolio import Portfolio
 from app.schemas.stock import StockResponse, StockCreate, StockDetailResponse
 from app.services.tradingview_service import tradingview_service
 from app.services.strategy_service import strategy_service
+from app.services.portfolio_service import portfolio_service
 
 router = APIRouter(prefix="/stocks", tags=["stocks"])
 logger = logging.getLogger(__name__)
@@ -554,7 +556,15 @@ async def refresh_stock_prices(
     for strategy in strategies:
         await strategy_service.create_snapshot(db, strategy.id)
     
-    return {"message": "Stock prices and holdings refreshed successfully"}
+    # Get all portfolios that need snapshot updates
+    portfolios_result = await db.execute(select(Portfolio))
+    portfolios = portfolios_result.scalars().all()
+    
+    # Create new snapshots for all portfolios
+    for portfolio in portfolios:
+        await portfolio_service.create_snapshot(db, portfolio.id)
+    
+    return {"message": "Stock prices, holdings, and portfolio snapshots refreshed successfully"}
 
 
 @router.get("/{stock_id}/ideas", status_code=status.HTTP_200_OK)
