@@ -260,9 +260,13 @@ export default function DashboardLayout({
               </div>
 
               <Separator />
+            </>
+          )}
 
-              {/* User Profile */}
-              <div className="p-4 border-t">
+          {/* User Profile - Always visible */}
+          <div className="p-4 border-t mt-auto">
+            {sidebarOpen ? (
+              <>
                 <div className="flex items-center gap-3 mb-3">
                   <Avatar>
                     <AvatarFallback className="bg-primary text-primary-foreground">
@@ -285,9 +289,26 @@ export default function DashboardLayout({
                   <LogOut className="mr-2 h-4 w-4" />
                   Logout
                 </Button>
+              </>
+            ) : (
+              <div className="flex flex-col items-center gap-2">
+                <Avatar className="h-8 w-8">
+                  <AvatarFallback className="bg-primary text-primary-foreground text-xs">
+                    {userEmail.charAt(0).toUpperCase() || "U"}
+                  </AvatarFallback>
+                </Avatar>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={handleLogout}
+                  title="Logout"
+                  className="h-8 w-8"
+                >
+                  <LogOut className="h-4 w-4" />
+                </Button>
               </div>
-            </>
-          )}
+            )}
+          </div>
         </div>
       </aside>
 

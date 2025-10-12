@@ -236,6 +236,7 @@ export default function PortfolioComparePage() {
         <CardContent>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {portfolios.map((portfolio) => {
+              if (!portfolio || !portfolio.name) return null;
               const isSelected = selectedIds.includes(portfolio.id);
               return (
                 <div
@@ -253,7 +254,7 @@ export default function PortfolioComparePage() {
                   <div className="flex-1 min-w-0">
                     <p className="font-medium truncate">{portfolio.name}</p>
                     <p className="text-sm text-muted-foreground">
-                      {portfolio.stock_ids.length} stocks
+                      {portfolio.stock_ids?.length || 0} stocks
                     </p>
                   </div>
                 </div>
@@ -286,31 +287,38 @@ export default function PortfolioComparePage() {
         <div className="text-center py-12">Loading comparison data...</div>
       ) : performances.length > 0 ? (
         <>
-          {/* Summary Stats */}
+          {/* Summary Stats - Performance Focus */}
           <div className="grid gap-4 md:grid-cols-4">
-            {performances.map((perf) => {
+            {performances.filter(p => p && p.portfolio_name).map((perf) => {
               const isPositive = perf.change_percent >= 0;
               return (
-                <Card key={perf.portfolio_id}>
+                <Card key={perf.portfolio_id} className={`border-2 ${
+                  isPositive ? "border-green-200 bg-green-50/50" : "border-red-200 bg-red-50/50"
+                }`}>
                   <CardHeader className="pb-2">
                     <CardTitle className="text-sm font-medium truncate">
-                      {perf.portfolio_name}
+                      {perf.portfolio_name || 'Unknown Portfolio'}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="space-y-1">
-                      <div className="text-2xl font-bold">
-                        {formatCurrency(perf.current_value, 0)}
-                      </div>
-                      <div className={`flex items-center gap-1 text-sm ${
+                    <div className="space-y-2">
+                      <div className={`flex items-center gap-2 ${
                         isPositive ? "text-green-600" : "text-red-600"
                       }`}>
                         {isPositive ? (
-                          <TrendingUp className="h-3 w-3" />
+                          <TrendingUp className="h-5 w-5" />
                         ) : (
-                          <TrendingDown className="h-3 w-3" />
+                          <TrendingDown className="h-5 w-5" />
                         )}
-                        {formatPercent(perf.change_percent, 2, true)}
+                        <span className="text-3xl font-bold">
+                          {formatPercent(perf.change_percent || 0, 2, true)}
+                        </span>
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        Value: {formatCurrency(perf.current_value || 0, 0)}
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        Change: {formatCurrency(perf.change || 0, 2)}
                       </div>
                     </div>
                   </CardContent>
@@ -325,18 +333,18 @@ export default function PortfolioComparePage() {
           {/* Risk/Return Analysis */}
           <div className="grid gap-4 md:grid-cols-2">
             <RiskReturnScatter
-              data={performances.map((perf) => {
-                const values = perf.time_series.map((point) => point.value);
+              data={performances.filter(p => p && p.portfolio_name && p.time_series).map((perf) => {
+                const values = perf.time_series?.map((point) => point?.value || 0).filter(v => v > 0) || [];
                 return {
-                  name: perf.portfolio_name,
-                  return: perf.change_percent,
-                  risk: calculateVolatility(values),
-                  value: perf.current_value,
+                  name: perf.portfolio_name || 'Unknown',
+                  return: perf.change_percent || 0,
+                  risk: values.length > 0 ? calculateVolatility(values) : 0,
+                  value: perf.current_value || 0,
                 };
               })}
             />
             <CorrelationMatrix
-              data={performances}
+              data={performances.filter(p => p && p.portfolio_name)}
               calculateCorrelation={calculateCorrelation}
             />
           </div>

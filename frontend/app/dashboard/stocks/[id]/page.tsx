@@ -593,14 +593,14 @@ export default function StockDetailPage() {
         </CardContent>
       </Card>
 
-      {/* Stock Information and Recommendation Chart */}
-      <div className="grid gap-4 md:grid-cols-2">
-        {/* Recommendation Chart - FIXED */}
-        <RecommendationChart
-          recommendation={stock.recommendation}
-          className="w-full"
-        />
+      {/* Recommendation Charts - Full Width */}
+      <RecommendationChart
+        recommendation={stock.recommendation}
+        className="grid md:grid-cols-2 gap-4"
+      />
 
+      {/* Stock Information Grid */}
+      <div className="grid gap-4 md:grid-cols-2">
         {/* Additional Stock Metrics - ENHANCED: Load from /metrics endpoint */}
         <Card>
           <CardHeader>
@@ -718,10 +718,8 @@ export default function StockDetailPage() {
             )}
           </CardContent>
         </Card>
-      </div>
 
-      {/* Company Information */}
-      <div className="grid gap-4 md:grid-cols-2">
+        {/* Company Information */}
         <Card>
           <CardHeader>
             <CardTitle>Company Information</CardTitle>

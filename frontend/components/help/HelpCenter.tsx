@@ -37,6 +37,7 @@ interface HelpArticle {
   content: string;
   icon: React.ReactNode;
   tags: string[];
+  imageUrl?: string;
 }
 
 const helpArticles: HelpArticle[] = [
@@ -46,21 +47,26 @@ const helpArticles: HelpArticle[] = [
     category: "Portfolios",
     icon: <Target className="h-5 w-5" />,
     tags: ["portfolio", "beginner", "getting started"],
-    content: `
-# Creating Your First Portfolio
+    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
+    content: `A portfolio is a collection of stocks you want to track together. Here's how to create one:
 
-A portfolio is a collection of stocks you want to track together. Here's how to create one:
+**Step 1: Navigate to Portfolios**
+Click on "Portfolios" in the sidebar to access the portfolios page.
 
-1. **Navigate to Portfolios** - Click on "Portfolios" in the sidebar
-2. **Click "Create Portfolio"** - Enter a name for your portfolio
-3. **Add Stocks** - Select stocks from the Egyptian Exchange (EGX)
-4. **Track Performance** - View real-time performance, sector allocation, and historical changes
+**Step 2: Click "Create Portfolio"**
+Enter a descriptive name for your portfolio that reflects its purpose or strategy.
+
+**Step 3: Add Stocks**
+Select stocks from the Egyptian Exchange (EGX) to include in your portfolio. You can add multiple stocks at once.
+
+**Step 4: Track Performance**
+View real-time performance, sector allocation, and historical changes of your portfolio.
 
 **Pro Tips:**
-- Create separate portfolios for different investment strategies (growth, dividend, etc.)
-- Use sector allocation charts to ensure diversification
-- Export portfolio data for external analysis
-    `
+• Create separate portfolios for different investment strategies (growth, dividend, etc.)
+• Use sector allocation charts to ensure diversification
+• Export portfolio data for external analysis
+• Review and rebalance your portfolio regularly`
   },
   {
     id: "strategies-guide",
@@ -68,28 +74,36 @@ A portfolio is a collection of stocks you want to track together. Here's how to 
     category: "Strategies",
     icon: <TrendingUp className="h-5 w-5" />,
     tags: ["strategy", "automation", "rebalancing"],
-    content: `
-# Building Investment Strategies
-
-Strategies allow you to automate your investment decisions with custom allocation rules.
+    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
+    content: `Strategies allow you to automate your investment decisions with custom allocation rules.
 
 **Key Concepts:**
-- **Initial Funds**: The total amount you want to invest
-- **Stock Allocation**: Percentage of funds allocated to each stock
-- **Rebalancing**: Adjusting holdings to match target allocation
+
+**Initial Funds:** The total amount you want to invest across all stocks in the strategy.
+
+**Stock Allocation:** Percentage of funds allocated to each stock. The total must equal 100%.
+
+**Rebalancing:** Adjusting holdings to match your target allocation when market movements cause drift.
 
 **Creating a Strategy:**
-1. Go to Strategies page
-2. Click "Create Strategy"
-3. Set your initial funds
-4. Add stocks with target allocations (must total 100%)
-5. Execute to create holdings
 
-**Rebalancing:**
-- View suggested actions to match target allocation
-- Execute rebalancing when market conditions change
-- Undo actions if needed
-    `
+1. Navigate to the Strategies page
+2. Click "Create Strategy" button
+3. Enter your initial investment funds
+4. Add stocks with target allocations (must total 100%)
+5. Execute the strategy to create actual holdings
+
+**Rebalancing Your Strategy:**
+
+• View suggested actions to match target allocation
+• Execute rebalancing when market conditions change
+• Undo actions if you made a mistake
+• Track historical rebalancing actions
+
+**Best Practices:**
+• Start with equal-weight allocations if unsure
+• Rebalance quarterly or when allocation drifts >5%
+• Document your investment thesis for each holding`
   },
   {
     id: "holdings-management",
@@ -97,25 +111,30 @@ Strategies allow you to automate your investment decisions with custom allocatio
     category: "Holdings",
     icon: <Wallet className="h-5 w-5" />,
     tags: ["holdings", "stocks", "manual"],
-    content: `
-# Managing Your Holdings
-
-Holdings represent your actual stock positions. You can manage them in multiple ways:
+    imageUrl: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&auto=format&fit=crop",
+    content: `Holdings represent your actual stock positions. You can manage them in multiple ways:
 
 **Adding Holdings:**
-- **From Strategy**: Execute a strategy to automatically create holdings
-- **Manual Entry**: Add stocks independently with custom purchase dates and prices
-- **Import CSV**: Bulk import holdings from a CSV file
+
+**From Strategy:** Execute a strategy to automatically create holdings based on your allocation rules.
+
+**Manual Entry:** Add stocks independently with custom purchase dates and prices for holdings you already own.
+
+**Import CSV:** Bulk import holdings from a CSV file for quick setup.
 
 **Mapping Holdings:**
-- Link unmapped holdings to existing portfolios or strategies
-- Track holdings across multiple portfolios
+
+• Link unmapped holdings to existing portfolios or strategies
+• Track the same holdings across multiple portfolios
+• Organize your investments for better analysis
 
 **Viewing Holdings:**
-- **Treemap View**: Visual representation of allocation
-- **Table View**: Detailed list with prices and performance
-- **Filters**: View all, mapped, or unmapped holdings
-    `
+
+**Treemap View:** Visual representation of your portfolio allocation by value
+
+**Table View:** Detailed list with current prices, purchase prices, and performance metrics
+
+**Filters:** Easily switch between all holdings, mapped, or unmapped holdings`
   },
   {
     id: "stocks-analysis",
@@ -123,28 +142,34 @@ Holdings represent your actual stock positions. You can manage them in multiple 
     category: "Stocks",
     icon: <LineChart className="h-5 w-5" />,
     tags: ["stocks", "analysis", "research"],
-    content: `
-# Stock Analysis & Research
-
-Explore the complete universe of EGX stocks with comprehensive data:
+    imageUrl: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop",
+    content: `Explore the complete universe of EGX stocks with comprehensive data:
 
 **Stock Information:**
-- **Price Data**: Real-time prices, OHLC data, volume
-- **Recommendations**: Buy/Sell/Hold signals from TradingView
-- **Fundamentals**: P/E ratio, EPS, dividend yield, market cap
-- **Technical**: Beta, 52-week high/low, moving averages
+
+**Price Data:** Real-time prices, OHLC (Open, High, Low, Close), and trading volume
+
+**Recommendations:** Buy/Sell/Hold signals sourced from TradingView analysis
+
+**Fundamentals:** P/E ratio, EPS, dividend yield, market cap, and other key metrics
+
+**Technical Indicators:** Beta, 52-week highs/lows, and moving averages
 
 **Features:**
-- **Search & Filter**: Find stocks by symbol, sector, or metrics
-- **Watchlists**: Save interesting stocks for monitoring
-- **Stock Details**: Dive deep into individual stock data
-- **Price History**: View historical price charts
+
+**Search & Filter:** Find stocks by symbol, sector, industry, or specific metrics
+
+**Watchlists:** Save interesting stocks for monitoring and quick access
+
+**Stock Details:** Dive deep into individual stock data with comprehensive charts
+
+**Price History:** View historical price movements and trends
 
 **Pro Tips:**
-- Use recommendations to identify potential opportunities
-- Compare stocks within the same sector
-- Set up watchlists for different themes (value, growth, dividend)
-    `
+• Use recommendations to identify potential opportunities
+• Compare stocks within the same sector for relative valuation
+• Create themed watchlists (value stocks, growth stocks, dividend payers)
+• Monitor stock fundamentals alongside technical indicators`
   },
   {
     id: "tradingview-integration",
@@ -152,34 +177,37 @@ Explore the complete universe of EGX stocks with comprehensive data:
     category: "Settings",
     icon: <Settings className="h-5 w-5" />,
     tags: ["tradingview", "integration", "data"],
-    content: `
-# TradingView Integration
-
-Connect your TradingView account for enhanced real-time market data.
+    imageUrl: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&auto=format&fit=crop",
+    content: `Connect your TradingView account for enhanced real-time market data.
 
 **Benefits:**
-- Real-time price updates
-- Enhanced historical data access
-- Priority data fetching
-- Advanced technical indicators
+
+• Real-time price updates without delays
+• Enhanced historical data access for deeper analysis
+• Priority data fetching for faster load times
+• Access to advanced technical indicators
 
 **How to Connect:**
-1. Go to Settings page
-2. Scroll to "TradingView Integration"
-3. Enter your TradingView credentials
-4. Click "Connect TradingView Account"
-5. Test connection to verify
+
+1. Navigate to the Settings page from the sidebar
+2. Scroll down to the "TradingView Integration" section
+3. Enter your TradingView username and password
+4. Click "Connect TradingView Account" button
+5. Test the connection to verify it's working
 
 **Security:**
-- Your credentials are encrypted and stored securely
-- You can disconnect at any time
-- Connection status is always visible
+
+• Your credentials are encrypted using industry-standard encryption
+• You can disconnect your account at any time
+• Connection status is always visible in settings
+• We never store your password in plain text
 
 **Troubleshooting:**
-- Ensure credentials are correct
-- Check your TradingView account is active
-- Test connection after setup
-    `
+
+• Double-check that your credentials are entered correctly
+• Verify your TradingView account is active and in good standing
+• Use the "Test Connection" button after connecting
+• If issues persist, try disconnecting and reconnecting`
   },
   {
     id: "keyboard-shortcuts",
@@ -187,29 +215,30 @@ Connect your TradingView account for enhanced real-time market data.
     category: "Tips",
     icon: <Keyboard className="h-5 w-5" />,
     tags: ["shortcuts", "productivity", "tips"],
-    content: `
-# Keyboard Shortcuts
+    imageUrl: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&auto=format&fit=crop",
+    content: `Master these keyboard shortcuts to navigate faster and boost your productivity:
 
-Master these shortcuts to navigate faster:
+**Navigation Shortcuts:**
 
-**Navigation:**
-- **⌘/Ctrl + K**: Quick search
-- **⌘/Ctrl + H**: Go to Holdings
-- **⌘/Ctrl + P**: Go to Portfolios
-- **⌘/Ctrl + S**: Go to Strategies
-- **⌘/Ctrl + B**: Go to Stocks
+• **⌘/Ctrl + K** - Quick search across the app
+• **⌘/Ctrl + H** - Jump to Holdings page
+• **⌘/Ctrl + P** - Jump to Portfolios page
+• **⌘/Ctrl + S** - Jump to Strategies page
+• **⌘/Ctrl + B** - Jump to Stocks page
 
-**Actions:**
-- **⌘/Ctrl + N**: Create new (context-aware)
-- **⌘/Ctrl + R**: Refresh prices
-- **⌘/Ctrl + ?**: Open help center
-- **Esc**: Close dialogs
+**Action Shortcuts:**
+
+• **⌘/Ctrl + N** - Create new (context-aware based on current page)
+• **⌘/Ctrl + R** - Refresh stock prices
+• **⌘/Ctrl + /** - Open this help center
+• **Esc** - Close any open dialog or modal
 
 **Pro Tips:**
-- Most dialogs can be closed with Esc
-- Use Tab to navigate form fields
-- Search is available on most list pages
-    `
+
+• Most dialogs and modals can be closed by pressing Esc
+• Use Tab to navigate between form fields efficiently
+• Search functionality is available on most list pages
+• Hold Shift while using shortcuts for additional actions`
   },
 ];
 
@@ -234,8 +263,8 @@ export function HelpCenter({ open, onOpenChange, defaultArticle }: HelpCenterPro
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl h-[80vh]">
-        <DialogHeader>
+      <DialogContent className="max-w-4xl max-h-[85vh] flex flex-col">
+        <DialogHeader className="flex-shrink-0">
           <DialogTitle className="flex items-center gap-2">
             <HelpCircle className="h-5 w-5" />
             Help Center
@@ -245,7 +274,7 @@ export function HelpCenter({ open, onOpenChange, defaultArticle }: HelpCenterPro
           </DialogDescription>
         </DialogHeader>
 
-        <div className="flex h-full gap-4">
+        <div className="flex flex-1 gap-4 overflow-hidden min-h-0">
           {/* Articles List */}
           {!selectedArticle && (
             <div className="flex-1 flex flex-col gap-4">
@@ -355,12 +384,12 @@ export function HelpCenter({ open, onOpenChange, defaultArticle }: HelpCenterPro
 
           {/* Article Content */}
           {selectedArticle && (
-            <div className="flex-1 flex flex-col">
+            <div className="flex-1 flex flex-col overflow-hidden">
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setSelectedArticle(null)}
-                className="self-start mb-4"
+                className="self-start mb-3 flex-shrink-0"
               >
                 <ChevronRight className="h-4 w-4 mr-1 rotate-180" />
                 Back to articles
@@ -368,38 +397,104 @@ export function HelpCenter({ open, onOpenChange, defaultArticle }: HelpCenterPro
 
               <ScrollArea className="flex-1 pr-4">
                 <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className="p-3 rounded-lg bg-primary/10 text-primary">
-                      {selectedArticle.icon}
+                  {/* Header Image */}
+                  {selectedArticle.imageUrl && (
+                    <div className="relative w-full h-32 rounded-lg overflow-hidden">
+                      <img 
+                        src={selectedArticle.imageUrl} 
+                        alt={selectedArticle.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
+                      <div className="absolute bottom-3 left-3 flex items-center gap-2">
+                        <div className="p-1.5 rounded-lg bg-background/95 backdrop-blur-sm">
+                          {selectedArticle.icon}
+                        </div>
+                        <div>
+                          <h2 className="text-xl font-bold text-foreground">{selectedArticle.title}</h2>
+                          <Badge variant="secondary" className="mt-0.5 text-xs">
+                            {selectedArticle.category}
+                          </Badge>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <h2 className="text-2xl font-bold">{selectedArticle.title}</h2>
-                      <Badge variant="secondary" className="mt-1">
-                        {selectedArticle.category}
-                      </Badge>
-                    </div>
-                  </div>
+                  )}
 
-                  <div className="prose prose-sm dark:prose-invert max-w-none">
+                  {/* No image fallback */}
+                  {!selectedArticle.imageUrl && (
+                    <div className="flex items-center gap-3 pb-3 border-b">
+                      <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                        {selectedArticle.icon}
+                      </div>
+                      <div>
+                        <h2 className="text-xl font-bold">{selectedArticle.title}</h2>
+                        <Badge variant="secondary" className="mt-0.5 text-xs">
+                          {selectedArticle.category}
+                        </Badge>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Article Content */}
+                  <div className="prose prose-sm dark:prose-invert max-w-none space-y-3">
                     {selectedArticle.content.split('\n').map((line, i) => {
-                      if (line.startsWith('# ')) {
-                        return <h1 key={i} className="text-2xl font-bold mt-6 mb-4">{line.slice(2)}</h1>;
-                      } else if (line.startsWith('## ')) {
-                        return <h2 key={i} className="text-xl font-semibold mt-5 mb-3">{line.slice(3)}</h2>;
-                      } else if (line.startsWith('**') && line.endsWith('**')) {
-                        return <p key={i} className="font-semibold mt-4 mb-2">{line.slice(2, -2)}</p>;
-                      } else if (line.startsWith('- ')) {
-                        return <li key={i} className="ml-4">{line.slice(2)}</li>;
-                      } else if (line.trim()) {
-                        return <p key={i} className="mb-2 text-muted-foreground">{line}</p>;
+                      const trimmedLine = line.trim();
+                      
+                      // Skip empty lines
+                      if (!trimmedLine) {
+                        return <div key={i} className="h-1" />;
                       }
-                      return null;
+                      
+                      // Bold headers (text between **)
+                      if (trimmedLine.startsWith('**') && trimmedLine.includes('**')) {
+                        const text = trimmedLine.replace(/\*\*/g, '');
+                        // Check if it's a header (ends with :)
+                        if (text.endsWith(':')) {
+                          return (
+                            <h3 key={i} className="text-base font-bold mt-4 mb-2 text-foreground">
+                              {text.slice(0, -1)}
+                            </h3>
+                          );
+                        }
+                        return (
+                          <p key={i} className="font-bold text-foreground mt-3 mb-1.5">
+                            {text}
+                          </p>
+                        );
+                      }
+                      
+                      // Bullet points
+                      if (trimmedLine.startsWith('• ') || trimmedLine.startsWith('- ')) {
+                        return (
+                          <li key={i} className="ml-6 mb-1.5 text-muted-foreground list-disc text-sm">
+                            {trimmedLine.slice(2)}
+                          </li>
+                        );
+                      }
+                      
+                      // Numbered lists
+                      if (/^\d+\.\s/.test(trimmedLine)) {
+                        return (
+                          <li key={i} className="ml-6 mb-1.5 text-muted-foreground list-decimal text-sm">
+                            {trimmedLine.replace(/^\d+\.\s/, '')}
+                          </li>
+                        );
+                      }
+                      
+                      // Regular paragraphs
+                      return (
+                        <p key={i} className="leading-relaxed text-muted-foreground text-sm">
+                          {trimmedLine.split('**').map((part, j) => 
+                            j % 2 === 0 ? part : <strong key={j} className="font-semibold text-foreground">{part}</strong>
+                          )}
+                        </p>
+                      );
                     })}
                   </div>
 
-                  {/* Related Articles */}
-                  <div className="mt-8 p-4 border rounded-lg bg-muted/50">
-                    <h3 className="font-semibold mb-2">Was this helpful?</h3>
+                  {/* Feedback Section */}
+                  <div className="mt-6 p-3 border rounded-lg bg-muted/50">
+                    <h3 className="font-semibold text-sm mb-2">Was this helpful?</h3>
                     <div className="flex gap-2">
                       <Button variant="outline" size="sm">
                         👍 Yes

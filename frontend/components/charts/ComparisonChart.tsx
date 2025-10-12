@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-  LineChart,
-  Line,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -35,21 +35,46 @@ interface ComparisonChartProps {
 export function ComparisonChart({
   data,
   title = "Performance Comparison",
-  description = "Compare portfolio values over time",
+  description = "Compare portfolio performance over time",
 }: ComparisonChartProps) {
   const { dateRange, setDateRange, getDateFilter } = useDateRange("1M");
   const [showLegend, setShowLegend] = useState(true);
 
-  // Merge all time series data
+  // Calculate initial values for each portfolio (first data point in filtered range)
+  const getInitialValues = () => {
+    const initialValues: Record<number, number> = {};
+    const dateFilter = getDateFilter();
+    
+    data.forEach((portfolio) => {
+      if (!portfolio || !portfolio.time_series) return;
+      
+      // Get filtered and sorted time series
+      const filteredSeries = portfolio.time_series
+        .filter((point) => point && point.date && new Date(point.date) >= dateFilter)
+        .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+      
+      // Use the first value as initial
+      if (filteredSeries.length > 0 && filteredSeries[0].value) {
+        initialValues[portfolio.portfolio_id] = filteredSeries[0].value;
+      }
+    });
+    
+    return initialValues;
+  };
+
+  // Merge all time series data and calculate performance percentages
   const mergedData = () => {
     if (data.length === 0) return [];
 
     const dateFilter = getDateFilter();
+    const initialValues = getInitialValues();
     
     // Get all unique dates from all portfolios
     const allDates = new Set<string>();
     data.forEach((portfolio) => {
+      if (!portfolio || !portfolio.time_series) return;
       portfolio.time_series.forEach((point) => {
+        if (!point || !point.date) return;
         const date = new Date(point.date);
         if (date >= dateFilter) {
           allDates.add(point.date);
@@ -60,7 +85,7 @@ export function ComparisonChart({
     // Sort dates
     const sortedDates = Array.from(allDates).sort();
 
-    // Create merged data structure
+    // Create merged data structure with performance percentages
     return sortedDates.map((date) => {
       const dataPoint: any = {
         date: new Date(date).toLocaleDateString("en-US", {
@@ -70,10 +95,18 @@ export function ComparisonChart({
         fullDate: date,
       };
 
-      // Add each portfolio's value for this date
+      // Add each portfolio's performance percentage for this date
       data.forEach((portfolio) => {
-        const point = portfolio.time_series.find((p) => p.date === date);
-        dataPoint[`portfolio_${portfolio.portfolio_id}`] = point?.value || null;
+        if (!portfolio || !portfolio.time_series) return;
+        const point = portfolio.time_series.find((p) => p && p.date === date);
+        
+        if (point?.value && initialValues[portfolio.portfolio_id]) {
+          const initialValue = initialValues[portfolio.portfolio_id];
+          const performancePercent = ((point.value - initialValue) / initialValue) * 100;
+          dataPoint[`portfolio_${portfolio.portfolio_id}`] = performancePercent;
+        } else {
+          dataPoint[`portfolio_${portfolio.portfolio_id}`] = null;
+        }
       });
 
       return dataPoint;
@@ -81,14 +114,38 @@ export function ComparisonChart({
   };
 
   const chartData = mergedData();
+  
+  // Calculate dynamic Y-axis domain
+  const getYAxisDomain = () => {
+    if (chartData.length === 0) return [-10, 10];
+    
+    let min = 0;
+    let max = 0;
+    
+    chartData.forEach((point) => {
+      data.forEach((portfolio) => {
+        const value = point[`portfolio_${portfolio.portfolio_id}`];
+        if (value !== null && value !== undefined) {
+          min = Math.min(min, value);
+          max = Math.max(max, value);
+        }
+      });
+    });
+    
+    // Add 10% padding
+    const padding = Math.max(Math.abs(max), Math.abs(min)) * 0.1;
+    return [Math.floor(min - padding), Math.ceil(max + padding)];
+  };
+
+  const yAxisDomain = getYAxisDomain();
 
   const handleExport = (format: "PNG" | "SVG" | "CSV") => {
     if (format === "CSV") {
       // Export data as CSV
-      const headers = ["Date", ...data.map((p) => p.portfolio_name)];
+      const headers = ["Date", ...data.filter(p => p && p.portfolio_name).map((p) => p.portfolio_name || "Unknown")];
       const rows = chartData.map((point) => [
         point.fullDate,
-        ...data.map((p) => point[`portfolio_${p.portfolio_id}`] || ""),
+        ...data.filter(p => p && p.portfolio_id).map((p) => point[`portfolio_${p.portfolio_id}`] || ""),
       ]);
 
       const csvContent = [
@@ -118,23 +175,28 @@ export function ComparisonChart({
         <div className="space-y-1">
           {payload.map((entry: any, index: number) => {
             const portfolio = data.find(
-              (p) => `portfolio_${p.portfolio_id}` === entry.dataKey
+              (p) => p && p.portfolio_id && `portfolio_${p.portfolio_id}` === entry.dataKey
             );
-            if (!portfolio) return null;
+            if (!portfolio || !portfolio.portfolio_name) return null;
+
+            const value = entry.value || 0;
+            const isPositive = value >= 0;
 
             return (
               <div key={index} className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-2">
                   <div
-                    className="w-3 h-3 rounded-full"
-                    style={{ backgroundColor: entry.color }}
+                    className="w-3 h-3 rounded"
+                    style={{ backgroundColor: entry.fill || entry.color }}
                   />
                   <span className="text-sm text-muted-foreground">
-                    {portfolio.portfolio_name}
+                    {portfolio.portfolio_name || "Unknown"}
                   </span>
                 </div>
-                <span className="text-sm font-medium">
-                  {formatCurrency(entry.value, 0)}
+                <span className={`text-sm font-medium ${
+                  isPositive ? "text-green-600" : "text-red-600"
+                }`}>
+                  {isPositive ? "+" : ""}{value.toFixed(2)}%
                 </span>
               </div>
             );
@@ -164,7 +226,7 @@ export function ComparisonChart({
       </CardHeader>
       <CardContent>
         <ResponsiveContainer width="100%" height={400}>
-          <LineChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+          <BarChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
             <XAxis
               dataKey="date"
@@ -176,7 +238,8 @@ export function ComparisonChart({
               tick={{ fontSize: 12 }}
               tickLine={false}
               axisLine={false}
-              tickFormatter={(value) => `${(value / 1000).toFixed(0)}K`}
+              domain={yAxisDomain}
+              tickFormatter={(value) => `${value.toFixed(1)}%`}
             />
             <Tooltip content={<CustomTooltip />} />
             {showLegend && (
@@ -184,23 +247,21 @@ export function ComparisonChart({
                 wrapperStyle={{ paddingTop: "20px" }}
                 formatter={(value) => {
                   const portfolioId = parseInt(value.split("_")[1]);
-                  const portfolio = data.find((p) => p.portfolio_id === portfolioId);
-                  return portfolio?.portfolio_name || value;
+                  const portfolio = data.find((p) => p && p.portfolio_id === portfolioId);
+                  return portfolio?.portfolio_name || "Unknown Portfolio";
                 }}
               />
             )}
-            {data.map((portfolio, index) => (
-              <Line
+            {data.filter(p => p && p.portfolio_id).map((portfolio, index) => (
+              <Bar
                 key={portfolio.portfolio_id}
-                type="monotone"
                 dataKey={`portfolio_${portfolio.portfolio_id}`}
-                stroke={getChartColor(index)}
-                strokeWidth={2}
-                dot={false}
+                fill={getChartColor(index)}
+                radius={[4, 4, 0, 0]}
                 name={`portfolio_${portfolio.portfolio_id}`}
               />
             ))}
-          </LineChart>
+          </BarChart>
         </ResponsiveContainer>
       </CardContent>
     </Card>

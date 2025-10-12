@@ -30,9 +30,9 @@ export function CorrelationMatrix({
       if (i === j) {
         matrix[i][j] = 1.0; // Perfect correlation with itself
       } else {
-        const series1 = data[i].time_series.map((p) => p.value);
-        const series2 = data[j].time_series.map((p) => p.value);
-        matrix[i][j] = calculateCorrelation(series1, series2);
+        const series1 = data[i]?.time_series?.map((p) => p?.value || 0).filter(v => v !== 0) || [];
+        const series2 = data[j]?.time_series?.map((p) => p?.value || 0).filter(v => v !== 0) || [];
+        matrix[i][j] = series1.length > 0 && series2.length > 0 ? calculateCorrelation(series1, series2) : 0;
       }
     }
   }
@@ -85,11 +85,11 @@ export function CorrelationMatrix({
                   <th className="border p-2 bg-muted/50 text-left text-xs font-medium">
                     Portfolio
                   </th>
-                  {data.map((portfolio, index) => (
+                  {data.filter(p => p && p.portfolio_id).map((portfolio, index) => (
                     <th
                       key={portfolio.portfolio_id}
                       className="border p-2 bg-muted/50 text-center text-xs font-medium"
-                      title={portfolio.portfolio_name}
+                      title={portfolio?.portfolio_name || "Unknown"}
                     >
                       P{index + 1}
                     </th>
@@ -97,11 +97,11 @@ export function CorrelationMatrix({
                 </tr>
               </thead>
               <tbody>
-                {data.map((portfolio, i) => (
+                {data.filter(p => p && p.portfolio_id).map((portfolio, i) => (
                   <tr key={portfolio.portfolio_id}>
                     <td className="border p-2 bg-muted/50 text-xs font-medium truncate max-w-[120px]">
-                      <span title={portfolio.portfolio_name}>
-                        P{i + 1}: {portfolio.portfolio_name}
+                      <span title={portfolio?.portfolio_name || "Unknown"}>
+                        P{i + 1}: {portfolio?.portfolio_name || "Unknown"}
                       </span>
                     </td>
                     {data.map((_, j) => {

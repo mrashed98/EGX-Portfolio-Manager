@@ -63,8 +63,11 @@ async function refreshAccessToken(): Promise<string | null> {
 // Add request interceptor - check token expiration and refresh if needed
 api.interceptors.request.use(
   async (config) => {
-    // Skip token check for auth endpoints
-    if (config.url?.includes("/auth/")) {
+    // Skip token check ONLY for public auth endpoints (login, register, refresh)
+    const publicAuthEndpoints = ["/auth/login", "/auth/register", "/auth/refresh"];
+    const isPublicEndpoint = publicAuthEndpoints.some(endpoint => config.url?.includes(endpoint));
+    
+    if (isPublicEndpoint) {
       return config;
     }
 
@@ -105,15 +108,15 @@ api.interceptors.request.use(
   }
 );
 
-// Response interceptor - handle 401 errors by attempting token refresh
+// Response interceptor - handle 401/403 errors by attempting token refresh
 api.interceptors.response.use(
   (response) => response,
   async (error: AxiosError) => {
     const originalRequest = error.config as InternalAxiosRequestConfig & { _retry?: boolean };
     
-    // If 401 and not already retried and not a refresh request
+    // If 401 or 403 (auth errors) and not already retried and not a refresh request
     if (
-      error.response?.status === 401 &&
+      (error.response?.status === 401 || error.response?.status === 403) &&
       !originalRequest._retry &&
       !originalRequest.url?.includes("/auth/refresh")
     ) {

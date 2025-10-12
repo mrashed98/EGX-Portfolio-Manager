@@ -35,9 +35,9 @@ export function RiskReturnScatter({
   description = "Portfolio risk-return profile",
 }: RiskReturnScatterProps) {
   // Transform data for scatter chart
-  const chartData = data.map((item, index) => ({
+  const chartData = data.filter(item => item && item.name).map((item, index) => ({
     ...item,
-    risk: item.risk * 100, // Convert to percentage
+    risk: (item.risk || 0) * 100, // Convert to percentage
     fill: getChartColor(index),
   }));
 
@@ -45,22 +45,23 @@ export function RiskReturnScatter({
     if (!active || !payload || !payload[0]) return null;
 
     const data = payload[0].payload;
+    if (!data) return null;
 
     return (
       <div className="rounded-lg border bg-background p-3 shadow-md">
-        <p className="font-semibold text-sm mb-2">{data.name}</p>
+        <p className="font-semibold text-sm mb-2">{data.name || "Unknown"}</p>
         <div className="space-y-1 text-xs">
           <div className="flex justify-between gap-4">
             <span className="text-muted-foreground">Return:</span>
-            <span className="font-medium">{formatPercent(data.return, 2, true)}</span>
+            <span className="font-medium">{formatPercent(data.return || 0, 2, true)}</span>
           </div>
           <div className="flex justify-between gap-4">
             <span className="text-muted-foreground">Risk:</span>
-            <span className="font-medium">{formatPercent(data.risk, 2)}</span>
+            <span className="font-medium">{formatPercent(data.risk || 0, 2)}</span>
           </div>
           <div className="flex justify-between gap-4">
             <span className="text-muted-foreground">Value:</span>
-            <span className="font-medium">{data.value.toFixed(0)} EGP</span>
+            <span className="font-medium">{(data.value || 0).toFixed(0)} EGP</span>
           </div>
         </div>
       </div>
@@ -69,6 +70,7 @@ export function RiskReturnScatter({
 
   const CustomLabel = (props: any) => {
     const { x, y, payload } = props;
+    if (!payload || !payload.name) return null;
     
     return (
       <text
@@ -84,8 +86,8 @@ export function RiskReturnScatter({
   };
 
   // Calculate efficient frontier reference line (simplified)
-  const maxReturn = Math.max(...chartData.map((d) => d.return));
-  const minRisk = Math.min(...chartData.map((d) => d.risk));
+  const maxReturn = chartData.length > 0 ? Math.max(...chartData.map((d) => d.return || 0)) : 0;
+  const minRisk = chartData.length > 0 ? Math.min(...chartData.map((d) => d.risk || 0)) : 0;
 
   return (
     <Card>
