@@ -58,10 +58,11 @@ export default function PortfolioComparePage() {
   }, [searchParams]);
 
   useEffect(() => {
-    if (selectedIds.length > 0) {
+    // Only load comparison if portfolios have been loaded
+    if (selectedIds.length > 0 && portfolios.length > 0 && !loading) {
       loadComparison();
     }
-  }, [selectedIds]);
+  }, [selectedIds, portfolios, loading]);
 
   const loadPortfolios = async () => {
     try {
@@ -88,20 +89,40 @@ export default function PortfolioComparePage() {
     setComparing(true);
     try {
       const responses = await Promise.all(
-        selectedIds.map((id) =>
-          api.get(`/portfolios/${id}/performance`).then((res) => ({
-            ...res.data,
-            portfolio_id: id,
-            portfolio_name: portfolios.find((p) => p.id === id)?.name || `Portfolio ${id}`,
-          }))
-        )
+        selectedIds.map(async (id) => {
+          try {
+            const res = await api.get(`/portfolios/${id}/performance`);
+            const portfolio = portfolios.find((p) => p.id === id);
+            
+            return {
+              ...res.data,
+              portfolio_id: id,
+              portfolio_name: portfolio?.name || `Portfolio ${id}`,
+            };
+          } catch (err) {
+            console.error(`Failed to load performance for portfolio ${id}:`, err);
+            // Return null for failed portfolios
+            return null;
+          }
+        })
       );
-      setPerformances(responses);
-    } catch (error) {
+      
+      // Filter out null values (failed requests)
+      const validResponses = responses.filter((r): r is PortfolioPerformance => r !== null);
+      setPerformances(validResponses);
+      
+      if (validResponses.length < selectedIds.length) {
+        toast({
+          title: "Partial Load",
+          description: `Loaded ${validResponses.length} of ${selectedIds.length} portfolios`,
+          variant: "default",
+        });
+      }
+    } catch (error: any) {
       console.error("Failed to load comparison data:", error);
       toast({
         title: "Error",
-        description: "Failed to load comparison data",
+        description: error.response?.data?.detail || "Failed to load comparison data",
         variant: "destructive",
       });
     } finally {

@@ -20,12 +20,16 @@ import {
   Plus,
   RefreshCw,
   Settings,
+  HelpCircle,
+  Sparkles,
 } from "lucide-react";
 import { authService } from "@/lib/auth";
 import { Toaster } from "@/components/ui/toaster";
 import { useToast } from "@/components/ui/use-toast";
 import { OfflineAlert } from "@/components/layout/OfflineAlert";
 import { useGlobalShortcuts } from "@/hooks/useKeyboardShortcuts";
+import { OnboardingTour, useOnboardingTour } from "@/components/onboarding/OnboardingTour";
+import { HelpCenter, useHelpCenter } from "@/components/help/HelpCenter";
 import api from "@/lib/api";
 
 export default function DashboardLayout({
@@ -45,6 +49,22 @@ export default function DashboardLayout({
   // Enable global keyboard shortcuts
   useGlobalShortcuts();
 
+  // Help center and onboarding
+  const { open: helpOpen, setOpen: setHelpOpen } = useHelpCenter();
+  const { restartTour } = useOnboardingTour();
+
+  // Keyboard shortcut for help (Cmd/Ctrl + ?)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "/") {
+        e.preventDefault();
+        setHelpOpen(true);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [setHelpOpen]);
+
   useEffect(() => {
     if (!authService.isAuthenticated()) {
       router.push("/login");
@@ -57,9 +77,19 @@ export default function DashboardLayout({
   const loadUser = async () => {
     try {
       const user = await authService.getCurrentUser();
-      setUserEmail(user.email);
-    } catch (error) {
+      if (user && user.email) {
+        setUserEmail(user.email);
+      } else {
+        // Fallback: try to get from token or redirect to login
+        console.warn("User email not found, logging out");
+        authService.logout();
+      }
+    } catch (error: any) {
       console.error("Failed to load user:", error);
+      // If 401, user is not authenticated
+      if (error.response?.status === 401) {
+        authService.logout();
+      }
     }
   };
 
@@ -112,14 +142,14 @@ export default function DashboardLayout({
   }
 
   const navItems = [
-    { href: "/dashboard", label: "Analytics", icon: BarChart3 },
-    { href: "/dashboard/stocks", label: "Stocks", icon: TrendingUp },
-    { href: "/dashboard/portfolios", label: "Portfolios", icon: Briefcase },
-    { href: "/dashboard/strategies", label: "Strategies", icon: Target },
-    { href: "/dashboard/holdings", label: "Holdings", icon: Wallet },
-    { href: "/dashboard/watchlists", label: "Watchlists", icon: Eye },
-    { href: "/dashboard/calendar", label: "Calendar", icon: Calendar },
-    { href: "/dashboard/settings", label: "Settings", icon: Settings },
+    { href: "/dashboard", label: "Analytics", icon: BarChart3, dataTour: "analytics" },
+    { href: "/dashboard/stocks", label: "Stocks", icon: TrendingUp, dataTour: "stocks" },
+    { href: "/dashboard/portfolios", label: "Portfolios", icon: Briefcase, dataTour: "portfolios" },
+    { href: "/dashboard/strategies", label: "Strategies", icon: Target, dataTour: "strategies" },
+    { href: "/dashboard/holdings", label: "Holdings", icon: Wallet, dataTour: "holdings" },
+    { href: "/dashboard/watchlists", label: "Watchlists", icon: Eye, dataTour: "watchlists" },
+    { href: "/dashboard/calendar", label: "Calendar", icon: Calendar, dataTour: "calendar" },
+    { href: "/dashboard/settings", label: "Settings", icon: Settings, dataTour: "settings" },
   ];
 
   return (
@@ -127,124 +157,137 @@ export default function DashboardLayout({
       {/* Sidebar */}
       <aside
         className={`fixed left-0 top-0 h-screen border-r bg-card transition-all duration-300 z-50 ${
-          sidebarOpen ? "w-64" : "w-0 -translate-x-full"
+          sidebarOpen ? "w-64" : "w-16 max-lg:-translate-x-full"
         }`}
       >
-        <div className="flex h-full flex-col">
+        <div className="flex h-full flex-col overflow-hidden">
           {/* Logo */}
-          <div className="p-6 border-b">
+          <div className={`border-b transition-all duration-300 ${sidebarOpen ? "p-6" : "p-4"}`}>
             <Link href="/dashboard">
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                FinSet
-              </h2>
-              <p className="text-xs text-muted-foreground mt-1">
-                EGX Portfolio Manager
-              </p>
+              {sidebarOpen ? (
+                <>
+                  <h2 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+                    FinSet
+                  </h2>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    EGX Portfolio Manager
+                  </p>
+                </>
+              ) : (
+                <h2 className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+                  F
+                </h2>
+              )}
             </Link>
           </div>
 
           {/* Navigation */}
-          <nav className="flex-1 space-y-1 p-3 overflow-y-auto">
+          <nav className="flex-1 space-y-1 p-2 overflow-y-auto">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = pathname === item.href;
               return (
-                <Link key={item.href} href={item.href}>
+                <Link key={item.href} href={item.href} data-tour={item.dataTour}>
                   <div
                     className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all ${
                       isActive
                         ? "bg-primary text-primary-foreground shadow-sm"
                         : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                    }`}
+                    } ${!sidebarOpen ? "justify-center" : ""}`}
+                    title={!sidebarOpen ? item.label : undefined}
                   >
-                    <Icon className="h-5 w-5" />
-                    <span>{item.label}</span>
+                    <Icon className="h-5 w-5 flex-shrink-0" />
+                    {sidebarOpen && <span className="truncate">{item.label}</span>}
                   </div>
                 </Link>
               );
             })}
           </nav>
 
-          <Separator />
+          {sidebarOpen && (
+            <>
+              <Separator />
 
-          {/* Quick Actions */}
-          <div className="p-3 space-y-2">
-            <p className="text-xs font-semibold text-muted-foreground px-3 mb-2">
-              Quick Actions
-            </p>
-            <div className="space-y-1">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="w-full justify-start text-sm"
-                onClick={handleNewPortfolio}
-              >
-                <Plus className="h-4 w-4 mr-2" />
-                New Portfolio
-              </Button>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="w-full justify-start text-sm"
-                onClick={handleNewStrategy}
-              >
-                <Plus className="h-4 w-4 mr-2" />
-                New Strategy
-              </Button>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="w-full justify-start text-sm"
-                onClick={handleNewHolding}
-              >
-                <Plus className="h-4 w-4 mr-2" />
-                Add Holding
-              </Button>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="w-full justify-start text-sm"
-                onClick={handleRefreshPrices}
-                disabled={refreshing}
-              >
-                <RefreshCw className={`h-4 w-4 mr-2 ${refreshing ? "animate-spin" : ""}`} />
-                {refreshing ? "Refreshing..." : "Refresh Prices"}
-              </Button>
-            </div>
-            {lastRefresh && (
-              <p className="text-xs text-muted-foreground px-3 pt-2">
-                Last updated: {lastRefresh.toLocaleTimeString()}
-              </p>
-            )}
-          </div>
-
-          <Separator />
-
-          {/* User Profile */}
-          <div className="p-4 border-t">
-            <div className="flex items-center gap-3 mb-3">
-              <Avatar>
-                <AvatarFallback className="bg-primary text-primary-foreground">
-                  {userEmail.charAt(0).toUpperCase() || "U"}
-                </AvatarFallback>
-              </Avatar>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium truncate">
-                  {userEmail.split("@")[0] || "User"}
+              {/* Quick Actions */}
+              <div className="p-3 space-y-2" data-tour="quick-actions">
+                <p className="text-xs font-semibold text-muted-foreground px-3 mb-2">
+                  Quick Actions
                 </p>
-                <p className="text-xs text-muted-foreground">Investor</p>
+                <div className="space-y-1">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="w-full justify-start text-sm"
+                    onClick={handleNewPortfolio}
+                  >
+                    <Plus className="h-4 w-4 mr-2" />
+                    New Portfolio
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="w-full justify-start text-sm"
+                    onClick={handleNewStrategy}
+                  >
+                    <Plus className="h-4 w-4 mr-2" />
+                    New Strategy
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="w-full justify-start text-sm"
+                    onClick={handleNewHolding}
+                  >
+                    <Plus className="h-4 w-4 mr-2" />
+                    Add Holding
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="w-full justify-start text-sm"
+                    onClick={handleRefreshPrices}
+                    disabled={refreshing}
+                  >
+                    <RefreshCw className={`h-4 w-4 mr-2 ${refreshing ? "animate-spin" : ""}`} />
+                    {refreshing ? "Refreshing..." : "Refresh Prices"}
+                  </Button>
+                </div>
+                {lastRefresh && (
+                  <p className="text-xs text-muted-foreground px-3 pt-2">
+                    Last updated: {lastRefresh.toLocaleTimeString()}
+                  </p>
+                )}
               </div>
-            </div>
-            <Button
-              variant="outline"
-              className="w-full justify-start"
-              size="sm"
-              onClick={handleLogout}
-            >
-              <LogOut className="mr-2 h-4 w-4" />
-              Logout
-            </Button>
-          </div>
+
+              <Separator />
+
+              {/* User Profile */}
+              <div className="p-4 border-t">
+                <div className="flex items-center gap-3 mb-3">
+                  <Avatar>
+                    <AvatarFallback className="bg-primary text-primary-foreground">
+                      {userEmail.charAt(0).toUpperCase() || "U"}
+                    </AvatarFallback>
+                  </Avatar>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-medium truncate">
+                      {userEmail.split("@")[0] || "User"}
+                    </p>
+                    <p className="text-xs text-muted-foreground">Investor</p>
+                  </div>
+                </div>
+                <Button
+                  variant="outline"
+                  className="w-full justify-start"
+                  size="sm"
+                  onClick={handleLogout}
+                >
+                  <LogOut className="mr-2 h-4 w-4" />
+                  Logout
+                </Button>
+              </div>
+            </>
+          )}
         </div>
       </aside>
 
@@ -263,7 +306,7 @@ export default function DashboardLayout({
       {/* Main Content */}
       <div
         className={`flex-1 transition-all duration-300 ${
-          sidebarOpen ? "lg:ml-64" : "ml-0"
+          sidebarOpen ? "lg:ml-64" : "lg:ml-16"
         }`}
       >
         {/* Top Bar */}
@@ -281,6 +324,25 @@ export default function DashboardLayout({
             </button>
             <div className="flex-1" />
             <div className="flex items-center gap-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setHelpOpen(true)}
+                className="gap-2"
+              >
+                <HelpCircle className="h-4 w-4" />
+                <span className="hidden md:inline">Help</span>
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={restartTour}
+                className="gap-2"
+              >
+                <Sparkles className="h-4 w-4" />
+                <span className="hidden md:inline">Tour</span>
+              </Button>
+              <Separator orientation="vertical" className="h-6" />
               <div className="text-sm text-muted-foreground">
                 {new Date().toLocaleDateString("en-US", {
                   weekday: "long",
@@ -302,6 +364,10 @@ export default function DashboardLayout({
       {/* Global Components */}
       <OfflineAlert />
       <Toaster />
+      
+      {/* Onboarding & Help */}
+      <OnboardingTour />
+      <HelpCenter open={helpOpen} onOpenChange={setHelpOpen} />
     </div>
   );
 }

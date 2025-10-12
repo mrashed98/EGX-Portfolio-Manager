@@ -8,6 +8,7 @@ from app.models.holding import Holding
 from app.models.strategy_snapshot import StrategySnapshot
 from app.models.watchlist import Watchlist
 from app.models.rebalancing_history import RebalancingHistory
+from app.models.tradingview_credential import TradingViewCredential
 
 __all__ = [
     "User",
@@ -20,5 +21,6 @@ __all__ = [
     "StrategySnapshot",
     "Watchlist",
     "RebalancingHistory",
+    "TradingViewCredential",
 ]
 

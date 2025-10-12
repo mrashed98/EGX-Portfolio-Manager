@@ -13,6 +13,7 @@ class Settings(BaseSettings):
     jwt_secret: str
     jwt_algorithm: str = "HS256"
     access_token_expire_minutes: int = 30
+    refresh_token_expire_days: int = 7  # Refresh token valid for 7 days
     cors_origins: str = "http://localhost:3000"
 
     @property

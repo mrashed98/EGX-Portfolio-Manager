@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
 from app.core.database import engine
-from app.api.routes import auth, stocks, portfolios, strategies, holdings, watchlists
+from app.api.routes import auth, stocks, portfolios, strategies, holdings, watchlists, tradingview
 from app.services.tradingview_service import tradingview_service
 from app.core.database import AsyncSessionLocal
 
@@ -42,6 +42,7 @@ app.include_router(portfolios.router, prefix="/api")
 app.include_router(strategies.router, prefix="/api")
 app.include_router(holdings.router, prefix="/api")
 app.include_router(watchlists.router, prefix="/api")
+app.include_router(tradingview.router, prefix="/api")
 
 
 @app.get("/")

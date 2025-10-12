@@ -44,13 +44,79 @@ class TradingViewService:
         self.initialized = False
         self.cookies = self._load_cookies()
         
-        # Initialize tvdatafeed for historical data
+        # Initialize tvdatafeed for historical data (without login by default)
         try:
             self.tv = TvDatafeed()
-            logger.info("TvDatafeed initialized successfully")
+            logger.info("TvDatafeed initialized successfully (no login)")
         except Exception as e:
             logger.error(f"Failed to initialize tvdatafeed: {str(e)}")
             self.tv = None
+    
+    def test_credentials(self, username: str, password: str) -> tuple[bool, str]:
+        """
+        Test TradingView credentials by attempting to authenticate.
+        
+        Args:
+            username: TradingView username
+            password: TradingView password
+        
+        Returns:
+            Tuple of (success: bool, message: str)
+        """
+        try:
+            # Try to initialize TvDatafeed with credentials
+            test_tv = TvDatafeed(username=username, password=password)
+            
+            # Test by fetching a simple stock data to verify connection
+            # Try to get 1 day of data for a common stock
+            test_data = test_tv.get_hist(
+                symbol='COMI',
+                exchange='EGX',
+                interval=TvInterval.in_daily,
+                n_bars=1
+            )
+            
+            if test_data is not None and not test_data.empty:
+                logger.info(f"TradingView credentials verified for user: {username}")
+                return True, "Connection successful - credentials verified"
+            else:
+                logger.warning(f"TradingView authentication succeeded but no data returned for user: {username}")
+                return True, "Authentication successful but unable to fetch test data"
+                
+        except Exception as e:
+            error_msg = str(e).lower()
+            
+            # Check for common authentication errors
+            if 'invalid' in error_msg or 'incorrect' in error_msg or 'wrong' in error_msg:
+                logger.error(f"Invalid TradingView credentials for user: {username}")
+                return False, "Invalid username or password"
+            elif 'timeout' in error_msg or 'connection' in error_msg:
+                logger.error(f"Connection timeout testing TradingView credentials: {str(e)}")
+                return False, "Connection timeout - please try again"
+            else:
+                logger.error(f"Error testing TradingView credentials: {str(e)}")
+                return False, f"Authentication failed: {str(e)}"
+    
+    def initialize_with_credentials(self, username: str, password: str) -> bool:
+        """
+        Initialize TvDatafeed with user credentials for enhanced data access.
+        
+        Args:
+            username: TradingView username
+            password: TradingView password
+        
+        Returns:
+            bool: True if initialization successful
+        """
+        try:
+            self.tv = TvDatafeed(username=username, password=password)
+            logger.info(f"TvDatafeed initialized with credentials for user: {username}")
+            return True
+        except Exception as e:
+            logger.error(f"Failed to initialize TvDatafeed with credentials: {str(e)}")
+            # Fallback to no-login mode
+            self.tv = TvDatafeed()
+            return False
     
     def _load_cookies(self) -> Optional[Dict]:
         """

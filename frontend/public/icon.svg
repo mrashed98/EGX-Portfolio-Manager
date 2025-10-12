@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background Circle -->
+  <circle cx="50" cy="50" r="48" fill="#0ea5e9" opacity="0.1"/>
+  
+  <!-- Chart Bar 1 (Shorter) -->
+  <rect x="20" y="55" width="12" height="25" rx="2" fill="#0ea5e9"/>
+  
+  <!-- Chart Bar 2 (Medium) -->
+  <rect x="37" y="40" width="12" height="40" rx="2" fill="#0ea5e9"/>
+  
+  <!-- Chart Bar 3 (Tallest) -->
+  <rect x="54" y="25" width="12" height="55" rx="2" fill="#0ea5e9"/>
+  
+  <!-- Trend Line -->
+  <path d="M15,70 L32,52 L49,38 L66,22 L85,30" stroke="#10b981" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Circle indicators on trend line -->
+  <circle cx="15" cy="70" r="3" fill="#10b981"/>
+  <circle cx="32" cy="52" r="3" fill="#10b981"/>
+  <circle cx="49" cy="38" r="3" fill="#10b981"/>
+  <circle cx="66" cy="22" r="3" fill="#10b981"/>
+  <circle cx="85" cy="30" r="3" fill="#10b981"/>
+  
+  <!-- Arrow Up (Positive Growth) -->
+  <path d="M72,30 L78,24 L84,30" stroke="#10b981" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+

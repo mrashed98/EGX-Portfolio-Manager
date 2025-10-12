@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Optional
 from sqlalchemy import String, DateTime
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -18,4 +19,5 @@ class User(Base):
     strategies: Mapped[list["Strategy"]] = relationship(back_populates="user", cascade="all, delete-orphan")
     holdings: Mapped[list["Holding"]] = relationship(back_populates="user", cascade="all, delete-orphan")
     watchlists: Mapped[list["Watchlist"]] = relationship(back_populates="user", cascade="all, delete-orphan")
+    tradingview_credential: Mapped[Optional["TradingViewCredential"]] = relationship(back_populates="user", uselist=False, cascade="all, delete-orphan")
 
