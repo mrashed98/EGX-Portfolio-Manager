@@ -23,6 +23,7 @@ dependencies = [
     "tradingview-screener>=3.0.0",
     "tradingview-scraper>=0.4.8",
     "tvdatafeed",
+    "openpyxl>=3.1.2",
 ]
 
 [build-system]

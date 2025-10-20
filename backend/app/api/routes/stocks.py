@@ -290,8 +290,8 @@ async def sync_all_stocks(
     user_id: int = Depends(get_current_user_id)
 ):
     """Sync all EGX stocks from TradingView screener - adds new stocks and updates existing ones"""
-    # Fetch all stocks from TradingView screener
-    tv_stocks = await tradingview_service.fetch_all_egx_stocks()
+    # Fetch all stocks from TradingView screener using user-specific cookies if available
+    tv_stocks = await tradingview_service.fetch_all_egx_stocks(db=db, user_id=user_id)
     
     if not tv_stocks:
         raise HTTPException(

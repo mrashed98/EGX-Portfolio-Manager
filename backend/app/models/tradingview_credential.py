@@ -11,8 +11,9 @@ class TradingViewCredential(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
     user_id: Mapped[int] = mapped_column(Integer, ForeignKey("users.id"), unique=True, nullable=False)
-    username: Mapped[str] = mapped_column(String(255), nullable=False)
-    encrypted_password: Mapped[str] = mapped_column(Text, nullable=False)  # Encrypted
+    username: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
+    encrypted_password: Mapped[Optional[str]] = mapped_column(Text, nullable=True)  # Encrypted (deprecated)
+    session_id: Mapped[Optional[str]] = mapped_column(Text, nullable=True)  # TradingView session cookie
     is_connected: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
     last_check_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
     connection_error: Mapped[Optional[str]] = mapped_column(Text, nullable=True)

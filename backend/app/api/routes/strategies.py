@@ -1,4 +1,5 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File
+from fastapi.responses import StreamingResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 
@@ -8,9 +9,12 @@ from app.models.strategy import Strategy
 from app.models.strategy_snapshot import StrategySnapshot
 from app.models.rebalancing_history import RebalancingHistory
 from app.models.stock import Stock
+from app.models.holding import Holding
+from app.models.portfolio import Portfolio
 from app.schemas.strategy import StrategyCreate, StrategyUpdate, StrategyResponse, StrategySnapshotResponse
 from app.services.strategy_service import strategy_service
 from app.services.rebalancing_service import rebalancing_service
+from app.services.import_export_service import import_export_service
 from app.schemas.rebalancing import RebalancingCalculation, RebalancingHistoryResponse
 
 router = APIRouter(prefix="/strategies", tags=["strategies"])
@@ -220,10 +224,12 @@ async def get_pending_rebalancing(
     
     # Fetch stock symbols
     stock_ids = [action["stock_id"] for action in history.actions]
-    stocks_result = await db.execute(
-        select(Stock).where(Stock.id.in_(stock_ids))
-    )
-    stocks = {stock.id: stock for stock in stocks_result.scalars().all()}
+    stocks = {}
+    if stock_ids:
+        stocks_result = await db.execute(
+            select(Stock).where(Stock.id.in_(stock_ids))
+        )
+        stocks = {stock.id: stock for stock in stocks_result.scalars().all()}
     
     # Update stock symbols
     for action in actions:
@@ -401,4 +407,211 @@ async def get_rebalancing_history(
     history = history_result.scalars().all()
     
     return history
+
+
+# ===== IMPORT/EXPORT ENDPOINTS =====
+
+@router.get("/import-template")
+async def download_strategy_template():
+    """Download Excel template for strategy import"""
+    template = import_export_service.generate_strategy_template()
+    
+    return StreamingResponse(
+        template,
+        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        headers={"Content-Disposition": "attachment; filename=strategy_import_template.xlsx"}
+    )
+
+
+@router.post("/import")
+async def import_strategy(
+    strategy_name: str,
+    file: UploadFile = File(...),
+    db: AsyncSession = Depends(get_db),
+    user_id: int = Depends(get_current_user_id)
+):
+    """Import strategy with holdings from Excel file"""
+    if not file.filename.endswith(('.xlsx', '.xls')):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Only Excel files (.xlsx, .xls) are supported"
+        )
+    
+    try:
+        content = await file.read()
+        parsed_data = await import_export_service.parse_strategy_excel(content, db)
+        holdings_data = parsed_data.get('holdings', [])
+        
+        if not holdings_data:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="No holdings data found in file"
+            )
+        
+        # Look up all stocks
+        symbols = [h['symbol'] for h in holdings_data]
+        stocks_result = await db.execute(
+            select(Stock).where(Stock.symbol.in_(symbols))
+        )
+        stocks = {stock.symbol: stock for stock in stocks_result.scalars().all()}
+        
+        # Check for missing stocks
+        found_symbols = set(stocks.keys())
+        missing_symbols = set(symbols) - found_symbols
+        if missing_symbols:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail=f"Stocks not found: {', '.join(missing_symbols)}"
+            )
+        
+        # Create holdings without a strategy first (manual holdings)
+        created_holdings = []
+        for holding_data in holdings_data:
+            stock = stocks[holding_data['symbol']]
+            current_value = holding_data['quantity'] * stock.current_price
+            
+            new_holding = Holding(
+                user_id=user_id,
+                stock_id=stock.id,
+                quantity=holding_data['quantity'],
+                average_price=holding_data['purchase_price'],
+                current_value=current_value,
+                purchase_date=holding_data['purchase_date'],
+                notes=holding_data['notes'],
+                is_manual=True
+            )
+            db.add(new_holding)
+            created_holdings.append(new_holding)
+        
+        await db.commit()
+        
+        return {
+            "message": f"Imported {len(created_holdings)} holdings for strategy '{strategy_name}'",
+            "holdings_count": len(created_holdings),
+            "note": "Holdings created as manual entries. You can now create a strategy and map these holdings to it."
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Failed to parse Excel file: {str(e)}"
+        )
+
+
+@router.get("/{strategy_id}/export")
+async def export_strategy(
+    strategy_id: int,
+    db: AsyncSession = Depends(get_db),
+    user_id: int = Depends(get_current_user_id)
+):
+    """Export strategy with all allocations and holdings"""
+    # Verify strategy ownership
+    result = await db.execute(
+        select(Strategy).where(
+            Strategy.id == strategy_id,
+            Strategy.user_id == user_id
+        )
+    )
+    strategy = result.scalar_one_or_none()
+    
+    if not strategy:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Strategy not found"
+        )
+    
+    # Get holdings
+    holdings_result = await db.execute(
+        select(Holding).where(Holding.strategy_id == strategy_id)
+    )
+    holdings = holdings_result.scalars().all()
+    
+    # Get all relevant stocks
+    stock_ids = [h.stock_id for h in holdings]
+    for alloc in strategy.portfolio_allocations:
+        stock_ids.extend([int(sid) for sid in alloc.get('stock_allocations', {}).keys()])
+    
+    stocks = {}
+    if stock_ids:
+        stocks_result = await db.execute(
+            select(Stock).where(Stock.id.in_(stock_ids))
+        )
+        stocks = {stock.id: stock for stock in stocks_result.scalars().all()}
+    
+    # Get portfolios
+    portfolio_ids = [alloc['portfolio_id'] for alloc in strategy.portfolio_allocations]
+    portfolios_result = await db.execute(
+        select(Portfolio).where(Portfolio.id.in_(portfolio_ids))
+    )
+    portfolios = {p.id: p for p in portfolios_result.scalars().all()}
+    
+    # Generate Excel
+    excel_file = await import_export_service.create_strategy_excel(
+        db, strategy, holdings, stocks, portfolios
+    )
+    
+    return StreamingResponse(
+        excel_file,
+        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        headers={"Content-Disposition": f"attachment; filename=strategy_{strategy.name.replace(' ', '_')}.xlsx"}
+    )
+
+
+@router.get("/{strategy_id}/history/export")
+async def export_strategy_history(
+    strategy_id: int,
+    db: AsyncSession = Depends(get_db),
+    user_id: int = Depends(get_current_user_id)
+):
+    """Export strategy rebalancing history"""
+    # Verify strategy ownership
+    result = await db.execute(
+        select(Strategy).where(
+            Strategy.id == strategy_id,
+            Strategy.user_id == user_id
+        )
+    )
+    strategy = result.scalar_one_or_none()
+    
+    if not strategy:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Strategy not found"
+        )
+    
+    # Get rebalancing history
+    history_result = await db.execute(
+        select(RebalancingHistory)
+        .where(RebalancingHistory.strategy_id == strategy_id)
+        .order_by(RebalancingHistory.created_at.desc())
+    )
+    history = history_result.scalars().all()
+    
+    # Get all relevant stocks
+    stock_ids = set()
+    for entry in history:
+        if isinstance(entry.actions, list):
+            for action in entry.actions:
+                if 'stock_id' in action:
+                    stock_ids.add(action['stock_id'])
+    
+    stocks = {}
+    if stock_ids:
+        stocks_result = await db.execute(
+            select(Stock).where(Stock.id.in_(stock_ids))
+        )
+        stocks = {stock.id: stock for stock in stocks_result.scalars().all()}
+    
+    # Generate Excel
+    excel_file = await import_export_service.create_strategy_history_excel(
+        db, strategy, history, stocks
+    )
+    
+    return StreamingResponse(
+        excel_file,
+        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        headers={"Content-Disposition": f"attachment; filename=strategy_{strategy.name.replace(' ', '_')}_history.xlsx"}
+    )
 

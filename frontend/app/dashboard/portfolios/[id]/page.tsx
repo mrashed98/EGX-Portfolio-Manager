@@ -26,6 +26,7 @@ import { Badge } from "@/components/ui/badge";
 import { PortfolioPerformanceChart } from "@/components/charts/PortfolioPerformanceChart";
 import { SectorAllocationChart } from "@/components/charts/SectorAllocationChart";
 import { StockLogo } from "@/components/StockLogo";
+import { ExportButton } from "@/components/import-export/ExportButton";
 import api from "@/lib/api";
 import { ArrowLeft, Edit, Trash2, Plus, X, History, TrendingUp, TrendingDown } from "lucide-react";
 
@@ -298,6 +299,11 @@ export default function PortfolioDetailPage() {
         </Button>
         <h1 className="text-3xl font-bold">{portfolio.name}</h1>
         <div className="ml-auto flex gap-2">
+          <ExportButton
+            endpoint={`/portfolios/${portfolioId}/export`}
+            label="Export"
+            variant="outline"
+          />
           <Button 
             variant="outline" 
             onClick={() => router.push(`/dashboard/portfolios/${portfolioId}/history`)}

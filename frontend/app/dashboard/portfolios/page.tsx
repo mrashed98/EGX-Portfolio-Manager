@@ -18,8 +18,10 @@ import {
 } from "@/components/ui/dialog";
 import { useToast } from "@/components/ui/use-toast";
 import { TrendSparkline } from "@/components/charts/TrendSparkline";
+import { FileUploadDialog } from "@/components/import-export/FileUploadDialog";
+import { ExportButton } from "@/components/import-export/ExportButton";
 import api from "@/lib/api";
-import { Plus, Trash2, X, Edit, Eye, TrendingUp, TrendingDown, Briefcase, GitCompare } from "lucide-react";
+import { Plus, Trash2, X, Edit, Eye, TrendingUp, TrendingDown, Briefcase, GitCompare, Upload, Download } from "lucide-react";
 
 interface Portfolio {
   id: number;
@@ -64,6 +66,7 @@ export default function PortfoliosPage() {
   const [tvSearchResults, setTvSearchResults] = useState<any[]>([]);
   const [tvSearching, setTvSearching] = useState(false);
   const [addingCustomStock, setAddingCustomStock] = useState(false);
+  const [importDialogOpen, setImportDialogOpen] = useState(false);
 
   useEffect(() => {
     loadData();
@@ -308,6 +311,19 @@ export default function PortfoliosPage() {
     }
   };
 
+  const handleImportPortfolios = async (file: File) => {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    await api.post("/portfolios/import", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+
+    await loadData();
+  };
+
 
   if (loading) {
     return (
@@ -331,7 +347,21 @@ export default function PortfoliosPage() {
             Create and manage your stock portfolios
           </p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
+          <Button
+            variant="outline"
+            onClick={() => setImportDialogOpen(true)}
+          >
+            <Upload className="mr-2 h-4 w-4" />
+            Import
+          </Button>
+          {portfolios.length > 0 && (
+            <ExportButton
+              endpoint="/portfolios/export-all"
+              label="Export All"
+              variant="outline"
+            />
+          )}
           {portfolios.length >= 2 && (
             <Button 
               variant="outline"
@@ -753,6 +783,17 @@ export default function PortfoliosPage() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+
+      {/* Import Dialog */}
+      <FileUploadDialog
+        open={importDialogOpen}
+        onOpenChange={setImportDialogOpen}
+        title="Import Portfolios"
+        description="Upload a CSV file with portfolio names and stock symbols"
+        acceptedFileTypes=".csv"
+        onUpload={handleImportPortfolios}
+        templateUrl={`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/portfolios/import-template`}
+      />
     </div>
   );
 }

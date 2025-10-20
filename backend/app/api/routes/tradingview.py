@@ -19,19 +19,16 @@ async def connect_tradingview(
     user_id: int = Depends(get_current_user_id)
 ):
     """
-    Connect TradingView account by storing encrypted credentials.
-    Tests credentials before saving.
+    Connect TradingView account by storing session_id.
+    Tests session_id before saving to verify real-time data access.
     """
-    # Test credentials first
-    success, message = tradingview_service.test_credentials(
-        credentials.username,
-        credentials.password
-    )
+    # Test session_id first
+    test_result = await tradingview_service.test_session_id(credentials.session_id)
     
-    if not success:
+    if not test_result['success']:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail=message
+            detail=test_result['message']
         )
     
     # Check if credentials already exist for this user
@@ -40,41 +37,31 @@ async def connect_tradingview(
     )
     existing_cred = result.scalar_one_or_none()
     
-    # Encrypt the password
-    encrypted_password = encrypt_credential(credentials.password)
-    
     if existing_cred:
         # Update existing credentials
-        existing_cred.username = credentials.username
-        existing_cred.encrypted_password = encrypted_password
-        existing_cred.is_connected = True
+        existing_cred.session_id = credentials.session_id
+        existing_cred.is_connected = test_result['is_realtime']
         existing_cred.last_check_at = datetime.utcnow()
-        existing_cred.connection_error = None
+        existing_cred.connection_error = None if test_result['is_realtime'] else f"Delayed data mode: {test_result['update_mode']}"
         existing_cred.updated_at = datetime.utcnow()
         
         await db.commit()
         await db.refresh(existing_cred)
-        
-        # Initialize service with new credentials
-        tradingview_service.initialize_with_credentials(credentials.username, credentials.password)
         
         return existing_cred
     else:
         # Create new credentials
         new_cred = TradingViewCredential(
             user_id=user_id,
-            username=credentials.username,
-            encrypted_password=encrypted_password,
-            is_connected=True,
+            session_id=credentials.session_id,
+            is_connected=test_result['is_realtime'],
             last_check_at=datetime.utcnow(),
+            connection_error=None if test_result['is_realtime'] else f"Delayed data mode: {test_result['update_mode']}"
         )
         
         db.add(new_cred)
         await db.commit()
         await db.refresh(new_cred)
-        
-        # Initialize service with new credentials
-        tradingview_service.initialize_with_credentials(credentials.username, credentials.password)
         
         return new_cred
 
@@ -85,7 +72,8 @@ async def test_connection(
     user_id: int = Depends(get_current_user_id)
 ):
     """
-    Test the TradingView connection using stored credentials.
+    Test the TradingView connection using stored session_id.
+    Checks if real-time data access is available.
     """
     # Get credentials
     result = await db.execute(
@@ -99,23 +87,30 @@ async def test_connection(
             detail="TradingView credentials not found"
         )
     
+    if not cred.session_id:
+        return TradingViewTestResponse(
+            success=False,
+            message="No session ID configured",
+            is_connected=False,
+            update_mode=None
+        )
+    
     # Test actual connection to TradingView
     try:
-        # Decrypt password and test
-        decrypted_password = decrypt_credential(cred.encrypted_password)
-        success, message = tradingview_service.test_credentials(cred.username, decrypted_password)
+        test_result = await tradingview_service.test_session_id(cred.session_id)
         
         # Update last check
         cred.last_check_at = datetime.utcnow()
-        cred.is_connected = success
-        cred.connection_error = None if success else message
+        cred.is_connected = test_result['is_realtime']
+        cred.connection_error = None if test_result['is_realtime'] else f"Delayed data mode: {test_result['update_mode']}"
         
         await db.commit()
         
         return TradingViewTestResponse(
-            success=success,
-            message=message,
-            is_connected=success
+            success=test_result['success'],
+            message=test_result['message'],
+            is_connected=test_result['is_realtime'],
+            update_mode=test_result['update_mode']
         )
     except Exception as e:
         # Update error state
@@ -127,7 +122,8 @@ async def test_connection(
         return TradingViewTestResponse(
             success=False,
             message=f"Connection test failed: {str(e)}",
-            is_connected=False
+            is_connected=False,
+            update_mode=None
         )
 
 

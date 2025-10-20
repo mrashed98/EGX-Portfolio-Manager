@@ -1,3 +1,4 @@
+from datetime import datetime
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from math import floor
@@ -64,10 +65,12 @@ class StrategyService:
                     holding = Holding(
                         user_id=strategy.user_id,
                         strategy_id=strategy.id,
+                        portfolio_id=portfolio_id,
                         stock_id=stock_id,
                         quantity=quantity,
                         average_price=stock.current_price,
-                        current_value=actual_cost
+                        current_value=actual_cost,
+                        purchase_date=datetime.utcnow()
                     )
                     db.add(holding)
         

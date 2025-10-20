@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File
+from fastapi.responses import StreamingResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from datetime import datetime
@@ -19,6 +20,7 @@ from app.schemas.holding import (
     HoldingMap,
     CSVHoldingImport
 )
+from app.services.import_export_service import import_export_service
 
 router = APIRouter(prefix="/holdings", tags=["holdings"])
 
@@ -405,4 +407,63 @@ async def delete_holding(
     await db.commit()
     
     return None
+
+
+# ===== EXPORT ENDPOINT =====
+
+@router.get("/export")
+async def export_all_holdings(
+    db: AsyncSession = Depends(get_db),
+    user_id: int = Depends(get_current_user_id)
+):
+    """Export all holdings with complete information to Excel"""
+    # Get all holdings
+    result = await db.execute(
+        select(Holding).where(Holding.user_id == user_id)
+    )
+    holdings = result.scalars().all()
+    
+    if not holdings:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="No holdings found"
+        )
+    
+    # Get all relevant stocks
+    stock_ids = [h.stock_id for h in holdings]
+    stocks = {}
+    if stock_ids:
+        stocks_result = await db.execute(
+            select(Stock).where(Stock.id.in_(stock_ids))
+        )
+        stocks = {stock.id: stock for stock in stocks_result.scalars().all()}
+    
+    # Get all strategies
+    strategy_ids = [h.strategy_id for h in holdings if h.strategy_id]
+    strategies = {}
+    if strategy_ids:
+        strategies_result = await db.execute(
+            select(Strategy).where(Strategy.id.in_(strategy_ids))
+        )
+        strategies = {s.id: s for s in strategies_result.scalars().all()}
+    
+    # Get all portfolios
+    portfolio_ids = [h.portfolio_id for h in holdings if h.portfolio_id]
+    portfolios = {}
+    if portfolio_ids:
+        portfolios_result = await db.execute(
+            select(Portfolio).where(Portfolio.id.in_(portfolio_ids))
+        )
+        portfolios = {p.id: p for p in portfolios_result.scalars().all()}
+    
+    # Generate Excel
+    excel_file = await import_export_service.create_holdings_excel(
+        db, holdings, stocks, strategies, portfolios
+    )
+    
+    return StreamingResponse(
+        excel_file,
+        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        headers={"Content-Disposition": "attachment; filename=all_holdings.xlsx"}
+    )
 

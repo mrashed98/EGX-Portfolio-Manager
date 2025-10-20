@@ -396,14 +396,13 @@ export default function SettingsPage() {
 // TradingView Settings Component
 function TradingViewSettings() {
   const { toast } = useToast();
-  const [credentials, setCredentials] = useState({
-    username: "",
-    password: "",
-  });
+  const [sessionId, setSessionId] = useState("");
   const [status, setStatus] = useState<"connected" | "disconnected" | "testing">("disconnected");
+  const [updateMode, setUpdateMode] = useState<string | null>(null);
   const [lastCheck, setLastCheck] = useState<Date | null>(null);
   const [testing, setTesting] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [showInstructions, setShowInstructions] = useState(false);
 
   useEffect(() => {
     // Load connection status from backend
@@ -414,8 +413,8 @@ function TradingViewSettings() {
     try {
       const response = await api.get("/tradingview/status");
       const data = response.data;
-      setCredentials({ username: data.username, password: "" });
       setStatus(data.is_connected ? "connected" : "disconnected");
+      setUpdateMode(data.connection_error?.includes('Delayed') ? 'delayed' : data.is_connected ? 'streaming' : null);
       if (data.last_check_at) {
         setLastCheck(new Date(data.last_check_at));
       }
@@ -430,13 +429,13 @@ function TradingViewSettings() {
   };
 
   const handleTestConnection = async () => {
-    // If we have username but no password, we're testing existing connection
-    const isTestingExisting = credentials.username && !credentials.password;
+    // If testing existing connection
+    const isTestingExisting = status === "connected";
     
-    if (!isTestingExisting && (!credentials.username || !credentials.password)) {
+    if (!isTestingExisting && !sessionId) {
       toast({
-        title: "Missing credentials",
-        description: "Please enter both username and password",
+        title: "Missing session ID",
+        description: "Please enter your TradingView session ID",
         variant: "destructive",
       });
       return;
@@ -452,6 +451,7 @@ function TradingViewSettings() {
         const data = response.data;
         
         setStatus(data.is_connected ? "connected" : "disconnected");
+        setUpdateMode(data.update_mode);
         setLastCheck(new Date());
         
         toast({
@@ -460,20 +460,25 @@ function TradingViewSettings() {
           variant: data.success ? "default" : "destructive",
         });
       } else {
-        // Connect with new credentials
+        // Connect with new session ID
         const response = await api.post("/tradingview/connect", {
-          username: credentials.username,
-          password: credentials.password,
+          session_id: sessionId,
         });
         
-        setStatus("connected");
+        const data = response.data;
+        setStatus(data.is_connected ? "connected" : "disconnected");
         setLastCheck(new Date());
-        setCredentials({ username: credentials.username, password: "" }); // Clear password
+        setSessionId(""); // Clear session ID for security
         
         toast({
           title: "Connection successful",
-          description: "TradingView account connected successfully",
+          description: data.is_connected 
+            ? "Real-time data access enabled" 
+            : "Connected but using delayed data. Check your TradingView subscription.",
         });
+        
+        // Auto-test to get update mode
+        setTimeout(() => loadStatus(), 500);
       }
     } catch (error: any) {
       setStatus("disconnected");
@@ -492,13 +497,14 @@ function TradingViewSettings() {
     try {
       await api.delete("/tradingview/disconnect");
       
-      setCredentials({ username: "", password: "" });
+      setSessionId("");
       setStatus("disconnected");
+      setUpdateMode(null);
       setLastCheck(null);
       
       toast({
         title: "Disconnected",
-        description: "TradingView account disconnected successfully",
+        description: "TradingView session disconnected successfully",
       });
     } catch (error: any) {
       const message = error.response?.data?.detail || "Failed to disconnect";
@@ -576,18 +582,22 @@ function TradingViewSettings() {
         {status === "connected" ? (
           // Connected State
           <div className="space-y-4">
-            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+            <div className={`${updateMode === 'streaming' || status === 'connected' ? 'bg-green-50 border-green-200' : 'bg-yellow-50 border-yellow-200'} border rounded-lg p-4`}>
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Shield className="h-5 w-5 text-green-600" />
+                <div className={`w-10 h-10 ${updateMode === 'streaming' || status === 'connected' ? 'bg-green-100' : 'bg-yellow-100'} rounded-full flex items-center justify-center flex-shrink-0`}>
+                  <Shield className={`h-5 w-5 ${updateMode === 'streaming' || status === 'connected' ? 'text-green-600' : 'text-yellow-600'}`} />
                 </div>
                 <div className="flex-1">
-                  <h4 className="font-semibold text-green-900">Connected Account</h4>
-                  <p className="text-sm text-green-700 mt-1">
-                    Username: <span className="font-mono">{credentials.username}</span>
+                  <h4 className={`font-semibold ${updateMode === 'streaming' || status === 'connected' ? 'text-green-900' : 'text-yellow-900'}`}>
+                    {updateMode === 'streaming' || status === 'connected' ? 'Real-Time Data Connected' : 'Connected (Delayed Data)'}
+                  </h4>
+                  <p className={`text-sm ${updateMode === 'streaming' || status === 'connected' ? 'text-green-700' : 'text-yellow-700'} mt-1`}>
+                    {updateMode === 'streaming' || status === 'connected' 
+                      ? 'You have access to real-time market data' 
+                      : 'Connected but receiving delayed data. Upgrade your TradingView subscription for real-time access.'}
                   </p>
                   {lastCheck && (
-                    <p className="text-xs text-green-600 mt-2">
+                    <p className={`text-xs ${updateMode === 'streaming' || status === 'connected' ? 'text-green-600' : 'text-yellow-600'} mt-2`}>
                       Last checked: {lastCheck.toLocaleString()}
                     </p>
                   )}
@@ -620,8 +630,8 @@ function TradingViewSettings() {
               <h4 className="text-sm font-semibold">Features Enabled</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
-                  Real-time stock prices
+                  <span className={`w-1.5 h-1.5 ${updateMode === 'streaming' || status === 'connected' ? 'bg-green-500' : 'bg-yellow-500'} rounded-full`} />
+                  {updateMode === 'streaming' || status === 'connected' ? 'Real-time' : 'Delayed'} stock prices
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
@@ -655,33 +665,49 @@ function TradingViewSettings() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="tv-username">TradingView Username</Label>
-                <Input
-                  id="tv-username"
-                  type="text"
-                  value={credentials.username}
-                  onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
-                  placeholder="your_username"
-                />
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <Label htmlFor="tv-session-id">TradingView Session ID</Label>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setShowInstructions(!showInstructions)}
+                  className="h-6 text-xs"
+                >
+                  {showInstructions ? 'Hide' : 'Show'} Instructions
+                </Button>
               </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="tv-password">Password or API Token</Label>
-                <Input
-                  id="tv-password"
-                  type="password"
-                  value={credentials.password}
-                  onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
-                  placeholder="••••••••"
-                />
-              </div>
+              
+              {showInstructions && (
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 space-y-3 text-sm">
+                  <p className="font-semibold">How to get your Session ID:</p>
+                  <ol className="list-decimal list-inside space-y-2 text-muted-foreground">
+                    <li>Go to <a href="https://www.tradingview.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">TradingView.com</a> and log in</li>
+                    <li>Open Developer Tools (Press F12 or right-click → Inspect)</li>
+                    <li>Go to the <strong>Application</strong> tab (Chrome) or <strong>Storage</strong> tab (Firefox)</li>
+                    <li>Navigate to <strong>Cookies</strong> → <strong>https://www.tradingview.com</strong></li>
+                    <li>Find and copy the <strong>sessionid</strong> cookie value</li>
+                    <li>Paste it below</li>
+                  </ol>
+                  <p className="text-xs text-amber-700 flex items-start gap-2">
+                    <span className="text-lg">⚠️</span>
+                    <span>Keep your session ID private. It provides access to your TradingView account. The session ID expires periodically and you&apos;ll need to update it.</span>
+                  </p>
+                </div>
+              )}
+              
+              <Input
+                id="tv-session-id"
+                type="password"
+                value={sessionId}
+                onChange={(e) => setSessionId(e.target.value)}
+                placeholder="Paste your TradingView session ID here"
+              />
             </div>
 
             <Button
               onClick={handleTestConnection}
-              disabled={testing || !credentials.username || !credentials.password}
+              disabled={testing || !sessionId}
               className="w-full"
             >
               {testing ? (
@@ -690,12 +716,12 @@ function TradingViewSettings() {
                   Testing Connection...
                 </>
               ) : (
-                "Connect TradingView Account"
+                "Connect TradingView"
               )}
             </Button>
 
             <p className="text-xs text-muted-foreground">
-              Your credentials are stored securely and used only to fetch market data. We never share your information.
+              Your session ID is stored securely and used only to fetch market data. We never share your information.
             </p>
           </div>
         )}

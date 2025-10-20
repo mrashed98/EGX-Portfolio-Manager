@@ -5,6 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ChevronDown, ChevronUp, Undo2 } from "lucide-react";
+import { ExportButton } from "@/components/import-export/ExportButton";
 import api from "@/lib/api";
 import { useToast } from "@/components/ui/use-toast";
 
@@ -120,7 +121,14 @@ export default function RebalancingHistoryPage() {
         <Button variant="ghost" size="icon" onClick={() => router.back()}>
           <ArrowLeft className="h-5 w-5" />
         </Button>
-        <h1 className="text-3xl font-bold">Rebalancing History</h1>
+        <h1 className="text-3xl font-bold flex-1">Rebalancing History</h1>
+        {history.length > 0 && (
+          <ExportButton
+            endpoint={`/strategies/${strategyId}/history/export`}
+            label="Export History"
+            variant="outline"
+          />
+        )}
       </div>
 
       {history.length === 0 ? (

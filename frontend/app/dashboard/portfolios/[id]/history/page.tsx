@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useToast } from "@/components/ui/use-toast";
+import { ExportButton } from "@/components/import-export/ExportButton";
 import api from "@/lib/api";
 import { ArrowLeft, ChevronDown, ChevronRight, Plus, Minus, Edit2, Calendar } from "lucide-react";
 
@@ -116,6 +117,13 @@ export default function PortfolioHistoryPage() {
             Track all changes made to this portfolio
           </p>
         </div>
+        {history.length > 0 && (
+          <ExportButton
+            endpoint={`/portfolios/${portfolioId}/history/export`}
+            label="Export History"
+            variant="outline"
+          />
+        )}
       </div>
 
       {/* Modification History */}

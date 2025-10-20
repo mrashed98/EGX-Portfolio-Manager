@@ -13,6 +13,7 @@ import { CorrelationMatrix } from "@/components/charts/CorrelationMatrix";
 import { RiskReturnScatter } from "@/components/charts/RiskReturnScatter";
 import { StatCard } from "@/components/analytics/StatCard";
 import { EmptyState } from "@/components/ui/empty-state";
+import { ExportButton } from "@/components/import-export/ExportButton";
 import { formatCurrency, formatPercent } from "@/lib/formatters";
 import api from "@/lib/api";
 
@@ -220,9 +221,18 @@ export default function PortfolioComparePage() {
             Compare performance across multiple portfolios (max 4)
           </p>
         </div>
-        <Badge variant="secondary">
-          {selectedIds.length} of 4 selected
-        </Badge>
+        <div className="flex gap-2 items-center">
+          {selectedIds.length > 0 && (
+            <ExportButton
+              endpoint={`/portfolios/comparison/export?portfolio_ids=${selectedIds.join(',')}`}
+              label="Export Comparison"
+              variant="outline"
+            />
+          )}
+          <Badge variant="secondary">
+            {selectedIds.length} of 4 selected
+          </Badge>
+        </div>
       </div>
 
       {/* Portfolio Selection */}

@@ -26,6 +26,7 @@ from tradingview_scraper.symbols.news import NewsScraper
 from tradingview_scraper.symbols.cal import CalendarScraper
 
 from app.models.stock import Stock
+from app.models.tradingview_credential import TradingViewCredential
 
 logger = logging.getLogger(__name__)
 
@@ -122,13 +123,8 @@ class TradingViewService:
         """
         Load TradingView session cookies for real-time data access.
         
-        Cookies can be provided via environment variable TRADINGVIEW_SESSION_ID.
-        To get your session ID:
-        1. Go to TradingView.com and log in
-        2. Open developer tools (F12)
-        3. Go to Application > Cookies > https://www.tradingview.com/
-        4. Copy the value of 'sessionid'
-        5. Set environment variable: TRADINGVIEW_SESSION_ID=your_session_id
+        This loads from environment variable (for backward compatibility).
+        For user-specific cookies, use load_user_cookies() method.
         
         Returns:
             Dict with sessionid or None if not configured
@@ -136,25 +132,104 @@ class TradingViewService:
         session_id = os.getenv('TRADINGVIEW_SESSION_ID')
         
         if session_id:
-            logger.info("TradingView session cookie loaded - real-time data enabled")
+            logger.info("TradingView session cookie loaded from environment - real-time data enabled")
             return {'sessionid': session_id}
         else:
             logger.warning("No TradingView session cookie - using delayed data")
-            logger.info("To enable real-time data, set TRADINGVIEW_SESSION_ID environment variable")
             return None
+    
+    async def load_user_cookies(self, db: AsyncSession, user_id: int) -> Optional[Dict]:
+        """
+        Load TradingView session cookies for a specific user from database.
+        
+        Args:
+            db: Database session
+            user_id: User ID to load credentials for
+        
+        Returns:
+            Dict with sessionid or None if not configured
+        """
+        result = await db.execute(
+            select(TradingViewCredential).where(TradingViewCredential.user_id == user_id)
+        )
+        credential = result.scalar_one_or_none()
+        
+        if credential and credential.session_id:
+            logger.info(f"TradingView session cookie loaded for user {user_id} - real-time data enabled")
+            return {'sessionid': credential.session_id}
+        else:
+            logger.info(f"No TradingView session cookie for user {user_id} - using delayed data")
+            return None
+    
+    async def test_session_id(self, session_id: str) -> Dict:
+        """
+        Test if a session_id provides real-time data access.
+        
+        Args:
+            session_id: TradingView session ID to test
+        
+        Returns:
+            Dict with success status and update_mode
+        """
+        try:
+            cookies = {'sessionid': session_id}
+            
+            # Test with a simple query to check update_mode
+            count, df = (Query()
+                .set_markets('egypt')
+                .select('name', 'update_mode')
+                .limit(1)
+                .get_scanner_data(cookies=cookies))
+            
+            if df is not None and not df.empty:
+                update_mode = df['update_mode'].iloc[0] if 'update_mode' in df.columns else 'unknown'
+                is_realtime = 'streaming' in str(update_mode).lower()
+                
+                return {
+                    'success': True,
+                    'is_realtime': is_realtime,
+                    'update_mode': update_mode,
+                    'message': f"Connection successful - Data mode: {update_mode}"
+                }
+            else:
+                return {
+                    'success': False,
+                    'is_realtime': False,
+                    'update_mode': None,
+                    'message': "Failed to fetch data - Invalid session ID"
+                }
+        except Exception as e:
+            logger.error(f"Error testing session ID: {e}")
+            return {
+                'success': False,
+                'is_realtime': False,
+                'update_mode': None,
+                'message': f"Error: {str(e)}"
+            }
     
     # ========================================
     # SECTION 1: tradingview_screener
     # Purpose: Latest prices, recommendations, filters, real-time streaming
     # ========================================
     
-    async def fetch_all_egx_stocks(self) -> List[Dict]:
+    async def fetch_all_egx_stocks(self, db: Optional[AsyncSession] = None, user_id: Optional[int] = None) -> List[Dict]:
         """
         Fetch all EGX stocks using tradingview_screener with real-time data.
         Uses cookies for authenticated streaming access if available.
+        
+        Args:
+            db: Optional database session to load user-specific cookies
+            user_id: Optional user ID to load user-specific cookies
         """
         try:
-            logger.info("Fetching all EGX stocks from TradingView screener...")
+            # Load user-specific cookies if provided
+            cookies = self.cookies
+            if db is not None and user_id is not None:
+                user_cookies = await self.load_user_cookies(db, user_id)
+                if user_cookies:
+                    cookies = user_cookies
+            
+            logger.info(f"Fetching all EGX stocks from TradingView screener... (Using {'user' if cookies and db else 'default'} cookies)")
             
             # Select fields that work with EGX market (tested in Phase 1)
             count, df = (Query()
@@ -171,7 +246,7 @@ class TradingViewService:
                 )
                 .order_by('market_cap_basic', ascending=False)
                 .limit(500)
-                .get_scanner_data(cookies=self.cookies))
+                .get_scanner_data(cookies=cookies))
             
             if df is None or df.empty:
                 logger.error("No data returned from TradingView screener")

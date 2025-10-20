@@ -41,6 +41,7 @@ import { AllocationChart } from "@/components/charts/AllocationChart";
 import { PortfolioChart } from "@/components/charts/PortfolioChart";
 import { ManualHoldingDialog } from "@/components/holdings/ManualHoldingDialog";
 import { HoldingsMappingDialog } from "@/components/holdings/HoldingsMappingDialog";
+import { ExportButton } from "@/components/import-export/ExportButton";
 import api from "@/lib/api";
 
 interface Holding {
@@ -406,10 +407,19 @@ export default function HoldingsPage() {
             Overview of all your stock holdings across strategies
           </p>
         </div>
-        <Button onClick={() => setManualDialogOpen(true)}>
-          <Plus className="mr-2 h-4 w-4" />
-          Add Manual Holding
-        </Button>
+        <div className="flex gap-2">
+          {holdings.length > 0 && (
+            <ExportButton
+              endpoint="/holdings/export"
+              label="Export All"
+              variant="outline"
+            />
+          )}
+          <Button onClick={() => setManualDialogOpen(true)}>
+            <Plus className="mr-2 h-4 w-4" />
+            Add Manual Holding
+          </Button>
+        </div>
       </div>
 
       {/* Stats Grid */}

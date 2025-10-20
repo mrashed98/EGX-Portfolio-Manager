@@ -22,8 +22,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
+import { FileUploadDialog } from "@/components/import-export/FileUploadDialog";
 import api from "@/lib/api";
-import { Plus, Trash2, RefreshCw, X, Eye, Edit } from "lucide-react";
+import { Plus, Trash2, RefreshCw, X, Eye, Edit, Upload } from "lucide-react";
 
 interface Strategy {
   id: number;
@@ -66,6 +67,7 @@ export default function StrategiesPage() {
   const [selectedPortfolioId, setSelectedPortfolioId] = useState<string>("");
   const [submitting, setSubmitting] = useState(false);
   const [editingStrategy, setEditingStrategy] = useState<Strategy | null>(null);
+  const [importDialogOpen, setImportDialogOpen] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -415,6 +417,19 @@ export default function StrategiesPage() {
     }
   };
 
+  const handleImportStrategy = async (file: File, additionalData: { name: string }) => {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    await api.post(`/strategies/import?strategy_name=${encodeURIComponent(additionalData.name)}`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+
+    await loadData();
+  };
+
   const getPortfolioName = (portfolioId: number) => {
     return portfolios.find((p) => p.id === portfolioId)?.name || `Portfolio #${portfolioId}`;
   };
@@ -432,10 +447,16 @@ export default function StrategiesPage() {
     <div>
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-3xl font-bold">Strategies</h1>
-        <Button onClick={() => setDialogOpen(true)}>
-          <Plus className="mr-2 h-4 w-4" />
-          Create Strategy
-        </Button>
+        <div className="flex gap-2">
+          <Button variant="outline" onClick={() => setImportDialogOpen(true)}>
+            <Upload className="mr-2 h-4 w-4" />
+            Import Holdings
+          </Button>
+          <Button onClick={() => setDialogOpen(true)}>
+            <Plus className="mr-2 h-4 w-4" />
+            Create Strategy
+          </Button>
+        </div>
       </div>
 
       {strategies.length === 0 ? (
@@ -822,6 +843,20 @@ export default function StrategiesPage() {
           </form>
         </DialogContent>
       </Dialog>
+
+      {/* Import Dialog */}
+      <FileUploadDialog
+        open={importDialogOpen}
+        onOpenChange={setImportDialogOpen}
+        title="Import Strategy Holdings"
+        description="Upload an Excel file with stock holdings data"
+        acceptedFileTypes=".xlsx,.xls"
+        onUpload={handleImportStrategy}
+        templateUrl={`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/strategies/import-template`}
+        showNameInput={true}
+        nameInputLabel="Strategy Name"
+        nameInputPlaceholder="Enter strategy name"
+      />
     </div>
   );
 }

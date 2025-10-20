@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { StockLogo } from "@/components/StockLogo";
 import { PortfolioPerformanceChart } from "@/components/charts/PortfolioPerformanceChart";
+import { ExportButton } from "@/components/import-export/ExportButton";
 import api from "@/lib/api";
 import { ArrowLeft, Edit, Trash2, RefreshCw, TrendingUp, TrendingDown, ArrowUpDown, ArrowUp, ArrowDown, History } from "lucide-react";
 
@@ -303,6 +304,11 @@ export default function StrategyDetailPage() {
         </Button>
         <h1 className="text-3xl font-bold">{strategy.name}</h1>
         <div className="ml-auto flex gap-2">
+          <ExportButton
+            endpoint={`/strategies/${strategyId}/export`}
+            label="Export"
+            variant="outline"
+          />
           <Button variant="outline" onClick={() => router.push(`/dashboard/strategies/${strategyId}/history`)}>
             <History className="mr-2 h-4 w-4" />
             History

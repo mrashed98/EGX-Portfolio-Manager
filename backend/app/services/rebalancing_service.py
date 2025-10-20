@@ -1,3 +1,4 @@
+from datetime import datetime
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from math import floor
@@ -356,7 +357,8 @@ class RebalancingService:
                         stock_id=stock_id,
                         quantity=quantity,
                         average_price=price,
-                        current_value=quantity * price
+                        current_value=quantity * price,
+                        purchase_date=datetime.utcnow()
                     )
                     db.add(holding)
             
@@ -462,7 +464,8 @@ class RebalancingService:
                         stock_id=stock_id,
                         quantity=quantity,
                         average_price=price,
-                        current_value=quantity * price
+                        current_value=quantity * price,
+                        purchase_date=datetime.utcnow()
                     )
                     db.add(holding)
         
